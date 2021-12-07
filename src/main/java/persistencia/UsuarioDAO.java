@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
+import modeloNullUsuario.NullUser;
 import modelo.Usuario;
 import persistenciaGeneral.ConexionProvider;
 import persistenciaGeneral.GenericDAO;
@@ -119,6 +120,26 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 			}
 
 			return usuarios;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+	
+	public Usuario find(Integer id) {
+		try {
+			String sql = "SELECT * FROM Usuario WHERE id = ?";
+			Connection conn = ConexionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setInt(1, id);
+			ResultSet resultados = statement.executeQuery();
+
+			Usuario user = NullUser.build();
+
+			if (resultados.next()) {
+				user = toUsuario(resultados);
+			}
+
+			return user;
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}
