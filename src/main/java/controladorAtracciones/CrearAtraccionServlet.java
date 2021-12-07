@@ -1,0 +1,7 @@
+package controladorAtracciones;
+
+import jakarta.servlet.http.HttpServlet;
+
+public class CrearAtraccionServlet extends HttpServlet {
+
+}
