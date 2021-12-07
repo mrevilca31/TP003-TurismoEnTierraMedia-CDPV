@@ -3,6 +3,10 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import persistencia.AtraccionDAO;
+import persistencia.PromocionDAO;
+import persistenciaGeneral.DAOFactory;
+
 public abstract class Producto {
 
 	protected List<Atraccion> atracciones = new ArrayList<Atraccion>();
@@ -49,4 +53,14 @@ public abstract class Producto {
 	protected abstract boolean hayCupo();
 
 	protected abstract void disminuirCupo() throws NoHayCupoException;
+	
+	public void actualizarProducto(Producto producto) {
+		if (producto.esPromo()) {
+			PromocionDAO promoDAO = DAOFactory.getPromocionDAO();
+			promoDAO.update((Promocion) producto);
+		} else {
+			AtraccionDAO atraccionDao = DAOFactory.getAtraccionDAO();
+			atraccionDao.update((Atraccion) producto);
+		}
+	}
 }
