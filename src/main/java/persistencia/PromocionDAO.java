@@ -15,6 +15,7 @@ import modelo.PromocionAbsoluta;
 import modelo.PromocionAxB;
 import modelo.PromocionPorcentual;
 import persistenciaGeneral.ConexionProvider;
+import persistenciaGeneral.DAOFactory;
 import persistenciaGeneral.GenericDAO;
 import persistenciaGeneral.MissingDataException;
 
