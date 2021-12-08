@@ -17,11 +17,11 @@ public abstract class Producto {
 	protected int costo;
 	protected double duracion;
 	protected Boolean borrado;
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -33,14 +33,15 @@ public abstract class Producto {
 	public double getDuracion() {
 		return duracion;
 	}
+
 	public String getTipoAtraccion() {
 		return tipoAtraccion;
 	}
-	
+
 	public Boolean getBorrado() {
 		return borrado;
 	}
-	
+
 	public void setBorrado(Boolean borrado) {
 		this.borrado = borrado;
 	}
@@ -63,12 +64,13 @@ public abstract class Producto {
 
 	public void setDuracion(double duracion) {
 		this.duracion = duracion;
+
 	}
 
 	public boolean esPromo() {
 		return false;
 	}
-	
+
 	public Boolean isBorrado() {
 		return borrado;
 	}
@@ -76,17 +78,17 @@ public abstract class Producto {
 	public void agregarAtraccion(Atraccion a) {
 		this.atracciones.add(a);
 	}
-	
+
 	public void agregarPromocion(Promocion p) {
 		this.promociones.add(p);
 	}
-	
+
 	protected abstract boolean contiene(Producto p);
-	
+
 	protected abstract boolean hayCupo();
 
-	protected abstract void disminuirCupo() throws NoHayCupoException;
-	
+	protected abstract void disminuirCupo(int i);
+
 	public void actualizarProducto(Producto producto) {
 		if (producto.esPromo()) {
 			PromocionDAO promoDAO = DAOFactory.getPromocionDAO();

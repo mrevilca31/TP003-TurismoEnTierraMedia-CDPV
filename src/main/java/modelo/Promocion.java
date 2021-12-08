@@ -121,9 +121,9 @@ public abstract class Promocion extends Producto {
 	}
 	
 	@Override
-	protected void disminuirCupo() throws NoHayCupoException {
+	protected void disminuirCupo(int i)  {
 		for (Atraccion atraccion : atraccionesEnPromocion) {
-			atraccion.disminuirCupo();
+			atraccion.disminuirCupo(1);
 		}
 	}
 }

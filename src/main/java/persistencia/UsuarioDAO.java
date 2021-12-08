@@ -56,13 +56,14 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 	}
 
 	@Override
-	public int delete(Usuario usuario) {
+	public int delete(Integer id) {
 		try {
-			String sql = "DELETE FROM Usuario WHERE nombre = '?'";
+			String sql = "Update FROM Usuario SET borrado = ? WHERE id = '?'";
 			Connection conn = ConexionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, usuario.getNombre());
+			statement.setInt(1, 1);
+			statement.setInt(2, id);
 			int rows = statement.executeUpdate();
 
 			return rows;
@@ -126,7 +127,7 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 			throw new MissingDataException(e);
 		}
 	}
-	
+
 	public Usuario find(Integer id) {
 		try {
 			String sql = "SELECT * FROM Usuario WHERE id = ?";

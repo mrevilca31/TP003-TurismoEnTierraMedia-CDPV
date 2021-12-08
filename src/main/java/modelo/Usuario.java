@@ -104,7 +104,7 @@ public class Usuario {
 	public void setBorrado(Boolean borrado) {
 		this.borrado = borrado;
 	}
-	
+
 	public Boolean isBorrado() {
 		return borrado;
 	}
@@ -158,11 +158,12 @@ public class Usuario {
 		return false;
 	}
 
-	private boolean puedeComprar(Producto p) {
-		if (this.getPresupuesto() < p.getCosto() || this.getTiempoDisponible() < p.getDuracion()) {
-			return false;
-		}
-		return true;
+	public boolean puedePagar(Producto p) {
+		return p.getCosto() <= this.getPresupuesto();
+	}
+
+	public boolean tieneTiempo(Producto p) {
+		return p.getDuracion() <= this.getTiempoDisponible();
 	}
 
 	public boolean checkPassword(String password) {
