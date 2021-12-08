@@ -15,39 +15,36 @@ import modelo.Usuario;
 import persistenciaGeneral.DAOFactory;
 import servicios.ComprarAtraccionServicio;
 
-	@WebServlet("/atracciones/buy.do")
-	public class ComprarAtraccionServlet extends HttpServlet implements Servlet  {
+@WebServlet("/atracciones/buy.do")
+public class ComprarAtraccionServlet extends HttpServlet implements Servlet {
 
-		private static final long serialVersionUID = 1L;
-		private ComprarAtraccionServicio comprarAtraccionServicio;
+	private static final long serialVersionUID = 1L;
+	private ComprarAtraccionServicio comprarAtraccionServicio;
 
-		@Override
-		public void init() throws ServletException {
-			super.init();
-			this.comprarAtraccionServicio = new ComprarAtraccionServicio();
-		}
-
-		@Override
-		protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-			Integer atraccionId = Integer.parseInt(req.getParameter("id"));
-			Usuario usuario = (Usuario) req.getSession().getAttribute("usuario");
-			Map<String, String> errors = comprarAtraccionServicio.comprar(usuario.getId(), atraccionId);
-			
-			Usuario usuario2 = DAOFactory.getUsuarioDAO().find(usuario.getId());
-			req.getSession().setAttribute("usuario", usuario2);
-			
-			if (errors.isEmpty()) {
-				req.setAttribute("flash", "¡Gracias por comprar!");
-			} else {
-				req.setAttribute("errors", errors);
-				req.setAttribute("flash", "No ha podido realizarse la compra");
-			}
-
-			RequestDispatcher dispatcher = getServletContext()
-					.getRequestDispatcher("/atracciones/index.do");
-			dispatcher.forward(req, resp);
-		}
+	@Override
+	public void init() throws ServletException {
+		super.init();
+		this.comprarAtraccionServicio = new ComprarAtraccionServicio();
 	}
 
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		Integer atraccionId = Integer.parseInt(req.getParameter("id"));
+		Usuario usuario = (Usuario) req.getSession().getAttribute("usuario");
+		Map<String, String> errors = comprarAtraccionServicio.comprar(usuario.getId(), atraccionId);
+
+		Usuario usuario2 = DAOFactory.getUsuarioDAO().find(usuario.getId());
+		req.getSession().setAttribute("usuario", usuario2);
+
+		if (errors.isEmpty()) {
+			req.setAttribute("flash", "¡Gracias por comprar!");
+		} else {
+			req.setAttribute("errors", errors);
+			req.setAttribute("flash", "No ha podido realizarse la compra");
+		}
+
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/atracciones/index.do");
+		dispatcher.forward(req, resp);
+	}
+}
