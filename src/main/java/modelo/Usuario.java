@@ -21,7 +21,7 @@ public class Usuario {
 	protected List<Producto> nuevosProductos;
 
 	public Usuario(int id, String nombre, int presupuesto, double tiempoDisponible, String atraccionPreferida,
-			String password, Boolean admin, Boolean borrado) {
+			String password, Boolean admin) {
 		this.id = id;
 		this.nombre = nombre;
 		this.presupuesto = presupuesto;
@@ -29,7 +29,6 @@ public class Usuario {
 		this.atraccionPreferida = atraccionPreferida;
 		this.password = password;
 		this.admin = admin;
-		this.borrado = borrado;
 
 		nuevosProductos = new ArrayList<Producto>();
 	}
