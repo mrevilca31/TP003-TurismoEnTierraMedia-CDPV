@@ -18,7 +18,7 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 	@Override
 	public int insert(Usuario usuario) {
 		try {
-			String sql = "INSERT INTO Usuario (nombre, presupuesto, tiempo_disponible, atraccion_preferida) VALUES ('?', ?, ?, '?')\r\n"
+			String sql = "INSERT INTO Usuario (nombre, presupuesto, tiempo_disponible, atraccion_preferida, contraseña, admin) VALUES ('?', ?, ?, '?', '?', ?)\r\n"
 					+ "";
 			Connection conn = ConexionProvider.getConnection();
 
@@ -27,6 +27,8 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 			statement.setInt(2, usuario.getPresupuesto());
 			statement.setDouble(3, usuario.getTiempoDisponible());
 			statement.setString(4, usuario.getAtraccionPreferida());
+			statement.setString(5, usuario.getPassword());
+			statement.setBoolean(6, usuario.getAdmin());
 			int rows = statement.executeUpdate();
 
 			return rows;
@@ -147,7 +149,7 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 
 	private Usuario toUsuario(ResultSet results) throws SQLException {
 		return new Usuario(results.getInt(1), results.getString(2), results.getInt(3), results.getDouble(4),
-				results.getString(5));
+				results.getString(5), results.getString(6), results.getBoolean(7));
 	}
 
 }
