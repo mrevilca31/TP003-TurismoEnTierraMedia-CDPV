@@ -3,6 +3,7 @@ package controladorAtracciones;
 import java.io.IOException;
 
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,10 +12,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import modelo.Atraccion;
 import servicios.AtraccionServicio;
 
-@WebServlet("/attractions/edit.do")
-public class EditarAtraccionServlet extends HttpServlet {
+@WebServlet("/atracciones/editarAtracciones.do")
+public class EditarAtraccionServlet extends HttpServlet implements Servlet {
 
-	private static final long serialVersionUID = 7598291131560345626L;
+	private static final long serialVersionUID = 1L;
 	private AtraccionServicio atraccionServicio;
 
 	@Override
@@ -27,10 +28,10 @@ public class EditarAtraccionServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 
-		Atraccion atraccion = atraccionServicio.find(id);
+		Atraccion atraccion = atraccionServicio.findAtraccionById(id);
 		req.setAttribute("atraccion", atraccion);
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/edit.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/atracciones/editarAtracciones.jsp");
 		dispatcher.forward(req, resp);
 	}
 
@@ -46,11 +47,11 @@ public class EditarAtraccionServlet extends HttpServlet {
 		Atraccion atraccion = atraccionServicio.update(id, nombre, costo, duracion, cupo, tipo);
 
 		if (atraccion.esValida()) {
-			resp.sendRedirect("/turismo/attractions/index.do");
+			resp.sendRedirect("/atracciones/index.do");
 		} else {
 			req.setAttribute("atraccion", atraccion);
 
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/edit.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/atracciones/editarAtracciones.jsp");
 			dispatcher.forward(req, resp);
 		}
 	}

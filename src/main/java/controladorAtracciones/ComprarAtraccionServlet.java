@@ -2,6 +2,8 @@ package controladorAtracciones;
 
 import java.io.IOException;
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.Servlet;
+
 import java.util.Map;
 
 import jakarta.servlet.ServletException;
@@ -14,9 +16,9 @@ import persistenciaGeneral.DAOFactory;
 import servicios.ComprarAtraccionServicio;
 
 	@WebServlet("/atracciones/buy.do")
-	public class ComprarAtraccionServlet extends HttpServlet {
+	public class ComprarAtraccionServlet extends HttpServlet implements Servlet  {
 
-		private static final long serialVersionUID = 3455721046062278592L;
+		private static final long serialVersionUID = 1L;
 		private ComprarAtraccionServicio comprarAtraccionServicio;
 
 		@Override
@@ -43,7 +45,7 @@ import servicios.ComprarAtraccionServicio;
 			}
 
 			RequestDispatcher dispatcher = getServletContext()
-					.getRequestDispatcher("/attractions/index.do");
+					.getRequestDispatcher("/atracciones/index.do");
 			dispatcher.forward(req, resp);
 		}
 	}

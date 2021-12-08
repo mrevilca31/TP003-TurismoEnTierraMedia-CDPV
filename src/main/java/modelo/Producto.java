@@ -16,6 +16,7 @@ public abstract class Producto {
 	protected String nombre;
 	protected int costo;
 	protected double duracion;
+	protected Boolean borrado;
 	
 	public int getId() {
 		return id;
@@ -36,8 +37,20 @@ public abstract class Producto {
 		return tipoAtraccion;
 	}
 	
+	public Boolean getBorrado() {
+		return borrado;
+	}
+	
+	public void setBorrado(Boolean borrado) {
+		this.borrado = borrado;
+	}
+	
 	public boolean esPromo() {
 		return false;
+	}
+	
+	public Boolean isBorrado() {
+		return borrado;
 	}
 
 	public void agregarAtraccion(Atraccion a) {

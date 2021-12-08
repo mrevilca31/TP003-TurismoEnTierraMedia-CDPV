@@ -2,6 +2,7 @@ package controladorAtracciones;
 
 import java.io.IOException;
 
+import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -9,10 +10,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import servicios.AtraccionServicio;
 
-@WebServlet("/attractions/delete.do")
-public class EliminarAtraccionServlet extends HttpServlet {
+@WebServlet("/atracciones/eliminarAtracciones.do")
+public class EliminarAtraccionServlet extends HttpServlet implements Servlet {
 
-	private static final long serialVersionUID = 1537949074766873118L;
+	private static final long serialVersionUID = 1L;
 	private AtraccionServicio atraccionServicio;
 
 	@Override
@@ -27,7 +28,7 @@ public class EliminarAtraccionServlet extends HttpServlet {
 
 		atraccionServicio.delete(id); 
 
-		resp.sendRedirect("/turismo/attractions/index.do");
+		resp.sendRedirect("/atracciones/index.do");
 	}
 
 

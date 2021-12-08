@@ -55,7 +55,6 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 		}
 	}
 
-	@Override
 	public int delete(Usuario usuario) {
 		try {
 			String sql = "DELETE FROM Usuario WHERE nombre = '?'";

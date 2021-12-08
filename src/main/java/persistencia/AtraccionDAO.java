@@ -92,15 +92,14 @@ public class AtraccionDAO implements GenericDAO<Atraccion> {
 		}
 	}
 
-	@Override
-	public int delete(Atraccion atraccion) {
+	public int delete(int id) {
 		try {
-			String sql = "DELETE FROM Atraccion_Promocion WHERE atraccion_id = ?;"
-					+ "DELETE FROM Atraccion WHERE id = ?;";
+			String sql = "UPDATE FROM Atraccion SET borrado = ? WHERE id = ?";
 			Connection conn = ConexionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setInt(1, atraccion.getId());
+			statement.setInt(1, 1);
+			statement.setInt(2, id);
 			int rows = statement.executeUpdate();
 
 			return rows;
