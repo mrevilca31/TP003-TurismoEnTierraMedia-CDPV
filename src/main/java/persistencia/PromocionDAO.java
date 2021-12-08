@@ -32,7 +32,7 @@ public class PromocionDAO implements GenericDAO<Promocion> {
 			ResultSet resultados = statement.executeQuery();
 
 			List<Atraccion> atracciones = DAOFactory.getAtraccionDAO().findAll();
-			
+
 			List<Promocion> promociones = new ArrayList<Promocion>();
 			Map<Promocion, List<Atraccion>> mapP = new HashMap<Promocion, List<Atraccion>>();
 
@@ -170,14 +170,15 @@ public class PromocionDAO implements GenericDAO<Promocion> {
 		}
 	}
 
-	public int delete(Promocion promocion) {
+	@Override
+	public int delete(Integer id) {
 		try {
-			String sql = "DELETE FROM Atraccion_Promocion\r\n" + "WHERE promocion_id = ?;\r\n" + "DELETE \r\n"
-					+ "FROM Promocion\r\n" + "WHERE id = ?;";
+			String sql = "UPDATE FROM Promocion SET BORRADO = ? WHERE id = ?";
 			Connection conn = ConexionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setInt(1, promocion.getId());
+			statement.setInt(1, 1);
+			statement.setInt(2, id);
 			int rows = statement.executeUpdate();
 
 			return rows;
