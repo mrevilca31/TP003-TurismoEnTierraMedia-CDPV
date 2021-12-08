@@ -64,7 +64,6 @@ public abstract class Producto {
 
 	public void setDuracion(double duracion) {
 		this.duracion = duracion;
-
 	}
 
 	public boolean esPromo() {

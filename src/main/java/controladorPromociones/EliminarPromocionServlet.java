@@ -25,7 +25,7 @@ public class EliminarPromocionServlet extends HttpServlet implements Servlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 
-		PromocionServicio.delete(id); 
+		promocionServicio.delete(id); 
 
 		resp.sendRedirect("/promociones/index.do");
 	}
