@@ -13,19 +13,25 @@ public class Usuario {
 	private int presupuesto;
 	private double tiempoDisponible;
 	private String atraccionPreferida;
+	private String password;
+	private Boolean admin;
+
 	protected Itinerario itinerario;
 	protected List<Producto> nuevosProductos;
 
-	public Usuario(int id, String nombre, int presupuesto, double tiempoDisponible, String atraccionPreferida/*, String password*/) {
+	public Usuario(int id, String nombre, int presupuesto, double tiempoDisponible, String atraccionPreferida,
+			String password, Boolean admin) {
 		this.id = id;
 		this.nombre = nombre;
 		this.presupuesto = presupuesto;
 		this.tiempoDisponible = tiempoDisponible;
 		this.atraccionPreferida = atraccionPreferida;
-		//this.password = password;
+		this.password = password;
+		this.admin = admin;
+
 		nuevosProductos = new ArrayList<Producto>();
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -49,7 +55,7 @@ public class Usuario {
 	public List<Producto> getProductosEnItinerario() {
 		return this.itinerario.productos;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -70,6 +76,26 @@ public class Usuario {
 		this.atraccionPreferida = atraccionPreferida;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = Crypt.hash(password);
+	}
+
+	public Boolean getAdmin() {
+		return admin;
+	}
+
+	public Boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(Boolean admin) {
+		this.admin = admin;
+	}
+
 	public void setItinerario(List<Producto> productos) {
 		this.itinerario = new Itinerario(productos);
 	}
@@ -79,19 +105,20 @@ public class Usuario {
 		this.presupuesto -= producto.getCosto();
 		this.tiempoDisponible -= producto.getDuracion();
 	}
-	
+
 	public void agregarProductoNuevo(Producto producto) {
 		this.nuevosProductos.add(producto);
 	}
-	
+
 	public List<Producto> getNuevosProductos() {
 		return this.nuevosProductos;
 	}
 
 	@Override
 	public String toString() {
-		return "\nUSUARIO \n Nombre: " + nombre + " | Presupuesto: " + presupuesto + " | Tiempo Disponible: " + tiempoDisponible
-				+ "hs. | Atraccion Preferida: " + atraccionPreferida /* + "Contraseña: *****"*/;
+		return "\nUSUARIO \n Nombre: " + nombre + " | Presupuesto: " + presupuesto + " | Tiempo Disponible: "
+				+ tiempoDisponible + "hs. | Atraccion Preferida: " + atraccionPreferida + "Contraseña: ***** | Admin: "
+				+ admin;
 	}
 
 	@Override
@@ -108,34 +135,25 @@ public class Usuario {
 		if (getClass() != obj.getClass())
 			return false;
 		Usuario other = (Usuario) obj;
-		return id == other.id
-				&& Objects.equals(nombre, other.nombre)
-				&& Objects.equals(presupuesto, other.presupuesto) 
+		return id == other.id && Objects.equals(nombre, other.nombre) && Objects.equals(presupuesto, other.presupuesto)
 				&& Objects.equals(tiempoDisponible, other.tiempoDisponible)
-				&& Objects.equals(itinerario, other.itinerario) 
+				&& Objects.equals(itinerario, other.itinerario)
 				&& Objects.equals(atraccionPreferida, other.atraccionPreferida);
-	}	
-	
+	}
+
 	public boolean isNull() {
 		return false;
 	}
-	
+
 	private boolean puedeComprar(Producto p) {
 		if (this.getPresupuesto() < p.getCosto() || this.getTiempoDisponible() < p.getDuracion()) {
 			return false;
 		}
 		return true;
 	}
-	
-	/*private String password;
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = Crypt.hash(password);
-	}
+
 	public boolean checkPassword(String password) {
 		return Crypt.match(password, this.password);
 	}
-	*/
+
 }
