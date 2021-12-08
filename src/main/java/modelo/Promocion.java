@@ -111,7 +111,7 @@ public abstract class Promocion extends Producto {
 
 	
 	@Override
-	protected boolean hayCupo() {
+	public boolean hayCupo() {
 		for (Atraccion atraccion : atraccionesEnPromocion) {
 			if (!atraccion.hayCupo()) {
 				return false;
@@ -121,7 +121,7 @@ public abstract class Promocion extends Producto {
 	}
 	
 	@Override
-	protected void disminuirCupo(int i)  {
+	public void disminuirCupo(int i)  {
 		for (Atraccion atraccion : atraccionesEnPromocion) {
 			atraccion.disminuirCupo(1);
 		}
