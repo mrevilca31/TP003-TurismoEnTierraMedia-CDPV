@@ -13,18 +13,25 @@ public class Usuario {
 	private int presupuesto;
 	private double tiempoDisponible;
 	private String atraccionPreferida;
+	private String password;
+	private Boolean admin;
+	
 	protected Itinerario itinerario;
 	protected List<Producto> nuevosProductos;
 
-	public Usuario(int id, String nombre, int presupuesto, double tiempoDisponible, String atraccionPreferida/*, String password*/) {
+	public Usuario(int id, String nombre, int presupuesto, double tiempoDisponible, String atraccionPreferida,
+			String password, Boolean admin) {
 		this.id = id;
 		this.nombre = nombre;
 		this.presupuesto = presupuesto;
 		this.tiempoDisponible = tiempoDisponible;
 		this.atraccionPreferida = atraccionPreferida;
-		//this.password = password;
+		this.password = password;
+		this.admin = admin;
+
 		nuevosProductos = new ArrayList<Producto>();
 	}
+
 	
 	public int getId() {
 		return id;
@@ -68,6 +75,26 @@ public class Usuario {
 
 	public void setAtraccionPreferida(String atraccionPreferida) {
 		this.atraccionPreferida = atraccionPreferida;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = Crypt.hash(password);
+	}
+
+	public Boolean getAdmin() {
+		return admin;
+	}
+
+	public Boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(Boolean admin) {
+		this.admin = admin;
 	}
 
 	public void setItinerario(List<Producto> productos) {
@@ -120,22 +147,16 @@ public class Usuario {
 		return false;
 	}
 	
-	private boolean puedeComprar(Producto p) {
-		if (this.getPresupuesto() < p.getCosto() || this.getTiempoDisponible() < p.getDuracion()) {
-			return false;
+	public boolean puedePagar(Producto p) {
+			return p.getCosto() <= this.getPresupuesto();
 		}
-		return true;
+
+	public boolean tieneTiempo(Producto p) {
+			return p.getDuracion() <= this.getTiempoDisponible();
 	}
 	
-	/*private String password;
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = Crypt.hash(password);
-	}
 	public boolean checkPassword(String password) {
 		return Crypt.match(password, this.password);
 	}
-	*/
+
 }

@@ -52,7 +52,7 @@ public abstract class Producto {
 	
 	protected abstract boolean hayCupo();
 
-	protected abstract void disminuirCupo() throws NoHayCupoException;
+	protected abstract void disminuirCupo(int i);
 	
 	public void actualizarProducto(Producto producto) {
 		if (producto.esPromo()) {
