@@ -15,12 +15,13 @@ public class Usuario {
 	private String atraccionPreferida;
 	private String password;
 	private Boolean admin;
+	private Boolean borrado;
 
 	protected Itinerario itinerario;
 	protected List<Producto> nuevosProductos;
 
 	public Usuario(int id, String nombre, int presupuesto, double tiempoDisponible, String atraccionPreferida,
-			String password, Boolean admin) {
+			String password, Boolean admin, Boolean borrado) {
 		this.id = id;
 		this.nombre = nombre;
 		this.presupuesto = presupuesto;
@@ -28,6 +29,7 @@ public class Usuario {
 		this.atraccionPreferida = atraccionPreferida;
 		this.password = password;
 		this.admin = admin;
+		this.borrado = borrado;
 
 		nuevosProductos = new ArrayList<Producto>();
 	}
@@ -94,6 +96,18 @@ public class Usuario {
 
 	public void setAdmin(Boolean admin) {
 		this.admin = admin;
+	}
+
+	public Boolean getBorrado() {
+		return borrado;
+	}
+
+	public void setBorrado(Boolean borrado) {
+		this.borrado = borrado;
+	}
+	
+	public Boolean isBorrado() {
+		return borrado;
 	}
 
 	public void setItinerario(List<Producto> productos) {
