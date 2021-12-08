@@ -128,6 +128,7 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 		}
 	}
 
+	@Override
 	public Usuario find(Integer id) {
 		try {
 			String sql = "SELECT * FROM Usuario WHERE id = ?";

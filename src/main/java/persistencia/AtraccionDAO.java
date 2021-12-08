@@ -109,6 +109,7 @@ public class AtraccionDAO implements GenericDAO<Atraccion> {
 		}
 	}
 
+	@Override
 	public Atraccion find(Integer id) {
 		try {
 			String sql = "SELECT * FROM ATTRACTIONS WHERE id = ?";
