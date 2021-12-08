@@ -1,6 +1,11 @@
 package servicios;
 
+import java.util.List;
+
 import jakarta.servlet.http.HttpServlet;
+import modelo.Atraccion;
+import persistencia.AtraccionDAO;
+import persistenciaGeneral.DAOFactory;
 
 public class AtraccionServicio extends HttpServlet {
 
