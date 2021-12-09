@@ -13,13 +13,19 @@ body{
     letter-spacing: 0.03em;
     line-height: 1.6;
     font-family: 'Open Sans', sans-serif;
+
+    background-image: url(../images/fondo2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .title{
     text-align: center;
     font-size: 40px;
-    color: #6a6a6a;
-    margin-top: 100px;
+    color: #012c03f1;
+    margin-top: 50px;
     font-weight: 100;
     font-family: 'Roboto', sans-serif;
 }
