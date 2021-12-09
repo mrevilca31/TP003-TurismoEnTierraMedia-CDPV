@@ -1,7 +1,9 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 import utilidades.Crypt;
@@ -17,18 +19,19 @@ public class Usuario {
 	private Boolean admin;
 	private Boolean borrado;
 
+	private HashMap<String, String> errors;
+	
 	protected Itinerario itinerario;
 	protected List<Producto> nuevosProductos;
 
 	public Usuario(int id, String nombre, int presupuesto, double tiempoDisponible, String atraccionPreferida,
-			String password, Boolean admin) {
+			String password) {
 		this.id = id;
 		this.nombre = nombre;
 		this.presupuesto = presupuesto;
 		this.tiempoDisponible = tiempoDisponible;
 		this.atraccionPreferida = atraccionPreferida;
 		this.password = password;
-		this.admin = admin;
 
 		nuevosProductos = new ArrayList<Producto>();
 	}
@@ -168,6 +171,26 @@ public class Usuario {
 
 	public boolean checkPassword(String password) {
 		return Crypt.match(password, this.password);
+	}
+	
+	public boolean isValid() {
+		validate();
+		return errors.isEmpty();
+	}
+	
+	public void validate() {
+		errors = new HashMap<String, String>();
+
+		if (presupuesto < 0) {
+			errors.put("presupuesto", "No debe ser negativo");
+		}
+		if (tiempoDisponible < 0) {
+			errors.put("tiempoDisponible", "No debe ser negativo");
+		}
+	}
+	
+	public Map<String, String> getErrors() {
+		return errors;
 	}
 
 }
