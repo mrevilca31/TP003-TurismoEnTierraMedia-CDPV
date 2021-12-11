@@ -21,17 +21,18 @@ public class Usuario {
 
 	private HashMap<String, String> errors;
 	
-	protected Itinerario itinerario;
+	private Itinerario itinerario;
 	protected List<Producto> nuevosProductos;
 
 	public Usuario(int id, String nombre, int presupuesto, double tiempoDisponible, String atraccionPreferida,
-			String password) {
+			String password, Boolean admin) {
 		this.id = id;
 		this.nombre = nombre;
 		this.presupuesto = presupuesto;
 		this.tiempoDisponible = tiempoDisponible;
 		this.atraccionPreferida = atraccionPreferida;
 		this.password = password;
+		this.admin = admin;
 
 		nuevosProductos = new ArrayList<Producto>();
 	}
@@ -57,7 +58,7 @@ public class Usuario {
 	}
 
 	public List<Producto> getProductosEnItinerario() {
-		return this.itinerario.productos;
+		return this.getItinerario().productos;
 	}
 
 	public void setId(int id) {
@@ -117,7 +118,7 @@ public class Usuario {
 	}
 
 	public void agregarProductosAlItinerario(Producto producto) {
-		itinerario.agregarProductos(producto);
+		getItinerario().agregarProductos(producto);
 		this.presupuesto -= producto.getCosto();
 		this.tiempoDisponible -= producto.getDuracion();
 	}
@@ -139,7 +140,7 @@ public class Usuario {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, nombre, presupuesto, tiempoDisponible, atraccionPreferida, itinerario);
+		return Objects.hash(id, nombre, presupuesto, tiempoDisponible, atraccionPreferida, getItinerario());
 	}
 
 	@Override
@@ -153,7 +154,7 @@ public class Usuario {
 		Usuario other = (Usuario) obj;
 		return id == other.id && Objects.equals(nombre, other.nombre) && Objects.equals(presupuesto, other.presupuesto)
 				&& Objects.equals(tiempoDisponible, other.tiempoDisponible)
-				&& Objects.equals(itinerario, other.itinerario)
+				&& Objects.equals(getItinerario(), other.getItinerario())
 				&& Objects.equals(atraccionPreferida, other.atraccionPreferida);
 	}
 
@@ -193,4 +194,11 @@ public class Usuario {
 		return errors;
 	}
 
+	public Itinerario getItinerario() {
+		return itinerario;
+	}
+
+	public void setItinerario(Itinerario itinerario) {
+		this.itinerario = itinerario;
+	}
 }

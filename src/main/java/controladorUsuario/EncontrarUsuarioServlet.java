@@ -6,16 +6,14 @@ import java.util.List;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import modelo.Usuario;
 import servicios.UsuarioServicio;
 
-@WebServlet("/usuarios/index.do")
-public class ListarUsuariosServlet extends HttpServlet implements Servlet {
-
+public class EncontrarUsuarioServlet extends HttpServlet implements Servlet {
+	
 	private static final long serialVersionUID = -8346640902238722429L;
 	private UsuarioServicio usuarioServicio;
 
@@ -28,8 +26,8 @@ public class ListarUsuariosServlet extends HttpServlet implements Servlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		List<Usuario> usuario = usuarioServicio.list();
-		req.setAttribute("usuario", usuario);
+		String nombre = usuarioServicio.findUser(nombre);
+		req.setAttribute("nombre", nombre);
 
 		RequestDispatcher dispatcher = getServletContext()
 				.getRequestDispatcher("/views/usuario/index.jsp");
@@ -37,5 +35,6 @@ public class ListarUsuariosServlet extends HttpServlet implements Servlet {
 		dispatcher.forward(req, resp);
 
 	}
+
 
 }
