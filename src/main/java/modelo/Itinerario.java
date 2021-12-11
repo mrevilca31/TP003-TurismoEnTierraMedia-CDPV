@@ -5,6 +5,10 @@ import java.util.List;
 public class Itinerario {
 	protected List<Producto> productos;
 
+	public void setProductos(List<Producto> productos) {
+		this.productos = productos;
+	}
+
 	public Itinerario(List<Producto> productos) {
 
 		this.productos = productos;
