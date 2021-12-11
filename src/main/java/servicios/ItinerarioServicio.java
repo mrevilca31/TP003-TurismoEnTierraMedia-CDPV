@@ -28,5 +28,4 @@ public class ItinerarioServicio extends HttpServlet {
 	public Itinerario find(int id, List<Producto> productos) {
 		return (Itinerario) DAOFactory.getItinerarioDAO().findAll(id, productos);
 	}
-
 }

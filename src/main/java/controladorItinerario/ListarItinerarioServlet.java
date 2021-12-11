@@ -1,6 +1,7 @@
 package controladorItinerario;
 
 import java.io.IOException;
+import java.util.List;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
@@ -12,13 +13,11 @@ import jakarta.servlet.http.HttpServletResponse;
 import modelo.Atraccion;
 import modelo.Itinerario;
 import modelo.Producto;
-import modelo.Usuario;
 import servicios.ItinerarioServicio;
-import servicios.UsuarioServicio;
 
-@WebServlet("/itinerario/cargarItinerario.do")
-public class CargarItinerarioServlet extends HttpServlet implements Servlet {
-
+@WebServlet("/itinerario/index.do")
+public class ListarItinerarioServlet extends HttpServlet implements Servlet {
+	
 	private static final long serialVersionUID = 1L;
 	private ItinerarioServicio itinerarioServicio;
 
@@ -30,20 +29,12 @@ public class CargarItinerarioServlet extends HttpServlet implements Servlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		List<Itinerario> itinerario = itinerarioServicio.find(int id, List<Producto> productos);
+		req.setAttribute("itinerario", itinerario);
 
-		RequestDispatcher dispatcher = getServletContext()
-				.getRequestDispatcher("/views/itinerario/cargarItinerario.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/iti/index.jsp");
 		dispatcher.forward(req, resp);
-	}
 
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String usuario = req.getParameter("usuario");
-		String producto = req.getParameter("producto");
-		Usuario user = UsuarioServicio.find(usuario);
-		//FALTA AGREGAR LA PARTE DE PRODUCTO
-
-		Itinerario itinerario = itinerarioServicio.create(user, producto);
-		resp.sendRedirect("/itinerario/index.do");
 	}
 
 }
