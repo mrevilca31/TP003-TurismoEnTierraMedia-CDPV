@@ -14,10 +14,6 @@ public class UsuarioServicio {
 		return DAOFactory.getUsuarioDAO().findAll();
 	}
 
-	public static Usuario findUser(String nombre) {
-		return DAOFactory.getUsuarioDAO().findByNombre(nombre);
-	}
-
 	public Usuario create(String nombre, Integer presupuesto, Double tiempoDisponible, String atraccionPreferida,
 			String password) {
 		Usuario usuario = new Usuario(-1, nombre, presupuesto, tiempoDisponible, atraccionPreferida, password, false);
