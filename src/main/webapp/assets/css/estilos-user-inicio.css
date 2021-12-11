@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&display=swap');
 
 body {
-    background-image: url(../images/MapaTierraMedia.jpg);
+    background-image: url(../images/fondos/MapaTierraMedia.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -32,8 +32,7 @@ body:before{
 }
 
 footer{
-    position: relative;
-    top: 40px;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;

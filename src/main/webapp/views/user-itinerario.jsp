@@ -8,7 +8,7 @@
 <body>
 	<jsp:include page="../partials/nav-user.jsp"></jsp:include>
 	<main class="container-lg">
-		<h1 class="title">PRODUCTOS ADQUIRIDOS</h1>
+		<h1 class="title">Productos Adquiridos</h1>
 		<c:forEach items="${itinerario}" var="producto">
 			<div class="card mt-4 border-secondary">
 				<h5 class="card-header text-white bg-success">Promo/Atraccion</h5>

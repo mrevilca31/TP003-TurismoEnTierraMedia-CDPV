@@ -10,7 +10,7 @@
 <body>
 	<jsp:include page="../partials/nav-user.jsp"></jsp:include>
 	<main>
-		<h1 class="title">PROMOCIONES</h1>
+		<h1 class="title">Promociones Disponibles</h1>
 		<!-- Cards con las Promociones -->
 		<c:forEach items="${promociones}" var="promociones">
 			<div class="container">

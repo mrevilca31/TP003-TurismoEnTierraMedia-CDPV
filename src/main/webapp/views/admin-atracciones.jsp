@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
-<jsp:include page="../partials/head-admin.jsp"></jsp:include>
-<title>Atracciones</title>
+	<jsp:include page="../partials/head-admin.jsp"></jsp:include>
+	<title>Atracciones</title>
 </head>
 <body>
 	<jsp:include page="../partials/nav-admin.jsp"></jsp:include>

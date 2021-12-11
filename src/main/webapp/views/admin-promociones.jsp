@@ -10,6 +10,10 @@
 	<jsp:include page="../partials/nav-admin.jsp"></jsp:include>
 
 	<main class="container-lg">
+		<!-- Boton nuevo producto -->
+		<button type="button" class="btn btn-success mt-3">
+			<i class="bi bi-plus-square"></i> Nueva Promocion
+		</button>
 		<!-- Tabla de Datos -->
 		<table
 			class="table table-success table-striped table-hover table-bordered border-light mt-4 table-responsive">
@@ -43,11 +47,6 @@
 				</c:forEach>
 			</tbody>
 		</table>
-
-		<!-- Boton nuevo producto -->
-		<button type="button" class="btn btn-success">
-			<i class="bi bi-plus-square"></i> Nueva Promocion
-		</button>
 	</main>
 
 </body>

@@ -1,7 +1,7 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" href="../assets/images/Iconos/IconoUser.PNG">
+<link rel="shortcut icon" href="../assets/images/Iconos/IconoUser.png">
 
 
 <!-- Bootstrap CSS -->

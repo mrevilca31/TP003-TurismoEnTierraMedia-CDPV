@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
-
+@import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&display=swap');
 
 html, body{
     margin: 0;
@@ -13,8 +13,7 @@ body{
     letter-spacing: 0.03em;
     line-height: 1.6;
     font-family: 'Open Sans', sans-serif;
-
-    background-image: url(../images/MapaTierraMedia.jpg);
+    background-image: url(../images/fondos/MapaTierraMedia.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -36,11 +35,11 @@ body:before{
 
 .title{
     text-align: center;
-    font-size: 40px;
-    color: #012c03f1;
-    margin-top: 50px;
-    font-weight: 100;
-    font-family: 'Roboto', sans-serif;
+    font-size: 80px;
+    color: #ffffffcd;
+    margin-top: 30px;
+    font-weight: 700;
+    font-family: 'Bilbo Swash Caps';
 }
 
 
@@ -90,4 +89,31 @@ body:before{
     font-weight: 500;
     text-decoration: none;
     color: #3498db;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    font-family: 'Roboto Mono', monospace;
+    color: #fff;
+}
+
+.footer-bottom{
+    background: #000;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .7;
+    font-weight: 200;
 }
