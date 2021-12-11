@@ -40,13 +40,15 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 	@Override
 	public int update(Usuario usuario) {
 		try {
-			String sql = "UPDATE USUARIO SET PRESUPUESTO = ?, TIEMPO_DISPONIBLE = ? WHERE ID = ?";
+			String sql = "UPDATE USUARIO SET NOMBRE = ?,PRESUPUESTO = ?, TIEMPO_DISPONIBLE = ?, CONTRASEÑA = ?, WHERE ID = ?";
 			Connection conn = ConexionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setInt(1, usuario.getPresupuesto());
-			statement.setDouble(2, usuario.getTiempoDisponible());
-			statement.setInt(3, usuario.getId());
+			statement.setString(1, usuario.getNombre());
+			statement.setInt(2, usuario.getPresupuesto());
+			statement.setDouble(3, usuario.getTiempoDisponible());
+			statement.setString(4, usuario.getPassword());
+			statement.setInt(5, usuario.getId());
 			int rows = statement.executeUpdate();
 
 			return rows;
@@ -75,7 +77,7 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 	@Override
 	public int countAll() {
 		try {
-			String sql = "SELECT COUNT(1) AS 'TOTAL USUARIOS' FROM Usuario";
+			String sql = "SELECT COUNT(1) AS 'TOTAL USUARIOS' FROM Usuario WHERE BORRADO =0";
 			Connection conn = ConexionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
@@ -91,7 +93,7 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 
 	public Usuario findByNombre(String nombre) {
 		try {
-			String sql = "SELECT * FROM Usuario WHERE nombre = '?'";
+			String sql = "SELECT * FROM Usuario WHERE nombre = '?' AND BORRADO =0";
 			Connection conn = ConexionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, nombre);
@@ -112,7 +114,7 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 	@Override
 	public List<Usuario> findAll() {
 		try {
-			String sql = "SELECT * FROM Usuario";
+			String sql = "SELECT * FROM Usuario WHERE BORRADO =0";
 			Connection conn = ConexionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
@@ -131,7 +133,7 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 	@Override
 	public Usuario find(Integer id) {
 		try {
-			String sql = "SELECT * FROM Usuario WHERE id = ?";
+			String sql = "SELECT * FROM Usuario WHERE id = ? AND BORRADO =0";
 			Connection conn = ConexionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, id);

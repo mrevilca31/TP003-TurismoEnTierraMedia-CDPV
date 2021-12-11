@@ -19,8 +19,8 @@ public class UsuarioServicio {
 	}
 
 	public Usuario create(String nombre, Integer presupuesto, Double tiempoDisponible, String atraccionPreferida,
-			String password, Boolean admin) {
-		Usuario usuario = new Usuario(-1, nombre, presupuesto, tiempoDisponible, atraccionPreferida, password, admin);
+			String password) {
+		Usuario usuario = new Usuario(-1, nombre, presupuesto, tiempoDisponible, atraccionPreferida, password, false);
 		usuario.setPassword(password);
 
 		if (usuario.isValid()) {
@@ -32,7 +32,7 @@ public class UsuarioServicio {
 	}
 
 	public void delete(Integer id) {
-		DAOFactory.getUsuarioDAO().delete(id);
+		DAOFactory.getUsuarioDAO().delete(id); 
 	}
 
 	public Usuario update(Integer id, String nombre, Integer presupuesto, Double tiempoDisponible,
@@ -47,9 +47,13 @@ public class UsuarioServicio {
 		usuario.setPassword(password);
 		usuario.setAdmin(admin);
 
-		if (!(usuario == null)) {
+		if (usuario.isValid()) {
 			usuarioDAO.update(usuario);
 		}
 		return usuario;
+	}
+
+	public Usuario find(int id) {
+		return DAOFactory.getUsuarioDAO().find(id);
 	}
 }

@@ -12,7 +12,7 @@ public class LoginServicio extends HttpServlet {
 		UsuarioDAO usuarioDao = DAOFactory.getUsuarioDAO();
 		Usuario usuario = usuarioDao.findByNombre(nombre);
     	
-    	if (usuario.isNull() /*|| !usuario.checkPassword(password)*/) {
+    	if (usuario.isNull() || !usuario.checkPassword(password)) {
     		usuario = NullUser.build();
     	}
     	return usuario;

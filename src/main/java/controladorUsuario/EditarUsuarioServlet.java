@@ -16,7 +16,7 @@ import servicios.UsuarioServicio;
 
 public class EditarUsuarioServlet extends HttpServlet implements Servlet {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 3455721046062278592L;
 	private UsuarioServicio usuarioServicio;
 
 	@Override
@@ -27,37 +27,33 @@ public class EditarUsuarioServlet extends HttpServlet implements Servlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String nombre = req.getParameter("nombre");
-
-		Usuario usuario = usuarioServicio.findUser(nombre);
-		req.setAttribute("atraccion", usuario);
-
+		int id = Integer.parseInt(req.getParameter("id"));
+		Usuario tmp_user = usuarioServicio.find(id);
+		req.setAttribute("tmp_user", tmp_user);
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/usuario/editarUsuario.jsp");
 		dispatcher.forward(req, resp);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Integer id = Integer.parseInt(req.getParameter("id"));
 		String nombre = req.getParameter("nombre");
-		Integer presupuesto = req.getParameter("presupuesto").trim() == "" ? null
-				: Integer.parseInt(req.getParameter("presupuesto"));
+		Integer presupuesto = Integer.parseInt(req.getParameter("presupuesto"));
 		Double tiempoDisponible = Double.parseDouble(req.getParameter("tiempoDisponible"));
 		String atraccionPreferida = req.getParameter("atraccionPreferida");
 		String password = req.getParameter("password");
-		Boolean admin = Boolean.valueOf(req.getParameter("admin"));
+		int id = Integer.parseInt(req.getParameter("id"));
 
-		Usuario usuario = usuarioServicio.update(id, nombre, presupuesto, tiempoDisponible, atraccionPreferida,
-				password, admin);
+		Usuario tmp_user = usuarioServicio.update(id, nombre, presupuesto, tiempoDisponible, atraccionPreferida, password, false);
 
-		if (!(usuario == null)) {
-			resp.sendRedirect("/usuario/index.do");
+		if (tmp_user.isValid()) {
+			resp.sendRedirect("/turismo/usuario/index.do");
 		} else {
-			req.setAttribute("usuario", usuario);
+			req.setAttribute("tmp_user", tmp_user);
 
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/usuario/editarUsuario.jsp");
 			dispatcher.forward(req, resp);
 		}
+
 	}
 
 }
