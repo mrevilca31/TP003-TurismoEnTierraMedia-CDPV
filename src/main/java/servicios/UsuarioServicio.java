@@ -21,7 +21,6 @@ public class UsuarioServicio {
 
 		if (usuario.isValid()) {
 			DAOFactory.getUsuarioDAO().insert(usuario);
-			// XXX: si no devuelve "1", es que hubo más errores
 		}
 
 		return usuario;
