@@ -13,7 +13,7 @@ public class PromocionServicio extends HttpServlet {
 		return DAOFactory.getPromocionDAO().findAll();
 	}
 
-	public Promocion create(String nombre, int costo, Double duracion, int cupo, String tipo) {
+	/*public Promocion create(String nombre, int costo, Double duracion, int cupo, String tipo) {
 
 		//HAY QUE MODIFICAR LOS PARAMETROS
 		Promocion promocion = new Promocion(-1, nombre, costo, duracion, cupo, tipo);
@@ -24,13 +24,13 @@ public class PromocionServicio extends HttpServlet {
 			// XXX: si no devuelve "1", es que hubo más errores
 		}
 		return promocion;
-	}
+	}*/
 
 	public Promocion findAtraccionById(int id) {
 		return DAOFactory.getPromocionDAO().find(id);
 	}
 
-	public Promocion update(int id, String nombre, Integer costo, Double duracion, int cupo, String tipo) {
+	/*public Promocion update(int id, String nombre, Integer costo, Double duracion, int cupo, String tipo) {
 
 		PromocionDAO promocionDAO = DAOFactory.getPromocionDAO();
 		Promocion promocion = promocionDAO.find(id);
@@ -45,7 +45,7 @@ public class PromocionServicio extends HttpServlet {
 			promocionDAO.update(promocion);
 		}
 		return promocion;
-	}
+	}*/
 
 	public void delete(Integer id) { 
 		DAOFactory.getPromocionDAO().delete(id);
