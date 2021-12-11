@@ -95,12 +95,11 @@ public class AtraccionDAO implements GenericDAO<Atraccion> {
 	@Override
 	public int delete(Integer id) {
 		try {
-			String sql = "UPDATE FROM Atraccion SET borrado = ? WHERE id = ?";
+			String sql = "UPDATE FROM Atraccion SET borrado = 1 WHERE id = ?";
 			Connection conn = ConexionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setInt(1, 1);
-			statement.setInt(2, id);
+			statement.setInt(1, id);
 			int rows = statement.executeUpdate();
 
 			return rows;

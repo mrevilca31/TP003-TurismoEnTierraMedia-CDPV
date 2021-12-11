@@ -170,12 +170,11 @@ public class PromocionDAO implements GenericDAO<Promocion> {
 	@Override
 	public int delete(Integer id) {
 		try {
-			String sql = "UPDATE FROM Promocion SET BORRADO = ? WHERE id = ?";
+			String sql = "UPDATE FROM Promocion SET BORRADO = 1 WHERE id = ?";
 			Connection conn = ConexionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setInt(1, 1);
-			statement.setInt(2, id);
+			statement.setInt(1, id);
 			int rows = statement.executeUpdate();
 
 			return rows;
