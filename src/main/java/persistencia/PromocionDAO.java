@@ -26,7 +26,8 @@ public class PromocionDAO implements GenericDAO<Promocion> {
 			String sql = "SELECT Promocion.id AS 'ID', Promocion.nombre AS 'Nombre Promocion', tipo_promo AS 'Tipo de Promocion', tipo_preferido AS 'Tipo de atracciones', Atraccion.nombre AS 'Atracciones incluidas', Promocion.costo_total AS 'Costo total promocion absoluta',(select nombre from Atraccion where id = PROMOCION.atraccion_bonificada) AS 'Atraccion bonificada promocion AxB', Promocion.descuento AS 'Tipo descuento promocion porcentual' \r\n"
 					+ "FROM Atraccion_Promocion \r\n"
 					+ "JOIN Promocion ON Promocion.id = Atraccion_Promocion.promocion_id\r\n"
-					+ "JOIN Atraccion ON Atraccion.id = Atraccion_Promocion.atraccion_id";
+					+ "JOIN Atraccion ON Atraccion.id = Atraccion_Promocion.atraccion_id"
+					+ "WHERE Promocion.borrado = 0";
 			Connection conn = ConexionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
@@ -185,7 +186,7 @@ public class PromocionDAO implements GenericDAO<Promocion> {
 
 	public int countAll() {
 		try {
-			String sql = "SELECT COUNT(1) AS 'TOTAL PROMOCIONES' FROM Promocion";
+			String sql = "SELECT COUNT(1) AS 'TOTAL PROMOCIONES' FROM Promocion WHERE borrado = 0";
 			Connection conn = ConexionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
@@ -205,7 +206,7 @@ public class PromocionDAO implements GenericDAO<Promocion> {
 			String sql = "SELECT Promocion.id AS 'ID', Promocion.nombre AS 'Nombre Promocion', tipo_promo AS 'Tipo de Promocion', tipo_preferido AS 'Tipo de atracciones', Atraccion.nombre AS 'Atracciones incluidas', Promocion.costo_total AS 'Costo total promocion absoluta',(select nombre from Atraccion where id = PROMOCION.atraccion_bonificada) AS 'Atraccion bonificada promocion AxB', Promocion.descuento AS 'Tipo descuento promocion porcentual' \r\n"
 					+ "FROM Atraccion_Promocion \r\n"
 					+ "JOIN Promocion ON Promocion.id = Atraccion_Promocion.promocion_id\r\n"
-					+ "JOIN Atraccion ON Atraccion.id = Atraccion_Promocion.atraccion_id" + "WHERE id = ?";
+					+ "JOIN Atraccion ON Atraccion.id = Atraccion_Promocion.atraccion_id" + "WHERE id = ? AND borrado = 0";
 			Connection conn = ConexionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, id);

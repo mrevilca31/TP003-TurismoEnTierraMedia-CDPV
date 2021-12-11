@@ -17,12 +17,16 @@ public class AtraccionDAO implements GenericDAO<Atraccion> {
 	@Override
 	public int update(Atraccion atraccion) {
 		try {
-			String sql = "UPDATE ATRACCION SET CUPO= ? WHERE ID = ?";
+			String sql = "UPDATE ATRACCION SET NOMBRE = '?', COSTO = ?, DURACION = ?, CUPO= ?, TIPO ='?' WHERE ID = ?";
 			Connection conn = ConexionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setInt(1, atraccion.getCupo());
-			statement.setInt(2, atraccion.getId());
+			statement.setString(1, atraccion.getNombre());
+			statement.setInt(2, atraccion.getCosto());
+			statement.setDouble(3, atraccion.getDuracion());
+			statement.setInt(4, atraccion.getCupo());
+			statement.setString(5, atraccion.getTipoAtraccion());
+			statement.setInt(6, atraccion.getId());
 			int rows = statement.executeUpdate();
 
 			return rows;
@@ -34,7 +38,7 @@ public class AtraccionDAO implements GenericDAO<Atraccion> {
 	@Override
 	public List<Atraccion> findAll() {
 		try {
-			String sql = "SELECT * FROM ATRACCION";
+			String sql = "SELECT * FROM ATRACCION WHERE borrado = 0";
 			Connection conn = ConexionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
@@ -58,7 +62,7 @@ public class AtraccionDAO implements GenericDAO<Atraccion> {
 	@Override
 	public int countAll() {
 		try {
-			String sql = "SELECT COUNT(1) AS 'TOTAL ATRACCIONES' FROM Atraccion";
+			String sql = "SELECT COUNT(1) AS 'TOTAL ATRACCIONES' FROM Atraccion WHERE borrad = 0";
 			Connection conn = ConexionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
@@ -111,7 +115,7 @@ public class AtraccionDAO implements GenericDAO<Atraccion> {
 	@Override
 	public Atraccion find(Integer id) {
 		try {
-			String sql = "SELECT * FROM ATTRACTIONS WHERE id = ?";
+			String sql = "SELECT * FROM ATTRACTIONS WHERE id = ? AND borrado = 0";
 			Connection conn = ConexionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, id);
