@@ -1,13 +1,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <head>
-	<jsp:include page="partials/head-admin.jsp"></jsp:include>
+	<jsp:include page="../partials/head-admin.jsp"></jsp:include>
 	<title>Usuarios</title>
 </head>
 
 <body>
-	<jsp:include page="partials/nav-admin.jsp"></jsp:include>
+	<jsp:include page="../partials/nav-admin.jsp"></jsp:include>
 	<main class="container-lg">
+	    <jsp:include page="../partials/form-nuevo-usuario.jsp"></jsp:include>
+		
 		<!-- Tabla de Datos -->
 		<table
 			class="table table-success table-striped table-hover table-bordered border-light mt-4 table-responsive">
@@ -39,11 +41,6 @@
 				</c:forEach>
 			</tbody>
 		</table>
-
-		<!-- Boton Nuevo Usuario -->
-		<button type="button" class="btn btn-success">
-			<i class="bi bi-plus-square"></i> Nuevo Usuario
-		</button>
 	</main>
 
 </body>

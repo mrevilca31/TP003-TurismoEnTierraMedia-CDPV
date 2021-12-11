@@ -1,21 +1,21 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
-	<jsp:include page="partials/head-user.jsp"></jsp:include>
-	<link rel="stylesheet" href="assets/css/estilos-user-inicio.css">
+	<jsp:include page="../partials/head-user.jsp"></jsp:include>
+	<link rel="stylesheet" href="../assets/css/estilos-user-inicio.css">
 	<title>Inicio</title>
 </head>
 
 <body>
-    <jsp:include page="partials/nav-user.jsp"></jsp:include>
+    <jsp:include page="../partials/nav-user.jsp"></jsp:include>
 	<main>
-		<h1 class="title">BIENVENIDOS A LA AVENTURA</h1>
+		<h1 class="title">Bienvenidos</h1>
 		<!-- Carrusel -->
 		<div class="container-lg mt-3">
 			<div id="carouselExampleCaptions" class="carousel slide"
 				data-bs-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<a href="#"> <img src="assets/images/Castillo.jpg"
+						<a href="#"> <img src="../assets/images/Castillo.jpg"
 							class=" d-block mx-auto my-auto" alt="..." width="850 px"
 							height="500 px">
 						</a>
@@ -25,7 +25,7 @@
 						</div>
 					</div>
 					<div class="carousel-item">
-						<a href="#"> <img src="assets/images/Castillo.jpg"
+						<a href="#"> <img src="../assets/images/Castillo.jpg"
 							class=" d-block mx-auto my-auto" alt="..." width="850 px"
 							height="500 px">
 						</a>
@@ -35,7 +35,7 @@
 						</div>
 					</div>
 					<div class="carousel-item">
-						<a href="#"> <img src="assets/images/Castillo.jpg"
+						<a href="#"> <img src="../assets/images/Castillo.jpg"
 							class=" d-block mx-auto my-auto" alt="..." width="850 px"
 							height="500 px">
 						</a>
@@ -58,4 +58,5 @@
 			</div>
 		</div>
 	</main>
+	<jsp:include page="../partials/footer.jsp"></jsp:include>
 </body>

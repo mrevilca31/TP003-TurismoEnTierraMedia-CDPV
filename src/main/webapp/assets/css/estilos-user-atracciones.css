@@ -14,11 +14,24 @@ body{
     line-height: 1.6;
     font-family: 'Open Sans', sans-serif;
 
-    background-image: url(../images/fondo2.jpg);
+    background-image: url(../images/MapaTierraMedia.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+}
+
+body:before{
+    content: "";
+    width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(0deg,#dfc24f ,#090909);
+
+    opacity: 0.5;
+    z-index: -1;
 }
 
 .title{

@@ -1,15 +1,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
-<jsp:include page="partials/head-user.jsp"></jsp:include>
-<link rel="stylesheet" href="assets/css/estilos-user-atracciones.css">
-<title>Atracciones</title>
+<jsp:include page="../partials/head-user.jsp"></jsp:include>
+
+<link rel="stylesheet"  href="../assets/css/estilos-user-atracciones.css">
+
+<title>Promociones</title>
 </head>
+
 <body>
-	<jsp:include page="partials/nav-user.jsp"></jsp:include>
+	<jsp:include page="../partials/nav-user.jsp"></jsp:include>
 	<main>
-		<h1 class="title">ATRACCIONES DISPONIBLES</h1>
-		<!-- Cards con las Atracciones -->
-		<c:forEach items="${atracciones}" var="atraccion">
+		<h1 class="title">PROMOCIONES</h1>
+		<!-- Cards con las Promociones -->
+		<c:forEach items="${promociones}" var="promociones">
 			<div class="container">
 				<div class="card">
 					<img src="assets/images/la-comarca.jpg">
@@ -46,4 +49,5 @@
 			</div>
 		</c:forEach>
 	</main>
+	<jsp:include page="../partials/footer.jsp"></jsp:include>
 </body>

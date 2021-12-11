@@ -1,12 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
-<jsp:include page="partials/head-user.jsp"></jsp:include>
-<link rel="stylesheet" href="assets/css/estilos-user-atracciones.css">
+<jsp:include page="../partials/head-user.jsp"></jsp:include>
+<link rel="stylesheet" href="../assets/css/estilos-user-atracciones.css">
 <title>Itinerario</title>
 </head>
 
 <body>
-	<jsp:include page="partials/nav-user.jsp"></jsp:include>
+	<jsp:include page="../partials/nav-user.jsp"></jsp:include>
 	<main class="container-lg">
 		<h1 class="title">PRODUCTOS ADQUIRIDOS</h1>
 		<c:forEach items="${itinerario}" var="producto">
@@ -19,4 +19,5 @@
 			</div>
 		</c:forEach>
 	</main>
+	<jsp:include page="../partials/footer.jsp"></jsp:include>
 </body>
