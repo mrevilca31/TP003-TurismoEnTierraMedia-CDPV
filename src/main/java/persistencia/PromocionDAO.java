@@ -127,11 +127,11 @@ public class PromocionDAO implements GenericDAO<Promocion> {
 		/*
 		 * try { String promoAbsoluta =
 		 * "INSERT INTO Promocion (nombre, tipo_promo, tipo_preferido, costo_total)" +
-		 * "VALUES ('?', '?', '?', ?);"; String promoPorcentual =
+		 * "VALUES (?,?,?,?);"; String promoPorcentual =
 		 * "INSERT INTO Promocion (nombre, tipo_promo, tipo_preferido, descuento)" +
-		 * "VALUES ('?', '?', '?', ?);"; String promoAxB =
+		 * "VALUES (?,?,?,?);"; String promoAxB =
 		 * "INSERT INTO Promocion (nombre, tipo_promo, tipo_preferido, atraccion_bonificada)"
-		 * + "VALUES ('?', '?', '?', '?');"; String atracciones =
+		 * + "VALUES (?,?,?,?);"; String atracciones =
 		 * "INSERT INTO Atraccion_Promocion (promocion_id, atraccion_id) VALUES (?, ?);"
 		 * ; Connection conn = ConexionProvider.getConnection();
 		 *

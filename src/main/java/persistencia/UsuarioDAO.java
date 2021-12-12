@@ -18,7 +18,7 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 	@Override
 	public int insert(Usuario usuario) {
 		try {
-			String sql = "INSERT INTO Usuario (nombre, presupuesto, tiempo_disponible, atraccion_preferida, contraseña, admin) VALUES ('?', ?, ?, '?', '?', ?)\r\n"
+			String sql = "INSERT INTO Usuario (nombre, presupuesto, tiempo_disponible, atraccion_preferida, contraseña, admin) VALUES (?, ?, ?, ?, ?, ?)\r\n"
 					+ "";
 			Connection conn = ConexionProvider.getConnection();
 
@@ -60,7 +60,7 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 	@Override
 	public int delete(Integer id) {
 		try {
-			String sql = "Update FROM Usuario SET borrado = 1 WHERE id = '?'";
+			String sql = "Update FROM Usuario SET borrado = 1 WHERE id = ?";
 			Connection conn = ConexionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
@@ -92,7 +92,7 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 
 	public Usuario findByNombre(String nombre) {
 		try {
-			String sql = "SELECT * FROM Usuario WHERE nombre = '?' AND BORRADO =0";
+			String sql = "SELECT * FROM Usuario WHERE nombre = ? AND BORRADO =0";
 			Connection conn = ConexionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, nombre);
