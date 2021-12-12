@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import modelo.Promocion;
 import servicios.PromocionServicio;
 
-@WebServlet("/promociones/editarPromocion.do")
+/*@WebServlet("/promociones/editarPromocion.do")
 public class EditarPromocionServlet extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = 1L;
 	private PromocionServicio promocionServicio;
@@ -57,4 +57,4 @@ public class EditarPromocionServlet extends HttpServlet implements Servlet {
 		}
 	}
 
-}
+}*/
