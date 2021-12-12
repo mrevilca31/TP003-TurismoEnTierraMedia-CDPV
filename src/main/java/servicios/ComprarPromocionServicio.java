@@ -3,14 +3,13 @@ package servicios;
 import java.util.HashMap;
 import java.util.Map;
 
-import jakarta.servlet.http.HttpServlet;
 import modelo.Promocion;
 import modelo.Usuario;
 import persistencia.PromocionDAO;
 import persistencia.UsuarioDAO;
 import persistenciaGeneral.DAOFactory;
 
-public class ComprarPromocionServicio extends HttpServlet {
+public class ComprarPromocionServicio {
 
 	PromocionDAO promocionDAO = DAOFactory.getPromocionDAO();
 	UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
