@@ -134,7 +134,7 @@ public class Usuario {
 	@Override
 	public String toString() {
 		return "\nUSUARIO \n Nombre: " + nombre + " | Presupuesto: " + presupuesto + " | Tiempo Disponible: "
-				+ tiempoDisponible + "hs. | Atraccion Preferida: " + atraccionPreferida + "Contraseña: ***** | Admin: "
+				+ tiempoDisponible + "hs. | Atraccion Preferida: " + atraccionPreferida + " | Contraseña: ***** | Admin: "
 				+ admin;
 	}
 
