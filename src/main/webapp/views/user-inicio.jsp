@@ -15,7 +15,7 @@
 				data-bs-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<a href="#"> <img src="../assets/images/Castillo.jpg"
+						<a href="#"> <img src="../assets/images/Atracciones/Castillo.jpg"
 							class=" d-block mx-auto my-auto" alt="..." width="850 px"
 							height="500 px">
 						</a>
@@ -25,7 +25,7 @@
 						</div>
 					</div>
 					<div class="carousel-item">
-						<a href="#"> <img src="../assets/images/Castillo.jpg"
+						<a href="#"> <img src="../assets/images/Atracciones/Castillo.jpg"
 							class=" d-block mx-auto my-auto" alt="..." width="850 px"
 							height="500 px">
 						</a>
@@ -35,7 +35,7 @@
 						</div>
 					</div>
 					<div class="carousel-item">
-						<a href="#"> <img src="../assets/images/Castillo.jpg"
+						<a href="#"> <img src="../assets/images/Atracciones/Castillo.jpg"
 							class=" d-block mx-auto my-auto" alt="..." width="850 px"
 							height="500 px">
 						</a>
