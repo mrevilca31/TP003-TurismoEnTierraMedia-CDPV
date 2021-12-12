@@ -14,12 +14,32 @@
 			<h1>Parque Tierra Media</h1>
 		</div>
 		<div class="main">
-			<form>
-				<span> <input type="text" placeholder="Usuario" name="">
-				</span><br> <span> <input type="password"
-					placeholder="Password" name="">
-				</span><br>
-				<button class="btn-login">Ingresar</button>
+		
+		<c:if test="${flash != null}">
+				<div class="alert alert-danger">
+					<p>
+						<c:out value="${flash}" />
+					</p>
+				</div>
+			</c:if>
+			
+			<c:if test="${success != null}">
+				<div class="alert alert-success">
+					<p>
+						<c:out value="${success}" />
+					</p>
+				</div>
+			</c:if>
+			<form action="login" method="post">
+				<div class="mb-3">
+					<label for="nombre" class="form-label"></label> 
+					<input class="form-control" placeholder="Usuario" name="nombre">
+				</div>
+				<div class="mb-3">
+					<label for="password" class="form-label"></label> 
+					<input type="password" class="form-control" placeholder="Password" name="password">
+				</div>
+				<button type="submit" class="btn btn-lg btn-primary">Ingresar</button>
 			</form>
 		</div>
 	</div>

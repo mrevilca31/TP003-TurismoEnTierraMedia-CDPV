@@ -1,12 +1,12 @@
 package controladorLogin;
 
 import java.io.IOException;
-import jakarta.servlet.http.HttpServlet;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import modelo.Usuario;
@@ -30,12 +30,12 @@ public class LoginServlet extends HttpServlet implements Servlet {
 
 		Usuario usuario = loginService.login(nombre, password);
 
-		if (!usuario.isNull() && usuario.isAdmin().booleanValue()) {
+		if (!usuario.isNull() && !usuario.isAdmin().booleanValue()) {
 			req.getSession().setAttribute("usuario", usuario);
 			resp.sendRedirect("views/user-inicio.jsp");
-		} else if (!usuario.isNull() && !usuario.isAdmin().booleanValue()) {
+		} else if (!usuario.isNull() && usuario.isAdmin().booleanValue()) {
 			req.getSession().setAttribute("usuario", usuario);
-			resp.sendRedirect("views/admin-usuario.jsp");
+			resp.sendRedirect("views/admin-usuarios.jsp");
 		} else {
 			req.setAttribute("flash", "Nombre de usuario o contraseña incorrectos");
 
