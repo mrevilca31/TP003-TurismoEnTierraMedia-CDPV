@@ -3,6 +3,7 @@ package controladorUsuario;
 import java.io.IOException;
 
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -12,7 +13,7 @@ import modelo.Usuario;
 import servicios.UsuarioServicio;
 
 @WebServlet("/users/create.do")
-public class CrearUsuarioServlet extends HttpServlet {
+public class CrearUsuarioServlet extends HttpServlet implements Servlet{
 
 	private static final long serialVersionUID = 3455721046062278592L;
 	private UsuarioServicio usuarioServicio;
