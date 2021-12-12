@@ -2,9 +2,7 @@ package servicios;
 
 import java.util.List;
 
-import modelo.Atraccion;
 import modelo.Usuario;
-import persistencia.AtraccionDAO;
 import persistencia.UsuarioDAO;
 import persistenciaGeneral.DAOFactory;
 

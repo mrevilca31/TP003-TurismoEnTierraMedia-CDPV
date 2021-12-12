@@ -2,12 +2,10 @@ package servicios;
 
 import java.util.List;
 
-import jakarta.servlet.http.HttpServlet;
 import modelo.Promocion;
-import persistencia.PromocionDAO;
 import persistenciaGeneral.DAOFactory;
 
-public class PromocionServicio extends HttpServlet {
+public class PromocionServicio {
 
 	public List<Promocion> list() {
 		return DAOFactory.getPromocionDAO().findAll();

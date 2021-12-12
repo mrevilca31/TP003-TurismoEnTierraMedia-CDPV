@@ -2,7 +2,6 @@ package servicios;
 
 import java.util.List;
 
-import jakarta.servlet.http.HttpServlet;
 import modelo.Atraccion;
 import modelo.Itinerario;
 import modelo.Producto;
@@ -10,7 +9,7 @@ import modelo.Usuario;
 import persistencia.ItinerarioDAO;
 import persistenciaGeneral.DAOFactory;
 
-public class ItinerarioServicio extends HttpServlet {
+public class ItinerarioServicio {
 
 	public List<Atraccion> list() {
 		return DAOFactory.getAtraccionDAO().findAll();
