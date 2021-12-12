@@ -1,7 +1,6 @@
 package controladorAtracciones;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
@@ -32,13 +31,14 @@ public class CrearAtraccionServlet extends HttpServlet implements Servlet {
 		dispatcher.forward(req, resp);
 	}
 
+	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String nombre = req.getParameter("nombre");
 		Integer costo = Integer.parseInt(req.getParameter("costo"));
 		Double duracion = Double.parseDouble(req.getParameter("duracion"));
 		Integer cupo = Integer.parseInt(req.getParameter("cupo"));
 		String tipo = req.getParameter("tipo");
-		
+
 		Atraccion atraccion = atraccionServicio.create(nombre, costo, duracion, cupo, tipo);
 		if (atraccion.esValida()) {
 			resp.sendRedirect("/atracciones/index.do");

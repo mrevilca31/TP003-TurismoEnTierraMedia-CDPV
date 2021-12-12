@@ -4,7 +4,6 @@ import java.util.List;
 
 import jakarta.servlet.http.HttpServlet;
 import modelo.Promocion;
-import persistencia.PromocionDAO;
 import persistenciaGeneral.DAOFactory;
 
 public class PromocionServicio extends HttpServlet {
@@ -47,7 +46,7 @@ public class PromocionServicio extends HttpServlet {
 		return promocion;
 	}*/
 
-	public void delete(Integer id) { 
+	public void delete(Integer id) {
 		DAOFactory.getPromocionDAO().delete(id);
 	}
 }

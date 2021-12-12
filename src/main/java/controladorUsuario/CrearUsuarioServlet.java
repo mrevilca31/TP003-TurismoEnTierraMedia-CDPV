@@ -38,9 +38,9 @@ public class CrearUsuarioServlet extends HttpServlet {
 		Double tiempoDisponible = Double.parseDouble(req.getParameter("tiempoDisponible"));
 		String atraccionPreferida = req.getParameter("atraccionPreferida");
 		String password = req.getParameter("password");
-		
+
 		Usuario tmp_user = usuarioServicio.create(nombre, presupuesto, tiempoDisponible, atraccionPreferida, password);
-		
+
 		if (tmp_user.isValid()) {
 			resp.sendRedirect("/turismo/usuario/index.do");
 		} else {

@@ -9,9 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import modelo.Atraccion;
 import modelo.Itinerario;
-import modelo.Producto;
 import modelo.Usuario;
 import servicios.ItinerarioServicio;
 import servicios.UsuarioServicio;
@@ -36,6 +34,7 @@ public class CargarItinerarioServlet extends HttpServlet implements Servlet {
 		dispatcher.forward(req, resp);
 	}
 
+	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String usuario = req.getParameter("usuario");
 		String producto = req.getParameter("producto");

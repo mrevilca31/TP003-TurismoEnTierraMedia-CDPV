@@ -2,9 +2,7 @@ package servicios;
 
 import java.util.List;
 
-import modelo.Atraccion;
 import modelo.Usuario;
-import persistencia.AtraccionDAO;
 import persistencia.UsuarioDAO;
 import persistenciaGeneral.DAOFactory;
 
@@ -27,7 +25,7 @@ public class UsuarioServicio {
 	}
 
 	public void delete(Integer id) {
-		DAOFactory.getUsuarioDAO().delete(id); 
+		DAOFactory.getUsuarioDAO().delete(id);
 	}
 
 	public Usuario update(Integer id, String nombre, Integer presupuesto, Double tiempoDisponible,

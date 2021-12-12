@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
-import modeloNullUsuario.NullUser;
 import modelo.Usuario;
+import modeloNullUsuario.NullUser;
 import persistenciaGeneral.ConexionProvider;
 import persistenciaGeneral.GenericDAO;
 import persistenciaGeneral.MissingDataException;
@@ -118,7 +118,7 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
 
-			List<Usuario> usuarios = new LinkedList<Usuario>();
+			List<Usuario> usuarios = new LinkedList<>();
 			while (resultados.next()) {
 				usuarios.add(toUsuario(resultados));
 			}

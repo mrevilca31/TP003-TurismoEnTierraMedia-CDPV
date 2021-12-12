@@ -9,8 +9,8 @@ import persistenciaGeneral.DAOFactory;
 
 public abstract class Producto {
 
-	protected List<Atraccion> atracciones = new ArrayList<Atraccion>();
-	protected List<Promocion> promociones = new ArrayList<Promocion>();
+	protected List<Atraccion> atracciones = new ArrayList<>();
+	protected List<Promocion> promociones = new ArrayList<>();
 	public int id;
 	protected String tipoAtraccion;
 	protected String nombre;

@@ -34,11 +34,11 @@ public abstract class Promocion extends Producto {
 	}
 
 	public void setAtraccionesEnPromocion(List<Atraccion> atracciones) {
-		this.atraccionesEnPromocion = atracciones; 
+		this.atraccionesEnPromocion = atracciones;
 		this.duracionPromocion();
 		costoPromocion();
 	}
-	
+
 	protected void duracionPromocion() {
 		double duracion = 0;
 		for (Atraccion A : atraccionesEnPromocion) {
@@ -62,9 +62,9 @@ public abstract class Promocion extends Producto {
 	public String toString() {
 		return "\nPROMOCION \n Nombre: " + super.getNombre() + " | Atracciones Incluidas: " + this.atraccionesIncluidas()
 		+ " | Duración: " + super.getDuracion() + "hs. | Costo: " + getCosto();
-				
+
 	}
-	
+
 
 	@Override
 	public int hashCode() {
@@ -78,9 +78,7 @@ public abstract class Promocion extends Producto {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if ((obj == null) || (getClass() != obj.getClass()))
 			return false;
 		Promocion other = (Promocion) obj;
 		if (super.getId() != other.getId())
@@ -109,7 +107,7 @@ public abstract class Promocion extends Producto {
 		return false;
 	}
 
-	
+
 	@Override
 	public boolean hayCupo() {
 		for (Atraccion atraccion : atraccionesEnPromocion) {
@@ -119,7 +117,7 @@ public abstract class Promocion extends Producto {
 		}
 		return true;
 	}
-	
+
 	@Override
 	public void disminuirCupo(int i)  {
 		for (Atraccion atraccion : atraccionesEnPromocion) {

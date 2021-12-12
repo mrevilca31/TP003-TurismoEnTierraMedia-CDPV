@@ -14,7 +14,7 @@ public class Itinerario {
 		this.productos = productos;
 	}
 
-	public Itinerario() {};
+	public Itinerario() {}
 
 	public List<Producto> getProductos() {
 		return productos;

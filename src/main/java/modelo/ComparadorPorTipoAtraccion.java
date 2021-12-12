@@ -2,13 +2,14 @@ package modelo;
 
 import java.util.Comparator;
 
-public class ComparadorPorTipoAtraccion implements Comparator<Producto> { 
+public class ComparadorPorTipoAtraccion implements Comparator<Producto> {
 	private String tipoPreferido;
 
 	public ComparadorPorTipoAtraccion(String tipoPreferido) {
 		this.tipoPreferido = tipoPreferido;
 	}
 
+	@Override
 	public int compare(Producto P1, Producto P2) {
 		if (P1.tipoAtraccion == this.tipoPreferido && P2.tipoAtraccion == this.tipoPreferido) {
 			if (P1.esPromo() && P2.esPromo()) {

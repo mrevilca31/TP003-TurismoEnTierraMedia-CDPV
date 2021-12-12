@@ -11,7 +11,7 @@ public interface GenericDAO<T> {
 	public int delete(Integer id);
 
 	public int countAll();
-	
+
 	public T find(Integer id);
 
 	public List<T> findAll();

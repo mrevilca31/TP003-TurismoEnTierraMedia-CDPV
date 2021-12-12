@@ -12,7 +12,7 @@ import servicios.UsuarioServicio;
 
 @WebServlet("/usuario/eliminarUsuario.do")
 public class EliminarUsuarioServlet extends HttpServlet implements Servlet {
-	
+
 	private static final long serialVersionUID = 1L;
 	private UsuarioServicio usuarioServicio;
 
@@ -21,12 +21,12 @@ public class EliminarUsuarioServlet extends HttpServlet implements Servlet {
 		super.init();
 		this.usuarioServicio = new UsuarioServicio();
 	}
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 
-		usuarioServicio.delete(id); 
+		usuarioServicio.delete(id);
 
 		resp.sendRedirect("/usuario/index.do");
 	}

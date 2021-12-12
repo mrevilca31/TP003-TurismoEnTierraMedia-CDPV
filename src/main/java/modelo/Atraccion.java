@@ -22,14 +22,17 @@ public class Atraccion extends Producto {
 		return cupo;
 	}
 
+	@Override
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
+	@Override
 	public void setCosto(int costo) {
 		this.costo = costo;
 	}
 
+	@Override
 	public void setDuracion(double duracion) {
 		this.duracion = duracion;
 	}
@@ -37,7 +40,7 @@ public class Atraccion extends Producto {
 	public void setCupo(int cupo) {
 		this.cupo = cupo;
 	}
-	
+
 	public void setTipo(String tipo) {
 		this.tipoAtraccion = tipo;
 	}
@@ -53,7 +56,7 @@ public class Atraccion extends Producto {
 	}
 
 	public void validar() {
-		errors = new HashMap<String, String>();
+		errors = new HashMap<>();
 
 		if (costo <= 0) {
 			errors.put("costo", "Debe ser positivo");
@@ -70,6 +73,7 @@ public class Atraccion extends Producto {
 		return errors;
 	}
 
+	@Override
 	public void disminuirCupo(int i) {
 		this.cupo--;
 	}
@@ -98,9 +102,7 @@ public class Atraccion extends Producto {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if ((obj == null) || (getClass() != obj.getClass()))
 			return false;
 		Atraccion other = (Atraccion) obj;
 		return cupo == other.cupo && Double.doubleToLongBits(duracion) == Double.doubleToLongBits(other.duracion)

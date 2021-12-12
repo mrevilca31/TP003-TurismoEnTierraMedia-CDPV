@@ -16,7 +16,7 @@ public class ComprarAtraccionServicio extends HttpServlet {
 	UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
 
 	public Map<String, String> comprar(Integer usuarioId, Integer atraccionId) {
-		Map<String, String> errors = new HashMap<String, String>();
+		Map<String, String> errors = new HashMap<>();
 
 		Usuario usuario = usuarioDAO.find(usuarioId);
 		Atraccion atraccion = atraccionDAO.find(atraccionId);

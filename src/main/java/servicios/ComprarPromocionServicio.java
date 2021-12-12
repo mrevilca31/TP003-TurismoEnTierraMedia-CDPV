@@ -11,12 +11,12 @@ import persistencia.UsuarioDAO;
 import persistenciaGeneral.DAOFactory;
 
 public class ComprarPromocionServicio extends HttpServlet {
-	
+
 	PromocionDAO promocionDAO = DAOFactory.getPromocionDAO();
 	UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
 
 	public Map<String, String> comprar(Integer usuarioId, Integer promocionId) {
-		Map<String, String> errors = new HashMap<String, String>();
+		Map<String, String> errors = new HashMap<>();
 
 		Usuario usuario = usuarioDAO.find(usuarioId);
 		Promocion promocion = promocionDAO.find(promocionId);
@@ -39,5 +39,5 @@ public class ComprarPromocionServicio extends HttpServlet {
 		}
 		return errors;
 	}
-	
+
 }

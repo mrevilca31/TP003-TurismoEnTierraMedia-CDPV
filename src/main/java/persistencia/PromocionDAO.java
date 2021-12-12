@@ -21,6 +21,7 @@ import persistenciaGeneral.MissingDataException;
 
 public class PromocionDAO implements GenericDAO<Promocion> {
 
+	@Override
 	public List<Promocion> findAll() {
 		try {
 			String sql = "SELECT Promocion.id AS 'ID', Promocion.nombre AS 'Nombre Promocion', tipo_promo AS 'Tipo de Promocion', tipo_preferido AS 'Tipo de atracciones', Atraccion.nombre AS 'Atracciones incluidas', Promocion.costo_total AS 'Costo total promocion absoluta',(select nombre from Atraccion where id = PROMOCION.atraccion_bonificada) AS 'Atraccion bonificada promocion AxB', Promocion.descuento AS 'Tipo descuento promocion porcentual' \r\n"
@@ -34,8 +35,8 @@ public class PromocionDAO implements GenericDAO<Promocion> {
 
 			List<Atraccion> atracciones = DAOFactory.getAtraccionDAO().findAll();
 
-			List<Promocion> promociones = new ArrayList<Promocion>();
-			Map<Promocion, List<Atraccion>> mapP = new HashMap<Promocion, List<Atraccion>>();
+			List<Promocion> promociones = new ArrayList<>();
+			Map<Promocion, List<Atraccion>> mapP = new HashMap<>();
 
 			while (resultados.next()) {
 				if (resultados.getString("Tipo de Promocion").equals("AXB")) {
@@ -100,13 +101,14 @@ public class PromocionDAO implements GenericDAO<Promocion> {
 			mapP.put(promo, atr);
 
 		} else {
-			List<Atraccion> atr = new ArrayList<Atraccion>();
+			List<Atraccion> atr = new ArrayList<>();
 			Atraccion a = buscarAtraccion(atracciones, resultados.getString("Atracciones incluidas"));
 			atr.add(a);
 			mapP.put(promo, atr);
 		}
 	}
 
+	@Override
 	public int update(Promocion promocion) {
 
 		List<Atraccion> atraccionesIncluidas = promocion.getAtraccionesEnPromocion();
@@ -119,6 +121,7 @@ public class PromocionDAO implements GenericDAO<Promocion> {
 		return rows;
 	}
 
+	@Override
 	public int insert(Promocion promocion) {
 		return 0;
 		/*
@@ -131,19 +134,19 @@ public class PromocionDAO implements GenericDAO<Promocion> {
 		 * + "VALUES ('?', '?', '?', '?');"; String atracciones =
 		 * "INSERT INTO Atraccion_Promocion (promocion_id, atraccion_id) VALUES (?, ?);"
 		 * ; Connection conn = ConexionProvider.getConnection();
-		 * 
+		 *
 		 * PreparedStatement statement1 = conn.prepareStatement(promoAbsoluta);
 		 * PreparedStatement statement2 = conn.prepareStatement(promoPorcentual);
 		 * PreparedStatement statement3 = conn.prepareStatement(promoAxB);
 		 * PreparedStatement statement4 = conn.prepareStatement(atracciones);
-		 * 
+		 *
 		 * if (promocion.getTipoPromo().equals("ABSOLUTA")) { statement1.setString(1,
 		 * promocion.getNombre()); statement1.setString(2, promocion.getTipoPromo());
 		 * statement1.setString(3, promocion.getTipoPreferido()); statement1.setInt(4,
 		 * promocion.getCosto()); // esta mal statement4.setInt(1, promocion.getId());
 		 * statement4.setInt(2, promocion.getId());// no se si esta bien, va el de la
 		 * atraccion
-		 * 
+		 *
 		 * int rows = statement1.executeUpdate(); } else if
 		 * (promocion.getTipoPromo().equals("PORCENTUAL")) { statement2.setString(1,
 		 * promocion.getNombre()); statement2.setString(2, promocion.getTipoPromo());
@@ -151,7 +154,7 @@ public class PromocionDAO implements GenericDAO<Promocion> {
 		 * promocion.getDescuento()); // esta mal statement4.setInt(1,
 		 * promocion.getId()); statement4.setInt(2, promocion.getId()); // no se si esta
 		 * bien
-		 * 
+		 *
 		 * int rows = statement2.executeUpdate(); } else if
 		 * (promocion.getTipoPromo().equals("AXB")) { statement3.setString(1,
 		 * promocion.getNombre()); statement3.setString(2, promocion.getTipoPromo());
@@ -159,11 +162,11 @@ public class PromocionDAO implements GenericDAO<Promocion> {
 		 * statement3.setString(4, promocion.getAtraccionBonificada()); // esta mal
 		 * statement4.setInt(1, promocion.getId()); statement4.setInt(2,
 		 * promocion.getAtraccionesEnPromocion().getId()); // ----
-		 * 
+		 *
 		 * int rows = statement3.executeUpdate();
-		 * 
+		 *
 		 * return rows; }
-		 * 
+		 *
 		 * } catch (Exception e) { throw new MissingDataException(e); }
 		 */
 	}
@@ -184,6 +187,7 @@ public class PromocionDAO implements GenericDAO<Promocion> {
 		}
 	}
 
+	@Override
 	public int countAll() {
 		try {
 			String sql = "SELECT COUNT(1) AS 'TOTAL PROMOCIONES' FROM Promocion WHERE borrado = 0";

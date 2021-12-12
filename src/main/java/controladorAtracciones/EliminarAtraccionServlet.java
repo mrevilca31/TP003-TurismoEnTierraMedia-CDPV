@@ -21,12 +21,12 @@ public class EliminarAtraccionServlet extends HttpServlet implements Servlet {
 		super.init();
 		this.atraccionServicio = new AtraccionServicio();
 	}
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 
-		atraccionServicio.delete(id); 
+		atraccionServicio.delete(id);
 
 		resp.sendRedirect("/atracciones/index.do");
 	}

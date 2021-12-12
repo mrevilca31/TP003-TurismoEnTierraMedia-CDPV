@@ -43,7 +43,7 @@ public class AtraccionDAO implements GenericDAO<Atraccion> {
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
 
-			List<Atraccion> atraccion = new LinkedList<Atraccion>();
+			List<Atraccion> atraccion = new LinkedList<>();
 			while (resultados.next()) {
 				atraccion.add(toAtraccion(resultados));
 			}

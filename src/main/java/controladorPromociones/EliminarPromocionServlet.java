@@ -20,12 +20,12 @@ public class EliminarPromocionServlet extends HttpServlet implements Servlet {
 		super.init();
 		this.promocionServicio = new PromocionServicio();
 	}
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 
-		promocionServicio.delete(id); 
+		promocionServicio.delete(id);
 
 		resp.sendRedirect("/promociones/index.do");
 	}

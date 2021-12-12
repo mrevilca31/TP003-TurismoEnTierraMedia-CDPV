@@ -20,7 +20,7 @@ public class Usuario {
 	private Boolean borrado;
 
 	private HashMap<String, String> errors;
-	
+
 	private Itinerario itinerario;
 	protected List<Producto> nuevosProductos;
 
@@ -34,7 +34,7 @@ public class Usuario {
 		this.password = password;
 		this.admin = admin;
 
-		nuevosProductos = new ArrayList<Producto>();
+		nuevosProductos = new ArrayList<>();
 	}
 
 	public int getId() {
@@ -147,9 +147,7 @@ public class Usuario {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if ((obj == null) || (getClass() != obj.getClass()))
 			return false;
 		Usuario other = (Usuario) obj;
 		return id == other.id && Objects.equals(nombre, other.nombre) && Objects.equals(presupuesto, other.presupuesto)
@@ -173,14 +171,14 @@ public class Usuario {
 	public boolean checkPassword(String password) {
 		return Crypt.match(password, this.password);
 	}
-	
+
 	public boolean isValid() {
 		validate();
 		return errors.isEmpty();
 	}
-	
+
 	public void validate() {
-		errors = new HashMap<String, String>();
+		errors = new HashMap<>();
 
 		if (presupuesto < 0) {
 			errors.put("presupuesto", "No debe ser negativo");
@@ -189,7 +187,7 @@ public class Usuario {
 			errors.put("tiempoDisponible", "No debe ser negativo");
 		}
 	}
-	
+
 	public Map<String, String> getErrors() {
 		return errors;
 	}

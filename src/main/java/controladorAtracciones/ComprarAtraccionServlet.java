@@ -1,11 +1,10 @@
 package controladorAtracciones;
 
 import java.io.IOException;
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.Servlet;
-
 import java.util.Map;
 
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

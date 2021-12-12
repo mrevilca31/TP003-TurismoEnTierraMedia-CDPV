@@ -56,7 +56,7 @@ public class ItinerarioDAO {
 			statement.setInt(1, idUsuario);
 			ResultSet resultados = statement.executeQuery();
 
-			List<Producto> itinerario = new ArrayList<Producto>();
+			List<Producto> itinerario = new ArrayList<>();
 			while (resultados.next()) {
 
 				if (!(resultados.getString(1) == null)) {
