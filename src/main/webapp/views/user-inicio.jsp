@@ -15,33 +15,33 @@
 				data-bs-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<a href="#"> <img src="../assets/images/Atracciones/Castillo.jpg"
+						<a href="#"> <img src="../assets/images/Atracciones/Mordor.jpg"
 							class=" d-block mx-auto my-auto" alt="..." width="850 px"
 							height="500 px">
 						</a>
 						<div class="carousel-caption d-none d-md-block">
 							<h2>NOMBRE PRODUCTO</h2>
-							<p>Click sobre la imagén para más información.</p>
+							<p>Click sobre la imagen para mas informacion.</p>
 						</div>
 					</div>
 					<div class="carousel-item">
-						<a href="#"> <img src="../assets/images/Atracciones/Castillo.jpg"
+						<a href="#"> <img src="../assets/images/Atracciones/Moria.jpg"
 							class=" d-block mx-auto my-auto" alt="..." width="850 px"
 							height="500 px">
 						</a>
 						<div class="carousel-caption d-none d-md-block">
 							<h2>NOMBRE PRODUCTO</h2>
-							<p>Click sobre la imagén para más información.</p>
+							<p>Click sobre la imagen para mas informacion.</p>
 						</div>
 					</div>
 					<div class="carousel-item">
-						<a href="#"> <img src="../assets/images/Atracciones/Castillo.jpg"
+						<a href="#"> <img src="../assets/images/Atracciones/Erebor.jpg"
 							class=" d-block mx-auto my-auto" alt="..." width="850 px"
 							height="500 px">
 						</a>
 						<div class="carousel-caption d-none d-md-block">
 							<h2>NOMBRE PRODUCTO</h2>
-							<p>Click sobre la imagén para más información.</p>
+							<p>Click sobre la imagen para mas informacion.</p>
 						</div>
 					</div>
 				</div>
