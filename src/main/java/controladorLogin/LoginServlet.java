@@ -1,6 +1,5 @@
 package controladorLogin;
 
-
 import java.io.IOException;
 import jakarta.servlet.http.HttpServlet;
 
@@ -14,7 +13,7 @@ import modelo.Usuario;
 import servicios.LoginServicio;
 
 @WebServlet("/login")
-public class LoginServlet extends HttpServlet implements Servlet{
+public class LoginServlet extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = 8308079314140233763L;
 	private LoginServicio loginService;
 
@@ -23,24 +22,25 @@ public class LoginServlet extends HttpServlet implements Servlet{
 		super.init();
 		loginService = new LoginServicio();
 	}
-	
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	String nombre = req.getParameter("nombre");
-    	String password = req.getParameter("password");
-    	
-    	Usuario usuario = loginService.login(nombre, password);
-    	
-    	if (!usuario.isNull()) {
-    		req.getSession().setAttribute("usuario", usuario);
-    		resp.sendRedirect("index.jsp");    		
-       	} else {
-    		req.setAttribute("flash", "Nombre de usuario o contraseña incorrectos");
-    		
-    		RequestDispatcher dispatcher = getServletContext()
-      		      .getRequestDispatcher("/login.jsp");
-      		    dispatcher.forward(req, resp);
-    	}
-    }
-}
 
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String nombre = req.getParameter("nombre");
+		String password = req.getParameter("password");
+
+		Usuario usuario = loginService.login(nombre, password);
+
+		if (!usuario.isNull() && usuario.isAdmin().booleanValue()) {
+			req.getSession().setAttribute("usuario", usuario);
+			resp.sendRedirect("views/user-inicio.jsp");
+		} else if (!usuario.isNull() && !usuario.isAdmin().booleanValue()) {
+			req.getSession().setAttribute("usuario", usuario);
+			resp.sendRedirect("views/admin-usuario.jsp");
+		} else {
+			req.setAttribute("flash", "Nombre de usuario o contraseña incorrectos");
+
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login.jsp");
+			dispatcher.forward(req, resp);
+		}
+	}
+}
