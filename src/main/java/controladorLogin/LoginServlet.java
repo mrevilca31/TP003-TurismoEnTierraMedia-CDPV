@@ -4,6 +4,7 @@ package controladorLogin;
 import java.io.IOException;
 
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -13,7 +14,7 @@ import modelo.Usuario;
 import servicios.LoginServicio;
 
 @WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = 8308079314140233763L;
 	private LoginServicio loginService;
 
