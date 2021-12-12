@@ -98,7 +98,7 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 			statement.setString(1, nombre);
 			ResultSet resultados = statement.executeQuery();
 
-			Usuario usuario = null;
+			Usuario usuario = NullUser.build();
 
 			if (resultados.next()) {
 				usuario = toUsuario(resultados);
