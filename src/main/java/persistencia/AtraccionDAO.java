@@ -17,7 +17,7 @@ public class AtraccionDAO implements GenericDAO<Atraccion> {
 	@Override
 	public int update(Atraccion atraccion) {
 		try {
-			String sql = "UPDATE ATRACCION SET NOMBRE = '?', COSTO = ?, DURACION = ?, CUPO= ?, TIPO ='?' WHERE ID = ?";
+			String sql = "UPDATE ATRACCION SET NOMBRE = ?, COSTO = ?, DURACION = ?, CUPO= ?, TIPO = ? WHERE ID = ?";
 			Connection conn = ConexionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
@@ -79,7 +79,7 @@ public class AtraccionDAO implements GenericDAO<Atraccion> {
 	@Override
 	public int insert(Atraccion atraccion) {
 		try {
-			String sql = "INSERT INTO Atraccion (nombre, costo, duracion, cupo, tipo) VALUES ('?', ?, ?, ?)";
+			String sql = "INSERT INTO Atraccion (nombre, costo, duracion, cupo, tipo) VALUES (?, ?, ?, ?)";
 			Connection conn = ConexionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
