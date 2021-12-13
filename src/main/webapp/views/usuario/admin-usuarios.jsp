@@ -1,14 +1,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <head>
-<jsp:include page="../partials/head-admin.jsp"></jsp:include>
+<jsp:include page="../../partials/head-admin.jsp"></jsp:include>
 <title>Usuarios</title>
 </head>
 
 <body>
-	<jsp:include page="../partials/nav-admin.jsp"></jsp:include>
+	<jsp:include page="../../partials/nav-admin.jsp"></jsp:include>
 	<main class="container-lg">
-		<jsp:include page="usuario/formulario.jsp"></jsp:include>
+		<jsp:include page="formulario.jsp"></jsp:include>
 
 		<!-- Tabla de Datos -->
 		<table
@@ -30,12 +30,22 @@
 						<td><c:out value="${usuario.presupuesto}"></c:out></td>
 						<td><c:out value="${usuario.tiempoDisponible}"></c:out></td>
 						<td><c:out value="${usuario.atraccionPreferida}"></c:out></td>
-						<td><c:out value="${usuario.admin}"></c:out></td>
+						<td><c:choose>
+								<c:when test="${usuario.admin}">
+									Admin
+								</c:when>
+								<c:otherwise>
+									Normal
+								</c:otherwise>
+							</c:choose></td>
 						<td>
-							<button type="button" class="btn btn-primary mx-2">
+							<button type="button" class="btn btn-primary mx-2"
+								href="/views/usuario/editarUsuario.jsp">
 								<i class="bi bi-pencil-square"></i> Modificar
+
 							</button>
-							<button type="button" class="btn btn-danger">
+							<button type="button" class="btn btn-danger"
+								href="/views/usuario/eliminarUsuario.jsp">
 								<i class="bi bi-trash"></i> Eliminar
 							</button>
 						</td>

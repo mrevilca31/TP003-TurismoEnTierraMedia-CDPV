@@ -44,7 +44,7 @@ public class CrearUsuarioServlet extends HttpServlet  implements Servlet {
 		Usuario tmp_user = usuarioServicio.create(nombre, presupuesto, tiempoDisponible, atraccionPreferida, password, admin);
 
 		if (tmp_user.isValid()) {
-			resp.sendRedirect("/admin-usuarios.do");
+			resp.sendRedirect("/usuario/listaUsuarios.do");
 		} else {
 			req.setAttribute("tmp_user", tmp_user);
 
