@@ -40,12 +40,12 @@
 							</c:choose></td>
 						<td>
 							<button type="button" class="btn btn-primary mx-2"
-								href="/views/usuario/editarUsuario.jsp">
+								href="/jsp01/usuario/editarUsuario.do">
 								<i class="bi bi-pencil-square"></i> Modificar
 
 							</button>
 							<button type="button" class="btn btn-danger"
-								href="/views/usuario/eliminarUsuario.jsp">
+								href="/jsp01/usuario/eliminarUsuario.do">
 								<i class="bi bi-trash"></i> Eliminar
 							</button>
 						</td>
