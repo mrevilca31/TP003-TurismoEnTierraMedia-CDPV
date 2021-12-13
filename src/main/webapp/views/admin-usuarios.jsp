@@ -20,6 +20,7 @@
 					<th scope="col">Tiempo Disponible</th>
 					<th scope="col">Atraccion Preferida</th>
 					<th scope="col">Rol</th>
+					<th scope="col">Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
