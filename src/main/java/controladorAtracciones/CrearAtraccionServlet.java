@@ -27,7 +27,7 @@ public class CrearAtraccionServlet extends HttpServlet implements Servlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		RequestDispatcher dispatcher = getServletContext()
-				.getRequestDispatcher("/views/atracciones/crearAtracciones.jsp");
+				.getRequestDispatcher("/views/atracciones/crearAtraccion.jsp");
 		dispatcher.forward(req, resp);
 	}
 
@@ -44,8 +44,9 @@ public class CrearAtraccionServlet extends HttpServlet implements Servlet {
 			resp.sendRedirect("/atracciones/index.do");
 		} else {
 			req.setAttribute("atraccion", atraccion);
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/atracciones/crearAtracciones.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/atracciones/crearAtraccion.jsp");
 			dispatcher.forward(req, resp);
 		}
 	}
+	
 }
