@@ -45,7 +45,7 @@
 				<tr>
 					<th scope="col">Nombre</th>
 					<th scope="col">Costo</th>
-					<th scope="col">Tiempo</th>
+					<th scope="col">Duracion</th>
 					<th scope="col">Cupo</th>
 					<th scope="col">Tipo</th>
 					<th scope="col">Acciones</th>
@@ -56,7 +56,7 @@
 					<tr>
 						<td><c:out value="${atraccion.nombre}"></c:out></td>
 						<td><c:out value="${atraccion.costo}"></c:out></td>
-						<td><c:out value="${atraccion.tiempo}"></c:out></td>
+						<td><c:out value="${atraccion.duracion}"></c:out></td>
 						<td><c:out value="${atraccion.cupo}"></c:out></td>
 						<td><c:out value="${atraccion.tipo}"></c:out></td>
 						<td><c:if test="${usuario.isAdmin}">
