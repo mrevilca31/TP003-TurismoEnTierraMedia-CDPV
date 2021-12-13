@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import modelo.Atraccion;
 import servicios.AtraccionServicio;
 
-@WebServlet("/atracciones/editarAtracciones.do")
+@WebServlet("/atracciones/editarAtraccion.do")
 public class EditarAtraccionServlet extends HttpServlet implements Servlet {
 
 	private static final long serialVersionUID = 1L;
@@ -51,7 +51,7 @@ public class EditarAtraccionServlet extends HttpServlet implements Servlet {
 		} else {
 			req.setAttribute("atraccion", atraccion);
 
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/atracciones/editarAtracciones.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/atracciones/editarAtraccion.jsp");
 			dispatcher.forward(req, resp);
 		}
 	}
