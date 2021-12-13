@@ -41,7 +41,7 @@ public class CrearAtraccionServlet extends HttpServlet implements Servlet {
 
 		Atraccion atraccion = atraccionServicio.create(nombre, costo, duracion, cupo, tipo);
 		if (atraccion.esValida()) {
-			resp.sendRedirect("/atracciones/index.do");
+			resp.sendRedirect("/atracciones/listaAtracciones.do");
 		} else {
 			req.setAttribute("atraccion", atraccion);
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/atracciones/crearAtraccion.jsp");

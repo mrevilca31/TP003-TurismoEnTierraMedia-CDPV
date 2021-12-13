@@ -48,7 +48,7 @@ public class EditarAtraccionServlet extends HttpServlet implements Servlet {
 		Atraccion atraccion = atraccionServicio.update(id, nombre, costo, duracion, cupo, tipo);
 
 		if (atraccion.esValida()) {
-			resp.sendRedirect("/atracciones/index.do");
+			resp.sendRedirect("/atracciones/listaAtracciones.do");
 		} else {
 			req.setAttribute("atraccion", atraccion);
 

@@ -3,7 +3,8 @@
 <header class="container-fluid">
 	<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-success">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="admin-atracciones.jsp">Parque Tierra Media</a>
+			<a class="navbar-brand" href="admin-atracciones.jsp">Parque
+				Tierra Media</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarNav"
 				aria-controls="navbarNav" aria-expanded="false"
@@ -13,22 +14,23 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="admin-atracciones.jsp">Atracciones</a></li>
+						aria-current="page" href="/jsp01/atracciones/listaAtracciones.do">Atracciones</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						href="admin-promociones.jsp">Promociones</a></li>
+						href="/jsp01/promociones/listaPromociones.do">Promociones</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						href="admin-usuarios.jsp">Usuarios</a></li>
+						href="/jsp01/usuario/listaUsuarios.do">Usuarios</a></li>
 					<li class="nav-item dropdown position-absolute end-0 me-4"><a
 						class="nav-link active dropdown-toggle" href="#"
 						id="navbarDropdownMenuLink" role="button"
-						data-bs-toggle="dropdown" aria-expanded="false"> Administrador </a>
+						data-bs-toggle="dropdown" aria-expanded="false"> Administrador
+					</a>
 						<ul class="dropdown-menu dropdown-menu-end "
 							aria-labelledby="navbarDropdownMenuLink">
 							<li><a class="dropdown-item" href="#"><i
 									class="bi bi-coin"></i> Monedas Disponibles</a></li>
 							<li><a class="dropdown-item" href="#"><i
 									class="bi bi-hourglass-split"></i> Tiempo Disponible</a></li>
-							<li><a class="dropdown-item" href="#"><i
+							<li><a class="dropdown-item" href="/jsp01/logout"><i
 									class="bi bi-box-arrow-left"></i> Salir</a></li>
 						</ul></li>
 				</ul>

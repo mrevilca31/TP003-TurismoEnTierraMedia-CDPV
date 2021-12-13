@@ -36,6 +36,7 @@ public class AtraccionServicio {
 		atraccion.setCosto(costo);
 		atraccion.setDuracion(duracion);
 		atraccion.setCupo(cupo);
+		atraccion.setTipo(tipo);
 
 		if (atraccion.esValida()) {
 			atraccionDAO.update(atraccion);

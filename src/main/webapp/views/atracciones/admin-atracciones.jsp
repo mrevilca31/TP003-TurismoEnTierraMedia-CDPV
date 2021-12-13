@@ -1,13 +1,28 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
-	<jsp:include page="../partials/head-admin.jsp"></jsp:include>
+	<jsp:include page="../../partials/head-admin.jsp"></jsp:include>
 	<title>Atracciones</title>
 </head>
 <body>
-	<jsp:include page="../partials/nav-admin.jsp"></jsp:include>
+	<jsp:include page="../../partials/nav-admin.jsp"></jsp:include>
 	
 	<main class="container-lg">	
-		<jsp:include page="../partials/form-nueva-atraccion.jsp"></jsp:include>
+		<jsp:include page="form.jsp"></jsp:include>
+		
+		<c:if test="${flash != null}">
+			<div class="alert alert-danger">
+				<p>
+					<c:out value="${flash}" />
+					<c:if test="${errors != null}">
+						<ul>
+							<c:forEach items="${errors}" var="entry">
+								<li><c:out value="${entry.getValue()}"></c:out></li>
+							</c:forEach>
+						</ul>
+					</c:if>
+				</p>
+			</div>
+		</c:if>
 		
 		<!-- Tabla de Atracciones -->
 		<table
@@ -23,11 +38,11 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${atraccion}" var="atraccion">
+				<c:forEach items="${atracciones}" var="atraccion">
 					<tr>
 						<td><c:out value="${atraccion.nombre}"></c:out></td>
 						<td><c:out value="${atraccion.costo}"></c:out></td>
-						<td><c:out value="${atraccion.tiempo}"></c:out></td>
+						<td><c:out value="${atraccion.duracion}"></c:out></td>
 						<td><c:out value="${atraccion.cupo}"></c:out></td>
 						<td><c:out value="${atraccion.tipo}"></c:out></td>
 						<td>
