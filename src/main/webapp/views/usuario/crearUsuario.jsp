@@ -18,7 +18,7 @@
 		</c:if>
 
 		<form action="/usuario/crearUsuario.do" method="post">
-			<jsp:include page="/views/usuario/formulario.jsp"></jsp:include>
+			<jsp:include page="formulario.jsp"></jsp:include>
 		</form>
 	</main>
 </body>

@@ -19,7 +19,7 @@
 		</c:if>
 
 		<form action="/atracciones/crearAtraccion.do" method="post">
-			<jsp:include page="/views/atracciones/form.jsp"></jsp:include>
+			<jsp:include page="form.jsp"></jsp:include>
 		</form>
 	</main>
 </body>

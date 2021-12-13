@@ -19,7 +19,7 @@
 
 		<form action="/usuario/editarUsuario.do" method="post">
 		<input type="hidden" id="id" name="id" value="${tmp_user.id}"/>
-			<jsp:include page="/views/usuario/formulario.jsp"></jsp:include>
+			<jsp:include page="formulario.jsp"></jsp:include>
 		</form>
 	</main>
 </body>

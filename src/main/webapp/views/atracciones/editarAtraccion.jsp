@@ -19,7 +19,7 @@
 
 		<form action="/atracciones/editarAtraccion.do" method="post">
 			<input type="hidden" name="id" value="${attraccion.id}">
-			<jsp:include page="/views/atracciones/form.jsp"></jsp:include>
+			<jsp:include page="form.jsp"></jsp:include>
 		</form>
 	</main>
 </body>
