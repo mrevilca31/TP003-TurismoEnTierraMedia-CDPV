@@ -28,7 +28,7 @@ public class EliminarUsuarioServlet extends HttpServlet implements Servlet {
 
 		usuarioServicio.delete(id);
 
-		resp.sendRedirect("/usuario/index.do");
+		resp.sendRedirect("/usuario/listaUsuarios.do");
 	}
 
 }

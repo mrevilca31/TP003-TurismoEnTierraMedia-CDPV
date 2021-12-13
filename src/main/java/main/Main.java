@@ -13,7 +13,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		UsuarioServicio uservice = new UsuarioServicio();
-		System.out.println(uservice.find(1));
+		System.out.println(uservice.list());
 		
 	}
 }
