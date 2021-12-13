@@ -30,6 +30,4 @@ public class EliminarAtraccionServlet extends HttpServlet implements Servlet {
 
 		resp.sendRedirect("/atracciones/index.do");
 	}
-
-
 }
