@@ -115,7 +115,7 @@ public class AtraccionDAO implements GenericDAO<Atraccion> {
 	@Override
 	public Atraccion find(Integer id) {
 		try {
-			String sql = "SELECT * FROM ATTRACTIONS WHERE id = ? AND borrado = 0";
+			String sql = "SELECT * FROM Atraccion WHERE id = ? AND borrado = 0";
 			Connection conn = ConexionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, id);
