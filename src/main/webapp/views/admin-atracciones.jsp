@@ -23,7 +23,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${atracciones}" var="atraccion">
+				<c:forEach items="${atraccion}" var="atraccion">
 					<tr>
 						<td><c:out value="${atraccion.nombre}"></c:out></td>
 						<td><c:out value="${atraccion.costo}"></c:out></td>
