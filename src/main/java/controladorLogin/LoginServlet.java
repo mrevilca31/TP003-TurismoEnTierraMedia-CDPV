@@ -32,10 +32,10 @@ public class LoginServlet extends HttpServlet implements Servlet {
 
 		if (!usuario.isNull() && !usuario.isAdmin().booleanValue()) {
 			req.getSession().setAttribute("usuario", usuario);
-			resp.sendRedirect("views/user-inicio.jsp");
+			resp.sendRedirect("views/user-inicio.jsp"); //MODIFICAR, crear servlet para ver 
 		} else if (!usuario.isNull() && usuario.isAdmin().booleanValue()) {
 			req.getSession().setAttribute("usuario", usuario);
-			resp.sendRedirect("views/admin-usuarios.jsp");
+			resp.sendRedirect("usuario/listaUsuarios.do");
 		} else {
 			req.setAttribute("flash", "Nombre de usuario o contraseña incorrectos");
 
