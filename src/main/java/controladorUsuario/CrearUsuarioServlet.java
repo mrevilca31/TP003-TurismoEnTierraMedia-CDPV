@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import modelo.Usuario;
 import servicios.UsuarioServicio;
 
-@WebServlet("/users/create.do")
+@WebServlet("/usuario/crearUsuario.do")
 public class CrearUsuarioServlet extends HttpServlet  implements Servlet {
 
 	private static final long serialVersionUID = 3455721046062278592L;
@@ -28,7 +28,7 @@ public class CrearUsuarioServlet extends HttpServlet  implements Servlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		RequestDispatcher dispatcher = getServletContext()
-				.getRequestDispatcher("/views/usuario/create.jsp");
+				.getRequestDispatcher("/views/usuario/crearUsuario.jsp");
 		dispatcher.forward(req, resp);
 	}
 
