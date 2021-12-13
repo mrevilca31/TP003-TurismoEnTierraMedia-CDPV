@@ -19,7 +19,6 @@ public class AtraccionServicio {
 		if (atraccion.esValida()) {
 			AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 			atraccionDAO.insert(atraccion);
-			// XXX: si no devuelve "1", es que hubo más errores
 		}
 		return atraccion;
 	}
