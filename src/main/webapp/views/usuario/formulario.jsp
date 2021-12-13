@@ -56,7 +56,7 @@
 						<input type="password" class="form-control" id="password"
 							name="password" required value="${tmp_user.password}"></input>
 						<div class="invalid-feedback">
-							<c:out value='${tmp_user.errors.get("password")}'></c:out>
+							<c:out value='${tmp_user.errors.get("password")}'/>
 						</div>
 					</div>
 					<button type="submit" class="btn btn-success mt-3">Crear</button>

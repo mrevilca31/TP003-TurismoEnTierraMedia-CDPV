@@ -39,16 +39,17 @@ public class CrearUsuarioServlet extends HttpServlet  implements Servlet {
 		Double tiempoDisponible = Double.parseDouble(req.getParameter("tiempoDisponible"));
 		String atraccionPreferida = req.getParameter("atraccionPreferida");
 		String password = req.getParameter("password");
+		Boolean admin = Boolean.parseBoolean(req.getParameter("admin"));
 
-		Usuario tmp_user = usuarioServicio.create(nombre, presupuesto, tiempoDisponible, atraccionPreferida, password);
+		Usuario tmp_user = usuarioServicio.create(nombre, presupuesto, tiempoDisponible, atraccionPreferida, password, admin);
 
 		if (tmp_user.isValid()) {
-			resp.sendRedirect("/turismo/usuario/index.do");
+			resp.sendRedirect("/usuario/listaUsuarios.do");
 		} else {
 			req.setAttribute("tmp_user", tmp_user);
 
 			RequestDispatcher dispatcher = getServletContext()
-					.getRequestDispatcher("/views/usuario/create.jsp");
+					.getRequestDispatcher("/views/usuario/crearUsuario.jsp");
 			dispatcher.forward(req, resp);
 		}
 

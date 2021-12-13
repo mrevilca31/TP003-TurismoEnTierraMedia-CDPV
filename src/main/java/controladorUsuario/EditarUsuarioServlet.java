@@ -36,17 +36,18 @@ public class EditarUsuarioServlet extends HttpServlet implements Servlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		Integer id = Integer.parseInt(req.getParameter("id"));
 		String nombre = req.getParameter("nombre");
 		Integer presupuesto = Integer.parseInt(req.getParameter("presupuesto"));
 		Double tiempoDisponible = Double.parseDouble(req.getParameter("tiempoDisponible"));
 		String atraccionPreferida = req.getParameter("atraccionPreferida");
 		String password = req.getParameter("password");
-		int id = Integer.parseInt(req.getParameter("id"));
+		Boolean admin = Boolean.parseBoolean(req.getParameter("admin"));
 
-		Usuario tmp_user = usuarioServicio.update(id, nombre, presupuesto, tiempoDisponible, atraccionPreferida, password, false);
+		Usuario tmp_user = usuarioServicio.update(id, nombre, presupuesto, tiempoDisponible, atraccionPreferida, password, admin);
 
 		if (tmp_user.isValid()) {
-			resp.sendRedirect("/turismo/usuario/index.do");
+			resp.sendRedirect("/usuario/listaUsuarios.do");
 		} else {
 			req.setAttribute("tmp_user", tmp_user);
 

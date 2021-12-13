@@ -13,7 +13,7 @@ public class UsuarioServicio {
 	}
 
 	public Usuario create(String nombre, Integer presupuesto, Double tiempoDisponible, String atraccionPreferida,
-			String password) {
+			String password, Boolean admin) {
 		Usuario usuario = new Usuario(-1, nombre, presupuesto, tiempoDisponible, atraccionPreferida, password, false);
 		usuario.setPassword(password);
 

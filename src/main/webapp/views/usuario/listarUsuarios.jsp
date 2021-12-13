@@ -31,13 +31,11 @@
 			<h1>Usuarios</h1>
 		</div>
 
-		<c:if test="${usuario.isAdmin()}">
-			<div class="mb-3">
-				<a href="/turismo/usuario/crearUsuario.do" class="btn btn-primary"
-					role="button"> <i class="bi bi-plus-lg"></i> Nuevo Usuario
-				</a>
-			</div>
-		</c:if>
+		<div class="mb-3">
+			<a href="/usuario/crearUsuario.do" class="btn btn-primary"
+				role="button"> <i class="bi bi-plus-lg"></i> Nuevo Usuario
+			</a>
+		</div>
 		<table class="table table-stripped table-hover">
 			<thead>
 				<tr>
@@ -47,12 +45,13 @@
 					<th>Atracción Preferida</th>
 					<th>Contraseña</th>
 					<th>Rol</th>
+					<th>Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${usuario}" var="tmp_user">
+				<c:forEach items="${usuarios}" var="tmp_user">
 					<tr>
-						<td><strong><c:out value="${usuario.nombre}"></c:out></strong></td>
+						<td><strong><c:out value="${tmp_user.nombre}"></c:out></strong></td>
 						<td><c:out value="${tmp_user.presupuesto}"></c:out></td>
 						<td><c:out value="${tmp_user.tiempoDisponible}"></c:out></td>
 						<td><c:out value="${tmp_user.tiempoDisponible}"></c:out></td>
@@ -66,15 +65,13 @@
 									Normal
 								</c:otherwise>
 							</c:choose></td>
-						<td><c:if
-								test="${usuario.admin && (!tmp_user.admin || tmp_user.id == usuario.id)}">
-								<a href="/turismo/usuario/editarUsuario.do?id=${tmp_user.id}"
-									class="btn btn-light rounded-0" role="button"><i
-									class="bi bi-pencil-fill"></i></a>
-								<a href="/turismo/usuario/eliminarUsuario.do?id=${tmp_user.id}"
-									class="btn btn-danger rounded" role="button"><i
-									class="bi bi-x-circle-fill"></i></a>
-							</c:if></td>
+						<td><a
+							href="/usuario/editarUsuario.do?id=${tmp_user.id}"
+							class="btn btn-light rounded-0" role="button"><i
+								class="bi bi-pencil-fill"></i></a> <a
+							href="/usuario/eliminarUsuario.do?id=${tmp_user.id}"
+							class="btn btn-danger rounded" role="button"><i
+								class="bi bi-x-circle-fill"></i></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

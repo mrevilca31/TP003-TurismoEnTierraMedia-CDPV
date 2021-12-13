@@ -17,7 +17,7 @@
 			</div>
 		</c:if>
 
-		<form action="/turismo/usuario/crearUsuario.do" method="post">
+		<form action="/usuario/crearUsuario.do" method="post">
 			<jsp:include page="/views/usuario/formulario.jsp"></jsp:include>
 		</form>
 	</main>

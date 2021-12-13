@@ -26,14 +26,11 @@ public class ListarUsuariosServlet extends HttpServlet implements Servlet {
 	}
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		List<Usuario> usuario = usuarioServicio.list();
 		req.setAttribute("usuario", usuario);
 
-		RequestDispatcher dispatcher = getServletContext()
-				.getRequestDispatcher("/views/usuario/listarUsuarios.jsp");
-		//Aca creo que tiene que ir a la pagina de admin/usuarios.jsp
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/admin-usuarios.jsp");
 		dispatcher.forward(req, resp);
 
 	}
