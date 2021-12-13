@@ -31,7 +31,8 @@ public class EditarAtraccionServlet extends HttpServlet implements Servlet {
 		Atraccion atraccion = atraccionServicio.findAtraccionById(id);
 		req.setAttribute("atraccion", atraccion);
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/atracciones/editarAtracciones.jsp");
+		RequestDispatcher dispatcher = getServletContext()
+				.getRequestDispatcher("/views/atracciones/editarAtracciones.jsp");
 		dispatcher.forward(req, resp);
 	}
 
@@ -51,9 +52,9 @@ public class EditarAtraccionServlet extends HttpServlet implements Servlet {
 		} else {
 			req.setAttribute("atraccion", atraccion);
 
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/atracciones/editarAtraccion.jsp");
+			RequestDispatcher dispatcher = getServletContext()
+					.getRequestDispatcher("/views/atracciones/editarAtraccion.jsp");
 			dispatcher.forward(req, resp);
 		}
 	}
-	
 }
