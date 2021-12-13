@@ -59,7 +59,7 @@
 							<c:out value='${tmp_user.errors.get("password")}'/>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-success mt-3">Crear</button>
+					<button type="submit" class="btn btn-success mt-3" href="">Crear</button>
 					<button type="button" class="btn btn-danger mt-3"
 						data-bs-dismiss="modal">Cancelar</button>
 				</form>
