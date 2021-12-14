@@ -45,7 +45,7 @@
 						<td><c:out value="${atraccion.costo}"></c:out></td>
 						<td><c:out value="${atraccion.duracion}"></c:out></td>
 						<td><c:out value="${atraccion.cupo}"></c:out></td>
-						<td><c:out value="${atraccion.tipo}"></c:out></td>
+						<td><c:out value="${atraccion.tipoAtraccion}"></c:out></td>
 						<td>
 							<button type="button" class="btn btn-primary mx-2">
 								<i class="bi bi-pencil-square"></i> Modificar
