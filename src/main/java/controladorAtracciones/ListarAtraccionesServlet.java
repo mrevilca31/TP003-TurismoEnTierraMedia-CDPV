@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import modelo.Atraccion;
+import modelo.Usuario;
 import servicios.AtraccionServicio;
 
 @WebServlet("/atracciones/listaAtracciones.do")
@@ -32,7 +33,16 @@ public class ListarAtraccionesServlet extends HttpServlet implements Servlet {
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/atracciones/admin-atracciones.jsp");
 		dispatcher.forward(req, resp);
-
+		
+		/*Usuario usuario;
+		if(usuario.isAdmin().booleanValue()) {
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/atracciones/admin-atracciones.jsp");
+			dispatcher.forward(req, resp);
+		} else {
+			RequestDispatcher dispatcher = getServletContext()
+					.getRequestDispatcher("/views/atracciones/user-atracciones.jsp");
+			dispatcher.forward(req, resp);
+		}*/
 	}
 
 }

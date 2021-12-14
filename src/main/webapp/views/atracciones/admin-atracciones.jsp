@@ -38,7 +38,7 @@
 				<tr>
 					<th scope="col">Nombre</th>
 					<th scope="col">Costo</th>
-					<th scope="col">Tiempo</th>
+					<th scope="col">Duración</th>
 					<th scope="col">Cupo</th>
 					<th scope="col">Tipo</th>
 					<th scope="col">Acciones</th>
