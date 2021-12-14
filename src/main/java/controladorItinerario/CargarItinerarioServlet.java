@@ -42,7 +42,7 @@ public class CargarItinerarioServlet extends HttpServlet implements Servlet {
 		//FALTA AGREGAR LA PARTE DE PRODUCTO
 
 		Itinerario itinerario = itinerarioServicio.create(user, producto);
-		resp.sendRedirect("/itinerario/index.do");
+		resp.sendRedirect("/itinerario/itinerario.do");
 	}
 
 }

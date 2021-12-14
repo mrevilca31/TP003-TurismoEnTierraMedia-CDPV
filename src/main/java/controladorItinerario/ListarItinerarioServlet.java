@@ -15,7 +15,7 @@ import modelo.Itinerario;
 import modelo.Producto;
 import servicios.ItinerarioServicio;
 
-@WebServlet("/itinerario/index.do")
+@WebServlet("/itinerario/itinerario.do")
 public class ListarItinerarioServlet extends HttpServlet implements Servlet {
 
 	private static final long serialVersionUID = 1L;
@@ -32,7 +32,7 @@ public class ListarItinerarioServlet extends HttpServlet implements Servlet {
 		List<Itinerario> itinerario = itinerarioServicio.find(int id, List<Producto> productos);
 		req.setAttribute("itinerario", itinerario);
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/iti/index.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/itinerario/listarItinerario.jsp");
 		dispatcher.forward(req, resp);
 
 	}

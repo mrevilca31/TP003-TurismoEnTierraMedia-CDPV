@@ -17,11 +17,11 @@
 					<li class="nav-item"><a class="nav-link active"
 						href="user-inicio.jsp">Inicio</a></li>
 					<li class="nav-item"><a class="nav-link active" aria-current="page"
-						href="user-atracciones.jsp">Atracciones</a></li>
+						href="/jsp01/atracciones/listaAtracciones.do">Atracciones</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						href="user-promociones.jsp">Promociones</a></li>
+						href="/jsp01/promociones/listaPromociones.do">Promociones</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						href="user-itinerario.jsp">Itinerario</a></li>
+						href="/jsp01/itinerario/itinerario.do">Itinerario</a></li>
 					<li class="nav-item dropdown position-absolute end-0 me-4"><a
 						class="nav-link active dropdown-toggle" href="#"
 						id="navbarDropdownMenuLink" role="button"
