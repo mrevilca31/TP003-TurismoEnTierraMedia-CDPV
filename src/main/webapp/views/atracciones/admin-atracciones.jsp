@@ -1,6 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
 	<jsp:include page="../../partials/head-admin.jsp"></jsp:include>
+	<link rel="shortcut icon" href="../../assets/images/Iconos/IconoAdmin.png">
+	
 	<title>Atracciones</title>
 </head>
 <body>
