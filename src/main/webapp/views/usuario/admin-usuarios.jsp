@@ -9,6 +9,11 @@
 <body>
 	<jsp:include page="../../partials/nav-admin.jsp"></jsp:include>
 	<main class="container-lg">
+		<!-- Boton nuevo Usuario -->
+		<button type="button" class="btn btn-success mt-3"
+			data-bs-toggle="modal" data-bs-target="#exampleModal">
+			<i class="bi bi-plus-square"></i> Nuevo Usuario
+		</button>
 		<jsp:include page="formulario.jsp"></jsp:include>
 
 		<!-- Tabla de Datos -->
@@ -41,10 +46,10 @@
 							</c:choose></td>
 						<td>
 							<button type="button" class="btn btn-primary mx-2"
-								href="/jsp01/usuario/editarUsuario.do">
+								data-bs-toggle="modal" data-bs-target="#exampleModal">
 								<i class="bi bi-pencil-square"></i> Modificar
-
-							</button>
+							</button> <jsp:include page="formulario.jsp"></jsp:include>
+							<jsp:include page="formulario.jsp"></jsp:include>
 							<button type="button" class="btn btn-danger"
 								href="/jsp01/usuario/eliminarUsuario.do">
 								<i class="bi bi-trash"></i> Eliminar

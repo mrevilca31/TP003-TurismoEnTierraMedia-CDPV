@@ -1,8 +1,3 @@
-<!-- Boton nuevo producto -->
-<button type="button" class="btn btn-success mt-3"
-	data-bs-toggle="modal" data-bs-target="#exampleModal">
-	<i class="bi bi-plus-square"></i> Nuevo Usuario
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1"
@@ -10,7 +5,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Nuevo Usuario</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Usuario</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal"
 					aria-label="Close"></button>
 			</div>
