@@ -22,14 +22,14 @@
 					<li class="nav-item dropdown position-absolute end-0 me-4"><a
 						class="nav-link active dropdown-toggle" href="#"
 						id="navbarDropdownMenuLink" role="button"
-						data-bs-toggle="dropdown" aria-expanded="false"> Administrador
+						data-bs-toggle="dropdown" aria-expanded="false"> ${usuario.nombre}
 					</a>
 						<ul class="dropdown-menu dropdown-menu-end "
 							aria-labelledby="navbarDropdownMenuLink">
 							<li><a class="dropdown-item" href="#"><i
-									class="bi bi-coin"></i> Monedas Disponibles</a></li>
+									class="bi bi-coin"></i> ${usuario.presupuesto} monedas</a></li>
 							<li><a class="dropdown-item" href="#"><i
-									class="bi bi-hourglass-split"></i> Tiempo Disponible</a></li>
+									class="bi bi-hourglass-split"></i> ${usuario.tiempoDisponible} horas</a></li>
 							<li><a class="dropdown-item" href="/jsp01/logout"><i
 									class="bi bi-box-arrow-left"></i> Salir</a></li>
 						</ul></li>

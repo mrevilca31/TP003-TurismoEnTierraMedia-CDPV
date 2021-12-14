@@ -2,7 +2,6 @@
 
 <head>
 <jsp:include page="../../partials/head-admin.jsp"></jsp:include>
-<link rel="shortcut icon" href="../../assets/images/Iconos/IconoAdmin.png">
 
 <title>Usuarios</title>
 </head>
