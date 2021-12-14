@@ -18,7 +18,7 @@
 		</c:if>
 
 		<form action="/atracciones/editarAtraccion.do" method="post">
-			<input type="hidden" name="id" value="${attraccion.id}">
+			<input type="hidden" name="id" value="${atraccion.id}">
 			<jsp:include page="form.jsp"></jsp:include>
 		</form>
 	</main>
