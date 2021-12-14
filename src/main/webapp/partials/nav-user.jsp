@@ -17,7 +17,7 @@
 					<li class="nav-item"><a class="nav-link active"
 						href="user-inicio.jsp">Inicio</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/jsp01/atracciones/listaAtracciones.do">Atracciones</a></li>
+						aria-current="page" href="/jsp01/usuario/listaAtracciones.do">Atracciones</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						href="/jsp01/promociones/listaPromociones.do">Promociones</a></li>
 					<li class="nav-item"><a class="nav-link active"
