@@ -15,7 +15,7 @@
 		<c:forEach items="${promociones}" var="promociones">
 			<div class="container">
 				<div class="card">
-					<img src="assets/images/la-comarca.jpg">
+					<img src="../assets/images/la-comarca.jpg">
 					<h4>La Comarca</h4>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 						Vel, excepturi unde?</p>

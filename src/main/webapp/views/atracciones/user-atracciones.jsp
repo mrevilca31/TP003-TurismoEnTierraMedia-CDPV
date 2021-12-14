@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
 	<jsp:include page="../../partials/head-user.jsp"></jsp:include>
-	<link rel="stylesheet" href="../assets/css/estilos-user-atracciones.css">
+	<link rel="stylesheet" href="../../assets/css/estilos-user-atracciones.css">
 	<title>Atracciones</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
 		<c:forEach items="${atracciones}" var="atraccion">
 			<div class="container">
 				<div class="card">
-					<img src="assets/images/la-comarca.jpg">
+					<img src="../../assets/images/la-comarca.jpg">
 					<h4>La Comarca</h4>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 						Vel, excepturi unde?</p>
