@@ -75,3 +75,7 @@ body {
 .main span {
 	position: relative;
 }
+
+.alert-danger{
+  color:#ffffffcd;
+}
