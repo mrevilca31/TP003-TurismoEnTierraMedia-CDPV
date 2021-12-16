@@ -15,38 +15,26 @@
 				data-bs-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<a href="/jsp01/atracciones/listaAtraccionesUsuario.do"> <img
-							src="../assets/images/Atracciones/Mordor.jpg"
+						<a href="/jsp01/views/user-inicio.jsp"> <img
+							src="../assets/images/fondos/Castillo.jpg"
 							class=" d-block mx-auto my-auto" role="button" alt="..."
 							width="850 px" height="500 px">
 						</a>
-						<div class="carousel-caption d-none d-md-block">
-							<h2>NOMBRE PRODUCTO</h2>
-							<p>Click sobre la imagen para mas informacion.</p>
-						</div>
 					</div>
-					<div class="carousel-item">
-						<a href="/jsp01/atracciones/listaAtraccionesUsuario.do"> <img
-							src="../assets/images/Atracciones/Moria.jpg"
-							class=" d-block mx-auto my-auto" role="button" alt="..."
-							width="850 px" height="500 px">
-						</a>
-						<div class="carousel-caption d-none d-md-block">
-							<h2>NOMBRE PRODUCTO</h2>
-							<p>Click sobre la imagen para mas informacion.</p>
+					<c:forEach items="${atracciones}" var="atraccion">
+						<div class="carousel-item">
+							<a href="/jsp01/atracciones/listaAtraccionesUsuario.do"> <img
+								src="../assets/images/Atracciones/<c:out value="${atraccion.getNombre()}"></c:out>.jpg"
+								class=" d-block mx-auto my-auto" role="button" alt="..."
+								width="850 px" height="500 px">
+							</a>
+							<div class="carousel-caption d-none d-md-block">
+								<h2>"${atraccion.getNombre().toUpperCase()}"</h2>
+								<p>COSTO: ${atraccion.getCosto()} monedas</p>
+								<p>Click sobre la imagen para mas informacion.</p>
+							</div>
 						</div>
-					</div>
-					<div class="carousel-item">
-						<a href="/jsp01/atracciones/listaAtraccionesUsuario.do"> <img
-							src="../assets/images/Atracciones/Erebor.jpg"
-							class=" d-block mx-auto my-auto" role="button" alt="..."
-							width="850 px" height="500 px">
-						</a>
-						<div class="carousel-caption d-none d-md-block">
-							<h2>NOMBRE PRODUCTO</h2>
-							<p>Click sobre la imagen para mas informacion.</p>
-						</div>
-					</div>
+					</c:forEach>
 				</div>
 				<button class="carousel-control-prev" type="button"
 					data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
