@@ -1,12 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
-	<jsp:include page="../partials/head-user.jsp"></jsp:include>
-	<link rel="stylesheet" href="../assets/css/estilos-user-inicio.css">
-	<title>Inicio</title>
+<jsp:include page="../partials/head-user.jsp"></jsp:include>
+<link rel="stylesheet" href="../assets/css/estilos-user-inicio.css">
+<title>Inicio</title>
 </head>
 
 <body>
-    <jsp:include page="../partials/nav-user.jsp"></jsp:include>
+	<jsp:include page="../partials/nav-user.jsp"></jsp:include>
 	<main>
 		<h1 class="title">Bienvenidos</h1>
 		<!-- Carrusel -->
@@ -15,9 +15,10 @@
 				data-bs-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<a href="#"> <img src="../assets/images/Atracciones/Mordor.jpg"
-							class=" d-block mx-auto my-auto" alt="..." width="850 px"
-							height="500 px">
+						<a href="/jsp01/atracciones/listaAtraccionesUsuario.do"> <img
+							src="../assets/images/Atracciones/Mordor.jpg"
+							class=" d-block mx-auto my-auto" role="button" alt="..."
+							width="850 px" height="500 px">
 						</a>
 						<div class="carousel-caption d-none d-md-block">
 							<h2>NOMBRE PRODUCTO</h2>
@@ -25,9 +26,10 @@
 						</div>
 					</div>
 					<div class="carousel-item">
-						<a href="#"> <img src="../assets/images/Atracciones/Moria.jpg"
-							class=" d-block mx-auto my-auto" alt="..." width="850 px"
-							height="500 px">
+						<a href="/jsp01/atracciones/listaAtraccionesUsuario.do"> <img
+							src="../assets/images/Atracciones/Moria.jpg"
+							class=" d-block mx-auto my-auto" role="button" alt="..."
+							width="850 px" height="500 px">
 						</a>
 						<div class="carousel-caption d-none d-md-block">
 							<h2>NOMBRE PRODUCTO</h2>
@@ -35,9 +37,10 @@
 						</div>
 					</div>
 					<div class="carousel-item">
-						<a href="#"> <img src="../assets/images/Atracciones/Erebor.jpg"
-							class=" d-block mx-auto my-auto" alt="..." width="850 px"
-							height="500 px">
+						<a href="/jsp01/atracciones/listaAtraccionesUsuario.do"> <img
+							src="../assets/images/Atracciones/Erebor.jpg"
+							class=" d-block mx-auto my-auto" role="button" alt="..."
+							width="850 px" height="500 px">
 						</a>
 						<div class="carousel-caption d-none d-md-block">
 							<h2>NOMBRE PRODUCTO</h2>
