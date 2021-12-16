@@ -14,8 +14,8 @@ import modelo.Promocion;
 import servicios.PromocionServicio;
 
 
-@WebServlet("/promociones/listaPromociones.do")
-public class ListarPromocionesServlet extends HttpServlet implements Servlet {
+@WebServlet("/promociones/listaPromocionesUsuario.do")
+public class ListarPromocionesUsuarioServlet extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = 1L;
 	private PromocionServicio promocionServicio;
 
@@ -30,7 +30,7 @@ public class ListarPromocionesServlet extends HttpServlet implements Servlet {
 		List<Promocion> promocion = promocionServicio.list();
 		req.setAttribute("promocion", promocion);
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/promociones/admin-promociones.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/promociones/user-promociones.jsp");
 		dispatcher.forward(req, resp);
 
 	}

@@ -19,7 +19,7 @@
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="/jsp01/atracciones/listaAtraccionesUsuario.do">Atracciones</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						href="/jsp01/promociones/listaPromociones.do">Promociones</a></li>
+						href="/jsp01/promociones/listaPromocionesUsuario.do">Promociones</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						href="/jsp01/itinerario/itinerario.do">Itinerario</a></li>
 					<li class="nav-item dropdown position-absolute end-0 me-4"><a

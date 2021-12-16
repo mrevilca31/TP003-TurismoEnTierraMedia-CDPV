@@ -1,22 +1,22 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
-<jsp:include page="../partials/head-user.jsp"></jsp:include>
+<jsp:include page="../../partials/head-user.jsp"></jsp:include>
 
-<link rel="stylesheet"  href="../assets/css/estilos-user-atracciones.css">
+<link rel="stylesheet"  href="../../assets/css/estilos-user-atracciones.css">
 
 <title>Promociones</title>
 </head>
 
 <body>
-	<jsp:include page="../partials/nav-user.jsp"></jsp:include>
+	<jsp:include page="../../partials/nav-user.jsp"></jsp:include>
 	<main>
 		<h1 class="title">Promociones Disponibles</h1>
 		<!-- Cards con las Promociones -->
-		<c:forEach items="${promociones}" var="promociones">
+		<c:forEach items="${promociones}" var="promocion">
 			<div class="container">
 				<div class="card">
 					<img src="../assets/images/la-comarca.jpg">
-					<h4>La Comarca</h4>
+					<h4>${promocion.nombre}</h4>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 						Vel, excepturi unde?</p>
 					<!-- Button trigger modal -->
@@ -49,5 +49,5 @@
 			</div>
 		</c:forEach>
 	</main>
-	<jsp:include page="../partials/footer.jsp"></jsp:include>
+	<jsp:include page="../../partials/footer.jsp"></jsp:include>
 </body>
