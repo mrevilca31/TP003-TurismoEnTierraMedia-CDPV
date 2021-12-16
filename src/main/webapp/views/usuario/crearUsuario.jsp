@@ -7,7 +7,7 @@
 <jsp:include page="/partials/head-admin.jsp"></jsp:include>
 </head>
 <body>
-	<jsp:include page="/partials/nav-admin.jsp"></jsp:include>
+	
 
 	<main class="container">
 
@@ -17,9 +17,7 @@
 			</div>
 		</c:if>
 
-		<form action="/usuario/crearUsuario.do" method="post">
-			<jsp:include page="formulario.jsp"></jsp:include>
-		</form>
+		<jsp:include page="formulario.jsp"></jsp:include>
 	</main>
 </body>
 </html>

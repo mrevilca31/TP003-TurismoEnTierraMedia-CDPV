@@ -18,7 +18,7 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 	@Override
 	public int insert(Usuario usuario) {
 		try {
-			String sql = "INSERT INTO Usuario (nombre, presupuesto, tiempo_disponible, atraccion_preferida, contraseña, admin) VALUES (?, ?, ?, ?, ?, ?)\r\n"
+			String sql = "INSERT INTO Usuario (nombre, presupuesto, tiempo_disponible, atraccion_preferida, password, admin) VALUES (?, ?, ?, ?, ?, ?)\r\n"
 					+ "";
 			Connection conn = ConexionProvider.getConnection();
 
@@ -40,7 +40,7 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 	@Override
 	public int update(Usuario usuario) {
 		try {
-			String sql = "UPDATE USUARIO SET NOMBRE = ?,PRESUPUESTO = ?, TIEMPO_DISPONIBLE = ?, CONTRASEÑA = ?, WHERE ID = ?";
+			String sql = "UPDATE USUARIO SET NOMBRE = ?,PRESUPUESTO = ?, TIEMPO_DISPONIBLE = ?, PASSWORD = ? WHERE ID = ?";
 			Connection conn = ConexionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
@@ -60,7 +60,7 @@ public class UsuarioDAO implements GenericDAO<Usuario> {
 	@Override
 	public int delete(Integer id) {
 		try {
-			String sql = "Update FROM Usuario SET borrado = 1 WHERE id = ?";
+			String sql = "Update Usuario SET borrado = 1 WHERE id = ?";
 			Connection conn = ConexionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);

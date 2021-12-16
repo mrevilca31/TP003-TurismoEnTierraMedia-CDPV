@@ -27,7 +27,7 @@ public class CrearAtraccionServlet extends HttpServlet implements Servlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		RequestDispatcher dispatcher = getServletContext()
-				.getRequestDispatcher("/views/atracciones/usuario.jsp");
+				.getRequestDispatcher("/views/atracciones/crearAtraccion.jsp");
 		dispatcher.forward(req, resp);
 	}
 

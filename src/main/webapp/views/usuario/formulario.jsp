@@ -10,7 +10,7 @@
 					aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
-				<form>
+				<form action="/jsp01/usuario/crearUsuario.do" method="post">
 					<div class="mb-3">
 						<label for="nombre" class="col-form-label">Nombre:</label> <input
 							type="text" class="form-control" id="nombre" name="nombre"
@@ -48,7 +48,7 @@
 					<div class="mb-3">
 						<label for="password"
 							class='col-form-label ${tmp_user.errors.get("password") != null ? "is-invalid" : "" }'>Contraseña:</label>
-						<input type="password" class="form-control" id="password"
+						<input type="text" class="form-control" id="password"
 							name="password" required value="${tmp_user.password}"></input>
 						<div class="invalid-feedback">
 							<c:out value='${tmp_user.errors.get("password")}'/>

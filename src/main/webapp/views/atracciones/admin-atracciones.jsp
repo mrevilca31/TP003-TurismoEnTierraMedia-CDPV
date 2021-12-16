@@ -58,10 +58,10 @@
 								class="btn btn-primary mx-2" role="button"> <i class="bi bi-pencil-square"></i>
 									Modificar
 						    </a>
-							
-							<button type="button" class="btn btn-danger">
-								<i class="bi bi-trash"></i> Eliminar
-							</button> 
+							<a href="/jsp01/atracciones/eliminarAtracciones.do?id=${atraccion.id}"
+									class="btn btn-danger" role="button"><i
+									class="bi bi-trash"></i> Eliminar
+							</a> 
 						</td>
 					</tr>
 				</c:forEach>

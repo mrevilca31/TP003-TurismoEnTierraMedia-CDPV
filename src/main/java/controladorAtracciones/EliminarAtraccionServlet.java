@@ -28,7 +28,7 @@ public class EliminarAtraccionServlet extends HttpServlet implements Servlet {
 
 		atraccionServicio.delete(id);
 
-		resp.sendRedirect("/atracciones/listaAtracciones.do");
+		resp.sendRedirect("/jsp01/atracciones/listaAtracciones.do");
 	}
 }
 

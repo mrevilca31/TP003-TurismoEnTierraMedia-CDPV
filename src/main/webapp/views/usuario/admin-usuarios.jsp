@@ -10,10 +10,11 @@
 	<jsp:include page="../../partials/nav-admin.jsp"></jsp:include>
 	<main class="container-lg">
 		<!-- Boton nuevo Usuario -->
-		<button type="button" class="btn btn-success mt-3"
-			data-bs-toggle="modal" data-bs-target="#exampleModal">
-			<i class="bi bi-plus-square"></i> Nuevo Usuario
-		</button>
+		<a href="/jsp01/usuario/crearUsuario.do"
+			class="btn btn-success mt-3" role="button" data-bs-toggle="modal"
+			data-bs-target="#exampleModal"> <i class="bi bi-plus-square"></i>
+			Nuevo Usuario
+		</a>
 		<jsp:include page="formulario.jsp"></jsp:include>
 
 		<!-- Tabla de Datos -->
@@ -45,15 +46,15 @@
 								</c:otherwise>
 							</c:choose></td>
 						<td>
-							<button type="button" class="btn btn-primary mx-2"
-								data-bs-toggle="modal" data-bs-target="#exampleModal">
-								<i class="bi bi-pencil-square"></i> Modificar
-							</button> <jsp:include page="formulario.jsp"></jsp:include>
-							<jsp:include page="formulario.jsp"></jsp:include>
-							<button type="button" class="btn btn-danger"
-								href="/jsp01/usuario/eliminarUsuario.do">
-								<i class="bi bi-trash"></i> Eliminar
-							</button>
+							<a href="/jsp01/usuario/editarUsuario.do?id=${usuario.id}"
+								class="btn btn-primary mx-2" role="button"> <i class="bi bi-pencil-square"></i>
+									Modificar
+						    </a>
+							
+							<a href="/jsp01/usuario/eliminarUsuario.do?id=${usuario.id}"
+									class="btn btn-danger" role="button"><i
+									class="bi bi-trash"></i> Eliminar
+							</a>
 						</td>
 					</tr>
 				</c:forEach>
