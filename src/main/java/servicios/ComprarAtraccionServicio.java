@@ -6,6 +6,7 @@ import java.util.Map;
 import modelo.Atraccion;
 import modelo.Usuario;
 import persistencia.AtraccionDAO;
+import persistencia.ItinerarioDAO;
 import persistencia.UsuarioDAO;
 import persistenciaGeneral.DAOFactory;
 
@@ -13,6 +14,7 @@ public class ComprarAtraccionServicio {
 
 	AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 	UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
+	ItinerarioDAO itinerarioDAO = DAOFactory.getItinerarioDAO();
 
 	public Map<String, String> comprar(Integer usuarioId, Integer atraccionId) {
 		Map<String, String> errors = new HashMap<>();
@@ -35,6 +37,7 @@ public class ComprarAtraccionServicio {
 			atraccion.disminuirCupo(1);
 			atraccionDAO.update(atraccion);
 			usuarioDAO.update(usuario);
+			itinerarioDAO.insert(usuario, atraccion);
 		}
 		return errors;
 	}

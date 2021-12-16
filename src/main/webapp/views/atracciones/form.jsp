@@ -12,8 +12,8 @@
 				<form action="/jsp01/atracciones/crearAtraccion.do" method="post">
 					<div class="mb-3">
 						<label for="nombre" class="col-form-label">Nombre:</label> <input
-							type="text" class="form-control" id="nombre" name="nombre" required
-							value="${atraccion.nombre}">
+							type="text" class="form-control" id="nombre" name="nombre"
+							required value="${atraccion.nombre}">
 					</div>
 					<div class="mb-3">
 						<label for="costo"
@@ -43,9 +43,9 @@
 						</div>
 					</div>
 					<div class="mb-3">
-						<label for="tipo" 
-						class='col-form-label ${atraccion.errors.get("tipo")!= null ? "is-invalid" : "" }'>Tipo:</label>
-							<input class="form-control" type="text" id="tipo" name="tipo" 
+						<label for="tipo"
+							class='col-form-label ${atraccion.errors.get("tipo")!= null ? "is-invalid" : "" }'>Tipo:</label>
+						<input class="form-control" type="text" id="tipo" name="tipo"
 							required value="${atraccion.tipo}"></input>
 						<div class="invalid-feedback">
 							<c:out value='${atraccion.errors.get("tipo")}'></c:out>

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import modelo.Promocion;
 import modelo.Usuario;
+import persistencia.ItinerarioDAO;
 import persistencia.PromocionDAO;
 import persistencia.UsuarioDAO;
 import persistenciaGeneral.DAOFactory;
@@ -13,6 +14,8 @@ public class ComprarPromocionServicio {
 
 	PromocionDAO promocionDAO = DAOFactory.getPromocionDAO();
 	UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
+	ItinerarioDAO itinerarioDAO = DAOFactory.getItinerarioDAO();
+
 
 	public Map<String, String> comprar(Integer usuarioId, Integer promocionId) {
 		Map<String, String> errors = new HashMap<>();
@@ -31,10 +34,11 @@ public class ComprarPromocionServicio {
 		}
 
 		if (errors.isEmpty()) {
-			usuario.agregarProductosAlItinerario(promocion);
 			promocion.disminuirCupo(1);
 			promocionDAO.update(promocion);
 			usuarioDAO.update(usuario);
+			itinerarioDAO.insert(usuario, promocion);
+
 		}
 		return errors;
 	}
