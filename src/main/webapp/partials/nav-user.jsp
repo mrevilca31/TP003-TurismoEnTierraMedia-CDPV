@@ -4,7 +4,7 @@
 	<!--barra de navegacion -->
 	<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-success">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="user-inicio.jsp">Parque Tierra
+			<a class="navbar-brand" href="/jsp01/views/user-inicio.jsp">Parque Tierra
 				Media</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarNav"
