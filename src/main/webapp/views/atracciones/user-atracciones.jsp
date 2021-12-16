@@ -1,8 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
-	<jsp:include page="../../partials/head-user.jsp"></jsp:include>
-	<link rel="stylesheet" href="../../assets/css/estilos-user-atracciones.css">
-	<title>Atracciones</title>
+<jsp:include page="../../partials/head-user.jsp"></jsp:include>
+<link rel="stylesheet"
+	href="/jsp01/assets/css/estilos-user-atracciones.css">
+
+<title>Atracciones</title>
 </head>
 <body>
 	<jsp:include page="../../partials/nav-user.jsp"></jsp:include>
@@ -12,15 +14,24 @@
 		<c:forEach items="${atracciones}" var="atraccion">
 			<div class="container">
 				<div class="card">
-					<img src="../../assets/images/la-comarca.jpg">
-					<h4>La Comarca</h4>
+					<h3>
+						<c:out value="${atraccion.getNombre().toUpperCase()}"></c:out>
+					</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 						Vel, excepturi unde?</p>
+
+					<p>DURACION: ${atraccion.getDuracion()} horas</p>
+					<p>COSTO: ${atraccion.getCosto()} monedas</p>
+					<img
+						src="../assets/images/Atracciones/<c:out value="${atraccion.getNombre()}"></c:out>.jpg"
+						alt="">
+
 					<!-- Button trigger modal -->
 					<button type="button" class="btn btn-success mx-5 mt-2"
 						data-bs-toggle="modal" data-bs-target="#exampleModal">
 						<i class="bi bi-cart-plus"></i> Comprar
 					</button>
+
 				</div>
 				<!-- Modal -->
 				<div class="modal fade" id="exampleModal" tabindex="-1"

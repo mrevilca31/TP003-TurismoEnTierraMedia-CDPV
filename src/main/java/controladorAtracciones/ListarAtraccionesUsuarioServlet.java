@@ -1,4 +1,4 @@
-package controladorUsuario;
+package controladorAtracciones;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import modelo.Atraccion;
 import servicios.AtraccionServicio;
 
-@WebServlet("/usuario/listaAtracciones.do")
+@WebServlet("/atracciones/listaAtraccionesUsuario.do")
 public class ListarAtraccionesUsuarioServlet extends HttpServlet implements Servlet {
 
 	private static final long serialVersionUID = 1L;
@@ -24,7 +24,7 @@ public class ListarAtraccionesUsuarioServlet extends HttpServlet implements Serv
 		super.init();
 		this.atraccionServicio = new AtraccionServicio();
 	}
-
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		List<Atraccion> atraccion = atraccionServicio.list();

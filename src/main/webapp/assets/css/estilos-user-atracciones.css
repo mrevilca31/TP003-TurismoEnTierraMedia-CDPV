@@ -54,6 +54,8 @@ body:before{
 }
 
 .container .card{
+	background-color: #E4D896;
+	background: rgba(0, 0, 0, 0.6);
     width: 330px;
     height: 430px;
     border-radius: 8px;
@@ -66,7 +68,7 @@ body:before{
 
 .container .card:hover{
     transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 10px 10px 8px #888888;
 }
 
 .container .card img{
@@ -74,15 +76,23 @@ body:before{
     height: 220px;
 }
 
+.container .card h3{
+	color: #ffffffcd;
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+}
 
 .container .card h4{
     font-weight: 600;
 }
 
 .container .card p{
+	color: #ffffffcd;
     padding: 0 1rem;
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 14px;
+    font-weight: 200;
+    line-height:15px;
 }
 
 .container .card a {

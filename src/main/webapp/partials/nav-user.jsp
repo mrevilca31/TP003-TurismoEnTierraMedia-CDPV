@@ -15,9 +15,9 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item"><a class="nav-link active"
-						href="user-inicio.jsp">Inicio</a></li>
+						href="/jsp01/views/user-inicio.jsp">Inicio</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/jsp01/usuario/listaAtracciones.do">Atracciones</a></li>
+						aria-current="page" href="/jsp01/atracciones/listaAtraccionesUsuario.do">Atracciones</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						href="/jsp01/promociones/listaPromociones.do">Promociones</a></li>
 					<li class="nav-item"><a class="nav-link active"
