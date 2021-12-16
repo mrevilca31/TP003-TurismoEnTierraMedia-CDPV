@@ -3,7 +3,7 @@
 <header class="container-fluid">
 	<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-success">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="admin-atracciones.jsp">Parque
+			<a class="navbar-brand" href="/jsp01/usuario/listaUsuarios.do">Parque
 				Tierra Media</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarNav"
