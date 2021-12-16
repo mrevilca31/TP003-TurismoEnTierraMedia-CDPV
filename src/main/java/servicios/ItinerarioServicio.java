@@ -11,7 +11,7 @@ import persistenciaGeneral.DAOFactory;
 
 public class ItinerarioServicio {
 
-	public Itinerario find(int id, List<Producto> productos) {
-		return (Itinerario) DAOFactory.getItinerarioDAO().findAll(id, productos);
+	public List<Producto> find(int id, List<Producto> productos) {
+		return DAOFactory.getItinerarioDAO().findAll(id, productos);
 	}
 }
