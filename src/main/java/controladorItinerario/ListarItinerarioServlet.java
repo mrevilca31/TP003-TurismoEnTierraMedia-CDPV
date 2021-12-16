@@ -36,7 +36,7 @@ public class ListarItinerarioServlet extends HttpServlet implements Servlet {
 		List<Itinerario> itinerario = (List<Itinerario>) itinerarioServicio.find(id, productos);
 		req.setAttribute("itinerario", itinerario);
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/itinerario/listarItinerario.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/user-itinerario.jsp");
 		dispatcher.forward(req, resp);
 
 	}
