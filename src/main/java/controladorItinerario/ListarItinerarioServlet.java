@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import modelo.Atraccion;
 import modelo.Itinerario;
 import modelo.Producto;
+import modelo.Usuario;
 import servicios.ItinerarioServicio;
 
 @WebServlet("/itinerario/itinerario.do")
@@ -29,7 +30,10 @@ public class ListarItinerarioServlet extends HttpServlet implements Servlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Itinerario> itinerario = itinerarioServicio.find(int id, List<Producto> productos);
+		Usuario usuario = (Usuario) req.getSession().getAttribute("usuario");
+		Integer id = usuario.getId();
+		List<Producto> productos = (List<Producto>) req.getSession().getAttribute("productos");
+		List<Itinerario> itinerario = (List<Itinerario>) itinerarioServicio.find(id, productos);
 		req.setAttribute("itinerario", itinerario);
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/itinerario/listarItinerario.jsp");
