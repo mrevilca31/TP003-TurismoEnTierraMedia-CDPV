@@ -32,7 +32,7 @@ public class EditarAtraccionServlet extends HttpServlet implements Servlet {
 		req.setAttribute("atraccion", atraccion);
 
 		RequestDispatcher dispatcher = getServletContext()
-				.getRequestDispatcher("/views/atracciones/editarAtracciones.jsp");
+				.getRequestDispatcher("/views/atracciones/editarAtraccion.jsp");
 		dispatcher.forward(req, resp);
 	}
 

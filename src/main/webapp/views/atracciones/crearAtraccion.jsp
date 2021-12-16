@@ -4,12 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<jsp:include page="/partials/head-admin.jsp"></jsp:include>
-	<title>Crear atraccion</title>
+<jsp:include page="/partials/head-admin.jsp"></jsp:include>
+<title>Crear atraccion</title>
 </head>
 <body>
-	<jsp:include page="/partials/nav-admin.jsp"></jsp:include>
-	
+
+
 	<main class="container">
 
 		<c:if test="${atraccion != null && !atraccion.isValid()}">
@@ -18,10 +18,10 @@
 			</div>
 		</c:if>
 
-		<form action="/atracciones/crearAtraccion.do" method="post">
-			<jsp:include page="form.jsp"></jsp:include>
-		</form>
+
+		<jsp:include page="form.jsp"></jsp:include>
+
+
 	</main>
 </body>
 </html>
-  

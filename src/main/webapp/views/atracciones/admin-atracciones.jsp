@@ -9,12 +9,13 @@
 
 	<main class="container-lg">
 
-		<!-- Boton nueva atraccion -->
-		<button type="button" class="btn btn-success mt-3"
-			data-bs-toggle="modal" data-bs-target="#exampleModal">
-			<i class="bi bi-plus-square"></i> Nueva Atraccion
-		</button>
+		<a href="/jsp01/atracciones/crearAtraccion.do"
+			class="btn btn-success mt-3" role="button" data-bs-toggle="modal"
+			data-bs-target="#exampleModal"> <i class="bi bi-plus-square"></i>
+			Nueva Atraccion
+		</a>
 		<jsp:include page="form.jsp"></jsp:include>
+
 
 		<c:if test="${flash != null}">
 			<div class="alert alert-danger">
@@ -53,13 +54,14 @@
 						<td><c:out value="${atraccion.cupo}"></c:out></td>
 						<td><c:out value="${atraccion.tipoAtraccion}"></c:out></td>
 						<td>
-							<button type="button" class="btn btn-primary mx-2"
-								data-bs-toggle="modal" data-bs-target="#exampleModal">
-								<i class="bi bi-pencil-square"></i> Modificar
-							</button> <jsp:include page="form.jsp"></jsp:include>
+							<a href="/jsp01/atracciones/editarAtraccion.do?id=${atraccion.id}"
+								class="btn btn-primary mx-2" role="button"> <i class="bi bi-pencil-square"></i>
+									Modificar
+						    </a>
+							<jsp:include page="form2.jsp"></jsp:include>
 							<button type="button" class="btn btn-danger">
 								<i class="bi bi-trash"></i> Eliminar
-							</button>
+							</button> 
 						</td>
 					</tr>
 				</c:forEach>

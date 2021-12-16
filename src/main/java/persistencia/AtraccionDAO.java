@@ -79,7 +79,7 @@ public class AtraccionDAO implements GenericDAO<Atraccion> {
 	@Override
 	public int insert(Atraccion atraccion) {
 		try {
-			String sql = "INSERT INTO Atraccion (nombre, costo, duracion, cupo, tipo) VALUES (?, ?, ?, ?)";
+			String sql = "INSERT INTO Atraccion (nombre, costo, duracion, cupo, tipo) VALUES (?, ?, ?, ?, ?)";
 			Connection conn = ConexionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
@@ -126,7 +126,7 @@ public class AtraccionDAO implements GenericDAO<Atraccion> {
 			if (resultados.next()) {
 				atraccion = toAtraccion(resultados);
 			}
-
+			
 			return atraccion;
 		} catch (Exception e) {
 			throw new MissingDataException(e);

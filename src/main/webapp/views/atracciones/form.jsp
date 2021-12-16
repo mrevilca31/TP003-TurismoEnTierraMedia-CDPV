@@ -1,19 +1,18 @@
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1"
 	aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Atraccion</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Atraccion 21</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal"
 					aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
-				<form>
+				<form action="/jsp01/atracciones/crearAtraccion.do" method="post">
 					<div class="mb-3">
-						<label for="name" class="col-form-label">Nombre:</label> <input
-							type="text" class="form-control" id="name" name="name" required
+						<label for="nombre" class="col-form-label">Nombre:</label> <input
+							type="text" class="form-control" id="nombre" name="nombre" required
 							value="${atraccion.nombre}">
 					</div>
 					<div class="mb-3">
