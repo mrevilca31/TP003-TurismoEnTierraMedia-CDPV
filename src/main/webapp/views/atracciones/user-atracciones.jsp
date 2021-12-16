@@ -47,7 +47,7 @@
 							<div class="modal-body">¿Realmente desea realizar esta
 								compra?</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-primary">Confirmar</button>
+								<button href="/jsp01/atracciones/buy.do?" role="button" class="btn btn-primary">Confirmar</button>
 								<button type="button" class="btn btn-danger"
 									data-bs-dismiss="modal">Cancelar</button>
 							</div>
