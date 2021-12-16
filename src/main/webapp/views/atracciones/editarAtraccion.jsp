@@ -49,7 +49,7 @@
 				<label for="tipo"
 					class='col-form-label ${atraccion.errors.get("tipo")!= null ? "is-invalid" : "" }'>Tipo:</label>
 				<input class="form-control" type="text" id="tipo" name="tipo"
-					required value="${atraccion.tipo}"></input>
+					required value="${atraccion.tipoAtraccion}"></input>
 				<div class="invalid-feedback">
 					<c:out value='${atraccion.errors.get("tipo")}'></c:out>
 				</div>
