@@ -14,6 +14,8 @@ public class ComparadorPorTipoAtraccion implements Comparator<Producto> {
 		if (P1.tipoAtraccion == this.tipoPreferido && P2.tipoAtraccion == this.tipoPreferido) {
 			if (P1.esPromo() && P2.esPromo()) {
 				return comparaPorCostoyPorTiempo(P1, P2);
+			} else if (!P1.esPromo() && !P2.esPromo()) {
+				return comparaPorCostoyPorTiempo(P1, P2);
 			} else {
 				return -Boolean.compare(P1.esPromo(), P2.esPromo());
 			}
