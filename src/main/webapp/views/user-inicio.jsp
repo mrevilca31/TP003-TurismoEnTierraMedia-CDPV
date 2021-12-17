@@ -21,16 +21,16 @@
 							width="850 px" height="500 px">
 						</a>
 					</div>
-					<c:forEach items="${atracciones}" var="atraccion">
+					<c:forEach items="${ofertas}" var="ofertas">
 						<div class="carousel-item">
 							<a href="/jsp01/atracciones/listaAtraccionesUsuario.do"> <img
-								src="../assets/images/Atracciones/<c:out value="${atraccion.getNombre()}"></c:out>.jpg"
+								src="../assets/images/Atracciones/<c:out value="${ofertas.nombre}"></c:out>.jpg"
 								class=" d-block mx-auto my-auto" role="button" alt="..."
 								width="850 px" height="500 px">
 							</a>
 							<div class="carousel-caption d-none d-md-block">
-								<h2>"${atraccion.getNombre().toUpperCase()}"</h2>
-								<p>COSTO: ${atraccion.getCosto()} monedas</p>
+								<h2>"${ofertas.nombre.toUpperCase()}"</h2>
+								<p>COSTO: ${ofertas.costo} monedas</p>
 								<p>Click sobre la imagen para mas informacion.</p>
 							</div>
 						</div>
