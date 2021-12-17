@@ -27,14 +27,25 @@
 							${atraccion.getDuracion()} horas</li>
 						<li class="list-group-item">PRECIO: ${atraccion.getCosto()}
 							monedas</li>
-						<li class="list-group-item">TIPO: ${atraccion.getTipoAtraccion()}</li>
+						<li class="list-group-item">TIPO:
+							${atraccion.getTipoAtraccion()}</li>
 					</ul>
 
 					<!-- Button trigger modal -->
-					<button type="button" class="btn btn-success mx-5 mt-3"
-						data-bs-toggle="modal" data-bs-target="#exampleModal">
-						<i class="bi bi-cart-plus"></i> Comprar
-					</button>
+					<c:choose>
+
+						<c:when
+							test="${usuario.puedePagar(atraccion) && usuario.tieneTiempo(atraccion) && atraccion.hayCupo()}">
+							<button type="button" class="btn btn-success mx-5 mt-3"
+								data-bs-toggle="modal" data-bs-target="#exampleModal">
+								<i class="bi bi-cart-plus"></i> Comprar
+							</button>
+						</c:when>
+						<c:otherwise>
+							<a href="#" class="btn btn-secondary rounded disabled"
+								role="button">No se puede comprar</a>
+						</c:otherwise>
+					</c:choose>
 				</div>
 				<!-- Modal -->
 				<div class="modal fade" id="exampleModal" tabindex="-1"
