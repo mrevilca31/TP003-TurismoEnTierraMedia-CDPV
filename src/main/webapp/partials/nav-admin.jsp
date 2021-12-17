@@ -15,8 +15,8 @@
 				<ul class="navbar-nav">
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="/jsp01/atracciones/listaAtracciones.do">Atracciones</a></li>
-					<li class="nav-item"><a class="nav-link active"
-						href="/jsp01/promociones/listaPromociones.do">Promociones</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="#">Promociones</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						href="/jsp01/usuario/listaUsuarios.do">Usuarios</a></li>
 					<li class="nav-item dropdown position-absolute end-0 me-4"><a
