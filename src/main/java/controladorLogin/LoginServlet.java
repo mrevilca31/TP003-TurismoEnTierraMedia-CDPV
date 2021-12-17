@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet implements Servlet {
 
 		if (!usuario.isNull() && !usuario.isAdmin().booleanValue()) {
 			req.getSession().setAttribute("usuario", usuario);
-			resp.sendRedirect("views/user-inicio.jsp"); //MODIFICAR, crear servlet para ver 
+			resp.sendRedirect("usuario/inicio.do");
 		} else if (!usuario.isNull() && usuario.isAdmin().booleanValue()) {
 			req.getSession().setAttribute("usuario", usuario);
 			resp.sendRedirect("usuario/listaUsuarios.do");
