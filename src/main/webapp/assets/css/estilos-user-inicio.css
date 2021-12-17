@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&display=swap');
+
+body {
+    background-image: url(../images/fondos/MapaTierraMedia.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+}
+
+body:before{
+    content: "";
+    width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(0deg,#dfc24f,#090909);
+
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.title {
+    text-align: center;
+    font-size: 80px;
+    color: #ffffffcd;
+    margin-top: 30px;
+    font-weight: 700;
+    font-family: 'Bilbo Swash Caps';
+}
+
+footer{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    font-family: 'Roboto Mono', monospace;
+    color: #fff;
+}
+
+.footer-bottom{
+    background: #000;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .7;
+    font-weight: 200;
+}
+
