@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
 @import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&display=swap');
 
+
 html, body{
     margin: 0;
     padding: 0;
@@ -13,7 +14,8 @@ body{
     letter-spacing: 0.03em;
     line-height: 1.6;
     font-family: 'Open Sans', sans-serif;
-    background-image: url(../images/fondos/MapaTierraMedia.jpg);
+
+    background-image: url(../images/MapaTierraMedia.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -33,7 +35,8 @@ body:before{
     z-index: -1;
 }
 
-.title{
+
+.title {
     text-align: center;
     font-size: 80px;
     color: #ffffffcd;
@@ -53,11 +56,9 @@ body:before{
     margin: auto;
 }
 
-.container .card{
-	background-color: #E4D896;
-	background: rgba(0, 0, 0, 0.6);
+.contenido .card{
     width: 330px;
-    height: 430px;
+    height: 460px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -66,33 +67,26 @@ body:before{
     transition: all 0.25s;
 }
 
-.container .card:hover{
+.contenido .card:hover{
     transform: translateY(-15px);
-    box-shadow: 10px 10px 8px #888888;
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }
 
-.container .card img{
+.contenido .card img{
     width: 330px;
     height: 220px;
 }
 
-.container .card h3{
-	color: #ffffffcd;
-    padding: 0 1rem;
-    font-size: 16px;
-    font-weight: 300;
-}
 
 .container .card h4{
+    margin-top: 10px;
     font-weight: 600;
 }
 
 .container .card p{
-	color: #ffffffcd;
     padding: 0 1rem;
-    font-size: 14px;
-    font-weight: 200;
-    line-height:15px;
+    font-size: 16px;
+    font-weight: 300;
 }
 
 .container .card a {
@@ -102,7 +96,8 @@ body:before{
 }
 
 footer{
-    position: fixed;
+	margin-top: 40px;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
