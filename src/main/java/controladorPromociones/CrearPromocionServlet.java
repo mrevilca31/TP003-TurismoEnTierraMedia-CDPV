@@ -33,7 +33,7 @@ public class CrearPromocionServlet extends HttpServlet implements Servlet {
 		if (promocion.esValida()) {
 			resp.sendRedirect("/promociones/index.do");
 		} else {
-			req.setAttribute("promocion", promocion);
+			req.setAttribute("promociones", promocion);
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/promocion/crearPromocion.jsp");
 			dispatcher.forward(req, resp);
 		}

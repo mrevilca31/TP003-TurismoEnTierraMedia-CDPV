@@ -16,7 +16,7 @@ public class EditarPromocionServlet extends HttpServlet implements Servlet {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 
 		Promocion promocion = promocionServicio.findPromocionById(id);
-		req.setAttribute("atraccion", promocion);
+		req.setAttribute("promocion", promocion);
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/promociones/editarPromocion.jsp");
 		dispatcher.forward(req, resp);

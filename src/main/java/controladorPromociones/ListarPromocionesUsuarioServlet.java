@@ -27,8 +27,8 @@ public class ListarPromocionesUsuarioServlet extends HttpServlet implements Serv
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Promocion> promocion = promocionServicio.list();
-		req.setAttribute("promocion", promocion);
+		List<Promocion> promociones = promocionServicio.list();
+		req.setAttribute("promociones", promociones);
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/promociones/user-promociones.jsp");
 		dispatcher.forward(req, resp);
