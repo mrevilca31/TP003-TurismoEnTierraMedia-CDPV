@@ -15,102 +15,17 @@
 				data-bs-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<a href="/jsp01/atracciones/listaAtraccionesUsuario.do"> <img
-							src="../assets/images/Atracciones/Moria.jpg"
+						<a href="/jsp01/usuario/inicio.do"> <img
+							src="../assets/images/fondos/FondoGeneral.jpg"
 							class=" d-block mx-auto my-auto" role="button" alt="..."
 							width="850 px" height="500 px">
 						</a>
 						<div class="carousel-caption d-none d-md-block">
-								<h2>MORIA</h2>
-								<p>COSTO: 10 monedas</p>
-								<p>Click sobre la imagen para mas informacion.</p>
-							</div>
+							<h1>${usuario.nombre}</h1>
+							<p>Estas ofertas estáñ diseñadas para ti</p>
+						</div>
 					</div>
-					<div class="carousel-item">
-						<a href="/jsp01/atracciones/listaAtraccionesUsuario.do"> <img
-							src="../assets/images/Atracciones/Minas Tirith.jpg"
-							class=" d-block mx-auto my-auto" role="button" alt="..."
-							width="850 px" height="500 px">
-						</a>
-						<div class="carousel-caption d-none d-md-block">
-								<h2>MINAS TIRITH</h2>
-								<p>COSTO: 5 monedas</p>
-								<p>Click sobre la imagen para mas informacion.</p>
-							</div>
-					</div>
-					<div class="carousel-item">
-						<a href="/jsp01/atracciones/listaAtraccionesUsuario.do"> <img
-							src="../assets/images/Atracciones/La Comarca.jpg"
-							class=" d-block mx-auto my-auto" role="button" alt="..."
-							width="850 px" height="500 px">
-						</a>
-						<div class="carousel-caption d-none d-md-block">
-								<h2>LA COMARCA</h2>
-								<p>COSTO: 10 monedas</p>
-								<p>Click sobre la imagen para mas informacion.</p>
-							</div>
-					</div>
-					<div class="carousel-item">
-						<a href="/jsp01/atracciones/listaAtraccionesUsuario.do"> <img
-							src="../assets/images/Atracciones/Mordor.jpg"
-							class=" d-block mx-auto my-auto" role="button" alt="..."
-							width="850 px" height="500 px">
-						</a>
-						<div class="carousel-caption d-none d-md-block">
-								<h2>MORDOR</h2>
-								<p>COSTO: 25 monedas</p>
-								<p>Click sobre la imagen para mas informacion.</p>
-							</div>
-					</div>
-					<div class="carousel-item">
-						<a href="/jsp01/atracciones/listaAtraccionesUsuario.do"> <img
-							src="../assets/images/Atracciones/Abismo de Helm.jpg"
-							class=" d-block mx-auto my-auto" role="button" alt="..."
-							width="850 px" height="500 px">
-						</a>
-						<div class="carousel-caption d-none d-md-block">
-								<h2>ABISMO DE HELM</h2>
-								<p>COSTO: 5 monedas</p>
-								<p>Click sobre la imagen para mas informacion.</p>
-							</div>
-					</div>
-					<div class="carousel-item">
-						<a href="/jsp01/atracciones/listaAtraccionesUsuario.do"> <img
-							src="../assets/images/Atracciones/Lothlórien.jpg"
-							class=" d-block mx-auto my-auto" role="button" alt="..."
-							width="850 px" height="500 px">
-						</a>
-						<div class="carousel-caption d-none d-md-block">
-								<h2>LOTHLÓRIEN</h2>
-								<p>COSTO: 35 monedas</p>
-								<p>Click sobre la imagen para mas informacion.</p>
-							</div>
-					</div>
-					<div class="carousel-item">
-						<a href="/jsp01/atracciones/listaAtraccionesUsuario.do"> <img
-							src="../assets/images/Atracciones/Erebor.jpg"
-							class=" d-block mx-auto my-auto" role="button" alt="..."
-							width="850 px" height="500 px">
-						</a>
-						<div class="carousel-caption d-none d-md-block">
-								<h2>EREBOR</h2>
-								<p>COSTO: 12 monedas</p>
-								<p>Click sobre la imagen para mas informacion.</p>
-							</div>
-					</div>
-					<div class="carousel-item">
-						<a href="/jsp01/atracciones/listaAtraccionesUsuario.do"> <img
-							src="../assets/images/Atracciones/Bosque Negro.jpg"
-							class=" d-block mx-auto my-auto" role="button" alt="..."
-							width="850 px" height="500 px">
-						</a>
-						<div class="carousel-caption d-none d-md-block">
-								<h2>BOSQUE NEGRO</h2>
-								<p>COSTO: 3 monedas</p>
-								<p>Click sobre la imagen para mas informacion.</p>
-							</div>
-					</div>
-				<!-- <c:forEach items="${ofertas}" var="ofertas">
+					<c:forEach items="${ofertas}" var="ofertas">
 						<div class="carousel-item">
 							<a href="/jsp01/atracciones/listaAtraccionesUsuario.do"> <img
 								src="../assets/images/Atracciones/<c:out value="${ofertas.nombre}"></c:out>.jpg"
@@ -123,7 +38,7 @@
 								<p>Click sobre la imagen para mas informacion.</p>
 							</div>
 						</div>
-					</c:forEach> -->	
+					</c:forEach>
 				</div>
 				<button class="carousel-control-prev" type="button"
 					data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
