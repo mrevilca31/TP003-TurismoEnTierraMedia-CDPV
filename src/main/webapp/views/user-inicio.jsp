@@ -22,7 +22,7 @@
 						</a>
 						<div class="carousel-caption d-none d-md-block">
 							<h1>${usuario.nombre}</h1>
-							<p>Estas ofertas estáñ diseñadas para ti</p>
+							<p>Estas ofertas están diseñadas para ti</p>
 						</div>
 					</div>
 					<c:forEach items="${ofertas}" var="ofertas">
