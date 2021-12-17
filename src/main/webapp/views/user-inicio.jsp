@@ -8,9 +8,9 @@
 <body>
 	<jsp:include page="../partials/nav-user.jsp"></jsp:include>
 	<main>
-		<h1 class="title">Bienvenidos</h1>
+		<h1 class="title">Bienvenido</h1>
 		<!-- Carrusel -->
-		<div class="container-lg mt-3">
+		<div class="container-lg my-3">
 			<div id="carouselExampleCaptions" class="carousel slide"
 				data-bs-ride="carousel">
 				<div class="carousel-inner">
@@ -21,8 +21,8 @@
 							width="850 px" height="500 px">
 						</a>
 						<div class="carousel-caption d-none d-md-block">
-							<h1>${usuario.nombre}</h1>
-							<p>Estas ofertas estáñ diseñadas para ti</p>
+							<h1>¡Hola ${usuario.nombre}!</h1>
+							<h3>Estas ofertas estáñ diseñadas para ti</h3>
 						</div>
 					</div>
 					<c:forEach items="${ofertas}" var="ofertas">
@@ -34,8 +34,9 @@
 							</a>
 							<div class="carousel-caption d-none d-md-block">
 								<h2>"${ofertas.nombre.toUpperCase()}"</h2>
-								<p>COSTO: ${ofertas.costo} monedas</p>
-								<p>Click sobre la imagen para mas informacion.</p>
+								<h4>COSTO: ${ofertas.costo} monedas</h4>
+								<h4>TIPO: ${ofertas.tipoAtraccion}</h4>
+								<h6>Click sobre la imagen para mas informacion.</h6>
 							</div>
 						</div>
 					</c:forEach>
