@@ -58,9 +58,10 @@ public class Usuario {
 		return atraccionPreferida;
 	}
 
-	/*public List<Producto> getProductosEnItinerario() {
-		return this.getItinerario().productos;
-	}*/
+	/*
+	 * public List<Producto> getProductosEnItinerario() { return
+	 * this.getItinerario().productos; }
+	 */
 
 	public void setId(int id) {
 		this.id = id;
@@ -114,9 +115,10 @@ public class Usuario {
 		return borrado;
 	}
 
-	/*public void setItinerario(List<Producto> productos) {
-		this.itinerario = new Itinerario(productos);
-	}*/
+	/*
+	 * public void setItinerario(List<Producto> productos) { this.itinerario = new
+	 * Itinerario(productos); }
+	 */
 
 	public void agregarProductosAlItinerario(Producto producto) {
 		itinerario.add(producto);
@@ -135,8 +137,8 @@ public class Usuario {
 	@Override
 	public String toString() {
 		return "\nUSUARIO \n Nombre: " + nombre + " | Presupuesto: " + presupuesto + " | Tiempo Disponible: "
-				+ tiempoDisponible + "hs. | Atraccion Preferida: " + atraccionPreferida + " | Contraseña: ***** | Admin: "
-				+ admin;
+				+ tiempoDisponible + "hs. | Atraccion Preferida: " + atraccionPreferida
+				+ " | Contraseña: ***** | Admin: " + admin;
 	}
 
 	@Override
@@ -193,24 +195,28 @@ public class Usuario {
 		return errors;
 	}
 
-	public List<Producto>getItinerario() {
+	public List<Producto> getItinerario() {
 		return itinerario;
 	}
-	
-	public String getItinerarioString()  {
 
+	public String getItinerarioString() {
+
+		String nombre = "";
 		double duracion = 0;
 		double costo = 0;
 		String atracciones = "";
 		for (Producto producto : this.itinerario) {
+			nombre = producto.getNombre();
 			costo += producto.getCosto();
 			duracion += producto.getDuracion();
+			atracciones = producto.getNombre();
 		}
-		return "Costo = " + costo + ", Duracion = " + duracion + ", Atracciones = " + atracciones;			
-		
+		return "PRODUCTO COMPRADO : " + nombre + ", COSTO = " + costo + ", DURACION = " + duracion + ", ATRACCIONES INCLUIDAS = " + atracciones;
+
 	}
 
-	/*public void setItinerario(Itinerario itinerario) {
-		this.itinerario = itinerario;
-	}*/
+	/*
+	 * public void setItinerario(Itinerario itinerario) { this.itinerario =
+	 * itinerario; }
+	 */
 }
