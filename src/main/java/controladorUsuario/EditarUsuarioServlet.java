@@ -41,10 +41,9 @@ public class EditarUsuarioServlet extends HttpServlet implements Servlet {
 		Integer presupuesto = Integer.parseInt(req.getParameter("presupuesto"));
 		Double tiempoDisponible = Double.parseDouble(req.getParameter("tiempoDisponible"));
 		String atraccionPreferida = req.getParameter("atraccionPreferida");
-		String password = req.getParameter("password");
 		Boolean admin = Boolean.parseBoolean(req.getParameter("admin"));
 
-		Usuario tmp_user = usuarioServicio.update(id, nombre, presupuesto, tiempoDisponible, atraccionPreferida, password, admin);
+		Usuario tmp_user = usuarioServicio.update(id, nombre, presupuesto, tiempoDisponible, atraccionPreferida, admin);
 
 		if (tmp_user.isValid()) {
 			resp.sendRedirect("/jsp01/usuario/listaUsuarios.do");

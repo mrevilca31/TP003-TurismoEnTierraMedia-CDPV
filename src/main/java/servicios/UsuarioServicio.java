@@ -29,7 +29,7 @@ public class UsuarioServicio {
 	}
 
 	public Usuario update(Integer id, String nombre, Integer presupuesto, Double tiempoDisponible,
-			String atraccionPreferida, String password, Boolean admin) {
+			String atraccionPreferida, Boolean admin) {
 		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
 		Usuario usuario = usuarioDAO.find(id);
 
@@ -37,7 +37,6 @@ public class UsuarioServicio {
 		usuario.setPresupuesto(presupuesto);
 		usuario.setTiempoDisponible(tiempoDisponible);
 		usuario.setAtraccionPreferida(atraccionPreferida);
-		usuario.setPassword(password);
 		usuario.setAdmin(admin);
 
 		if (usuario.isValid()) {
