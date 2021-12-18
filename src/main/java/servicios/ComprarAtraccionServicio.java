@@ -16,10 +16,10 @@ public class ComprarAtraccionServicio {
 	UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
 	ItinerarioDAO itinerarioDAO = DAOFactory.getItinerarioDAO();
 
-	public Map<String, String> comprar(Integer usuarioId, Integer atraccionId) {
-		Map<String, String> errors = new HashMap<>();
+	public Map<String, String> comprar(Usuario usuario, Integer atraccionId) {
+		Map<String, String> errors = new HashMap<String, String>();
 
-		Usuario usuario = usuarioDAO.find(usuarioId);
+		//Usuario usuario = usuarioDAO.find(usuarioId);
 		Atraccion atraccion = atraccionDAO.find(atraccionId);
 
 		if (!atraccion.hayCupo()) {

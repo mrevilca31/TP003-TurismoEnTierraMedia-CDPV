@@ -40,7 +40,7 @@ public class ItinerarioDAO {
 		}
 	}
 
-	public List<Producto> findAll(int idUsuario, List<Producto> productos) {
+	public List<Producto> findAll(Usuario usuario, List<Producto> productos) {
 		try {
 			String consulta = "select promocion_id, atraccion_id from Itinerario WHERE usuario_id = ?";
 			String promo = "select promocion.id, promocion.nombre from Promocion\r\n" + "INNER JOIN Itinerario on \r\n"
@@ -53,7 +53,7 @@ public class ItinerarioDAO {
 			PreparedStatement statementPromo = conn.prepareStatement(promo);
 			PreparedStatement statementAtrac = conn.prepareStatement(atracc);
 
-			statement.setInt(1, idUsuario);
+			statement.setString(1, usuario.getNombre());
 			ResultSet resultados = statement.executeQuery();
 
 			List<Producto> itinerario = new ArrayList<>();

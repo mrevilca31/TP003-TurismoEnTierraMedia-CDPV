@@ -13,7 +13,7 @@
 			<div class="card mt-4 border-secondary">
 				<h5 class="card-header text-white bg-success">Promo/Atraccion</h5>
 				<div class="card-body text-dark bg-light">
-					<h5 class="card-title">Nombre</h5>
+					<h5 class="card-title">Nombre: "${usuario.getItinerario()}" </h5>
 					<p class="card-text">Detalles</p>
 				</div>
 			</div>

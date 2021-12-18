@@ -31,11 +31,15 @@ public class ListarItinerarioServlet extends HttpServlet implements Servlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Usuario usuario = (Usuario) req.getSession().getAttribute("usuario");
-		Integer id = usuario.getId();
-		List<Producto> productos = (List<Producto>) req.getSession().getAttribute("productos");
-		List<Producto> itinerario = itinerarioServicio.find(id, productos);
-		req.setAttribute("itinerario", itinerario);
+		// Integer id = usuario.getId();
+		// List<Producto> productos = (List<Producto>)
+		// req.getSession().getAttribute("productos");
+		
+		List<Producto> itinerario = usuario.getItinerario();
+		/*Itinerario itinerario = null;
+		//itinerario = usuario.getItinerario();*/
 
+		req.setAttribute("itinerario", itinerario);
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/user-itinerario.jsp");
 		dispatcher.forward(req, resp);
 

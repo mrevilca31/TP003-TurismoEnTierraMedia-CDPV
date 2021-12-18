@@ -2,6 +2,7 @@ package modelo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -21,7 +22,7 @@ public class Usuario {
 
 	private HashMap<String, String> errors;
 
-	private Itinerario itinerario;
+	private LinkedList<Producto> itinerario = new LinkedList<Producto>();
 	protected List<Producto> nuevosProductos;
 
 	public Usuario(int id, String nombre, int presupuesto, double tiempoDisponible, String atraccionPreferida,
@@ -57,9 +58,9 @@ public class Usuario {
 		return atraccionPreferida;
 	}
 
-	public List<Producto> getProductosEnItinerario() {
+	/*public List<Producto> getProductosEnItinerario() {
 		return this.getItinerario().productos;
-	}
+	}*/
 
 	public void setId(int id) {
 		this.id = id;
@@ -113,12 +114,12 @@ public class Usuario {
 		return borrado;
 	}
 
-	public void setItinerario(List<Producto> productos) {
+	/*public void setItinerario(List<Producto> productos) {
 		this.itinerario = new Itinerario(productos);
-	}
+	}*/
 
 	public void agregarProductosAlItinerario(Producto producto) {
-		getItinerario().agregarProductos(producto);
+		itinerario.add(producto);
 		this.presupuesto -= producto.getCosto();
 		this.tiempoDisponible -= producto.getDuracion();
 	}
@@ -192,11 +193,24 @@ public class Usuario {
 		return errors;
 	}
 
-	public Itinerario getItinerario() {
+	public List<Producto>getItinerario() {
 		return itinerario;
 	}
+	
+	public String getItinerarioString()  {
 
-	public void setItinerario(Itinerario itinerario) {
-		this.itinerario = itinerario;
+		double duracion = 0;
+		double costo = 0;
+		String atracciones = "";
+		for (Producto producto : this.itinerario) {
+			costo += producto.getCosto();
+			duracion += producto.getDuracion();
+		}
+		return "Costo = " + costo + ", Duracion = " + duracion + ", Atracciones = " + atracciones;			
+		
 	}
+
+	/*public void setItinerario(Itinerario itinerario) {
+		this.itinerario = itinerario;
+	}*/
 }
