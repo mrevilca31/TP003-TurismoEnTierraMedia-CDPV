@@ -34,7 +34,7 @@ public class ComprarAtraccionServicio {
 
 		if (errors.isEmpty()) {
 			usuario.agregarProductosAlItinerario(atraccion);
-			atraccion.disminuirCupo(1);
+			atraccion.disminuirCupo();
 			atraccionDAO.update(atraccion);
 			usuarioDAO.update(usuario);
 			itinerarioDAO.insert(usuario, atraccion);
