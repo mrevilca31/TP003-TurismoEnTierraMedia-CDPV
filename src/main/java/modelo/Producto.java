@@ -86,7 +86,7 @@ public abstract class Producto {
 
 	protected abstract boolean hayCupo();
 
-	protected abstract void disminuirCupo(int i);
+	protected abstract void disminuirCupo();
 
 	public void actualizarProducto(Producto producto) {
 		if (producto.esPromo()) {

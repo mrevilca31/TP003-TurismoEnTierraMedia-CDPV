@@ -74,7 +74,7 @@ public class Atraccion extends Producto {
 	}
 
 	@Override
-	public void disminuirCupo(int i) {
+	public void disminuirCupo() {
 		this.cupo--;
 	}
 

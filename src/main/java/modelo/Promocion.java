@@ -119,9 +119,9 @@ public abstract class Promocion extends Producto {
 	}
 
 	@Override
-	public void disminuirCupo(int i)  {
+	public void disminuirCupo()  {
 		for (Atraccion atraccion : atraccionesEnPromocion) {
-			atraccion.disminuirCupo(1);
+			atraccion.disminuirCupo();
 		}
 	}
 }
