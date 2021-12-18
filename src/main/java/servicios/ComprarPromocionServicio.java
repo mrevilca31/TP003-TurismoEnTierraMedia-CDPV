@@ -34,7 +34,7 @@ public class ComprarPromocionServicio {
 		}
 
 		if (errors.isEmpty()) {
-			promocion.disminuirCupo(1);
+			promocion.disminuirCupo();
 			promocionDAO.update(promocion);
 			usuarioDAO.update(usuario);
 			itinerarioDAO.insert(usuario, promocion);
