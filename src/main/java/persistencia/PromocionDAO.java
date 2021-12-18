@@ -28,7 +28,7 @@ public class PromocionDAO implements GenericDAO<Promocion> {
 					+ "FROM Atraccion_Promocion \r\n"
 					+ "JOIN Promocion ON Promocion.id = Atraccion_Promocion.promocion_id\r\n"
 					+ "JOIN Atraccion ON Atraccion.id = Atraccion_Promocion.atraccion_id"
-					+ "WHERE Promocion.borrado = 0";
+					+ "WHERE Promocion.borrado = 0 AND Atraccion.borrado = 0";
 			Connection conn = ConexionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
