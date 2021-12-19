@@ -33,7 +33,11 @@ public class ListarItinerarioServlet extends HttpServlet implements Servlet {
 		// req.getSession().getAttribute("productos");
 		
 		List<Producto> itinerario = itinerarioServicio.find(usuario);
-		
+		if (!itinerario.isEmpty()) {
+			req.getSession().setAttribute("itinerario", itinerario);
+			req.getSession().setAttribute("usuario", usuario);
+		}else {
+		}
 		req.setAttribute("itinerario", itinerario);
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/user-itinerario.jsp");
 		dispatcher.forward(req, resp);
