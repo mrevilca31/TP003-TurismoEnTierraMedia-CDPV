@@ -22,8 +22,7 @@ public class Usuario {
 
 	private HashMap<String, String> errors;
 
-	private LinkedList<Producto> itinerario = new LinkedList<Producto>();
-	protected List<Producto> nuevosProductos;
+	public LinkedList<Producto> itinerario = new LinkedList<Producto>();
 
 	public Usuario(int id, String nombre, int presupuesto, double tiempoDisponible, String atraccionPreferida,
 			String password, Boolean admin) {
@@ -34,8 +33,6 @@ public class Usuario {
 		this.atraccionPreferida = atraccionPreferida;
 		this.password = password;
 		this.admin = admin;
-
-		nuevosProductos = new ArrayList<>();
 	}
 
 	public int getId() {
@@ -115,28 +112,15 @@ public class Usuario {
 		return borrado;
 	}
 
-	/*
-	 * public void setItinerario(List<Producto> productos) { this.itinerario = new
-	 * Itinerario(productos); }
-	 */
-
 	public void agregarProductosAlItinerario(Producto producto) {
 		itinerario.add(producto);
 		this.presupuesto -= producto.getCosto();
 		this.tiempoDisponible -= producto.getDuracion();
 	}
 
-	public void agregarProductoNuevo(Producto producto) {
-		this.nuevosProductos.add(producto);
-	}
-
-	public List<Producto> getNuevosProductos() {
-		return this.nuevosProductos;
-	}
-
 	@Override
 	public String toString() {
-		return "\nUSUARIO \n Nombre: " + nombre + " | Presupuesto: " + presupuesto + " | Tiempo Disponible: "
+		return "Usuario: " + nombre + " | Presupuesto: " + presupuesto + " | Tiempo Disponible: "
 				+ tiempoDisponible + "hs. | Atraccion Preferida: " + atraccionPreferida
 				+ " | Contraseña: ***** | Admin: " + admin;
 	}
@@ -199,24 +183,20 @@ public class Usuario {
 		return itinerario;
 	}
 
-	public String getItinerarioString() {
+	public void setItinerario(LinkedList<Producto> itinerario) {
+		this.itinerario = itinerario;
+	}
 
-		String nombre = "";
+	public String totalItinerario() {
+
 		double duracion = 0;
 		double costo = 0;
-		String atracciones = "";
 		for (Producto producto : this.itinerario) {
-			nombre = producto.getNombre();
 			costo += producto.getCosto();
 			duracion += producto.getDuracion();
-			atracciones = producto.getNombre();
 		}
-		return "PRODUCTO COMPRADO : " + nombre + ", COSTO = " + costo + ", DURACION = " + duracion + ", ATRACCIONES INCLUIDAS = " + atracciones;
+		return "RESUMEN DE COMPRA: COSTO TOTAL = " + costo + ", DURACION TOTAL = " + duracion;
 
 	}
 
-	/*
-	 * public void setItinerario(Itinerario itinerario) { this.itinerario =
-	 * itinerario; }
-	 */
 }
