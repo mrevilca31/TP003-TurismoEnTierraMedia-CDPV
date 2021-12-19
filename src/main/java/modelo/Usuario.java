@@ -2,6 +2,7 @@ package modelo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -153,6 +154,15 @@ public class Usuario {
 
 	public boolean tieneTiempo(Producto p) {
 		return p.getDuracion() <= this.getTiempoDisponible();
+	}
+	
+	public boolean itinerarioContiene(Producto p) {
+		Boolean yaCompro = false;
+		Iterator<Producto> itr = itinerario.iterator();
+		while (!yaCompro && itr.hasNext()) {
+			yaCompro = itr.next().contiene(p);
+		}
+		return yaCompro;
 	}
 
 	public boolean checkPassword(String password) {

@@ -35,7 +35,7 @@
 					<c:choose>
 
 						<c:when
-							test="${usuario.puedePagar(atraccion) && usuario.tieneTiempo(atraccion) && atraccion.hayCupo()}">
+							test="${usuario.puedePagar(atraccion) && usuario.tieneTiempo(atraccion) && atraccion.hayCupo() && !usuario.itinerarioContiene(atraccion)}">
 							<button type="button" class="btn btn-success mx-5 mt-3"
 								data-bs-toggle="modal"
 								data-bs-target="#exampleModal-${atraccion.id}">
