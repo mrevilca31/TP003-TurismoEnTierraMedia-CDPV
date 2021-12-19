@@ -40,7 +40,7 @@ public class ItinerarioDAO {
 		}
 	}
 
-	public List<Producto> findAll(int idUsuario, List<Producto> productos) {
+	public List<Producto> findAll(Usuario usuario, List<Producto> productos) {
 		try {
 			String consulta = "select promocion_id, atraccion_id from Itinerario WHERE usuario_id = ?";
 			String promo = "select promocion.id, promocion.nombre from Promocion\r\n" + "INNER JOIN Itinerario on \r\n"
@@ -53,7 +53,7 @@ public class ItinerarioDAO {
 			PreparedStatement statementPromo = conn.prepareStatement(promo);
 			PreparedStatement statementAtrac = conn.prepareStatement(atracc);
 
-			statement.setInt(1, idUsuario);
+			statement.setString(1, usuario.getNombre());
 			ResultSet resultados = statement.executeQuery();
 
 			List<Producto> itinerario = new ArrayList<>();
@@ -90,5 +90,48 @@ public class ItinerarioDAO {
 			}
 		}
 		return null;
+	}
+
+	public List<Producto> findByNombre(Usuario usuario) {
+		try {
+			String consulta = "select promocion_id, atraccion_id from Itinerario WHERE usuario_id = ?";
+			String promo = "select promocion.id, promocion.nombre from Promocion\r\n" + "INNER JOIN Itinerario on \r\n"
+					+ "Promocion.id = ?;";
+			String atracc = "select Atraccion.id, Atraccion.nombre from Atraccion\r\n" + "INNER JOIN Itinerario on \r\n"
+					+ "Atraccion.id = ?;";
+
+			Connection conn = ConexionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(consulta);
+			PreparedStatement statementPromo = conn.prepareStatement(promo);
+			PreparedStatement statementAtrac = conn.prepareStatement(atracc);
+
+			statement.setInt(1, usuario.getId());
+			ResultSet resultados = statement.executeQuery();
+
+			List<Producto> productos = new ArrayList();
+			List<Producto> itinerario = new ArrayList<>();
+			while (resultados.next()) {
+
+				if (!(resultados.getString(1) == null)) {
+
+					statementPromo.setInt(1, resultados.getInt(1));
+					ResultSet pr = statementPromo.executeQuery();
+
+					Producto promocion = buscarProducto(pr, productos);
+					itinerario.add(promocion);
+				}
+				if (!(resultados.getString(2) == null)) {
+
+					statementAtrac.setInt(1, resultados.getInt(2));
+					ResultSet at = statementAtrac.executeQuery();
+					Producto atraccion = buscarProducto(at, productos);
+					itinerario.add(atraccion);
+				}
+			}
+
+			return itinerario;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
 	}
 }

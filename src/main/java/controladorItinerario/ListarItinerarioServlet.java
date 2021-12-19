@@ -10,8 +10,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import modelo.Atraccion;
-import modelo.Itinerario;
 import modelo.Producto;
 import modelo.Usuario;
 import servicios.ItinerarioServicio;
@@ -31,11 +29,16 @@ public class ListarItinerarioServlet extends HttpServlet implements Servlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Usuario usuario = (Usuario) req.getSession().getAttribute("usuario");
-		Integer id = usuario.getId();
-		List<Producto> productos = (List<Producto>) req.getSession().getAttribute("productos");
-		List<Producto> itinerario = itinerarioServicio.find(id, productos);
+		// List<Producto> productos = (List<Producto>)
+		// req.getSession().getAttribute("productos");
+		
+		List<Producto> itinerario = itinerarioServicio.find(usuario);
+		if (!itinerario.isEmpty()) {
+			req.getSession().setAttribute("itinerario", itinerario);
+			req.getSession().setAttribute("usuario", usuario);
+		}else {
+		}
 		req.setAttribute("itinerario", itinerario);
-
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/user-itinerario.jsp");
 		dispatcher.forward(req, resp);
 

@@ -43,9 +43,8 @@ public class EditarAtraccionServlet extends HttpServlet implements Servlet {
 		Integer costo = req.getParameter("costo").trim() == "" ? null : Integer.parseInt(req.getParameter("costo"));
 		Double duracion = Double.parseDouble(req.getParameter("duracion"));
 		Integer cupo = Integer.parseInt(req.getParameter("cupo"));
-		String tipo = req.getParameter("tipo");
 
-		Atraccion atraccion = atraccionServicio.update(id, nombre, costo, duracion, cupo, tipo);
+		Atraccion atraccion = atraccionServicio.update(id, nombre, costo, duracion, cupo);
 
 		if (atraccion.esValida()) {
 			resp.sendRedirect("/jsp01/atracciones/listaAtracciones.do");

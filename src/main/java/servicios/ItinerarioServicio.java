@@ -11,7 +11,13 @@ import persistenciaGeneral.DAOFactory;
 
 public class ItinerarioServicio {
 
-	public List<Producto> find(int id, List<Producto> productos) {
-		return DAOFactory.getItinerarioDAO().findAll(id, productos);
-	}
+	public List<Producto> find(Usuario usuario) {
+		List<Producto> productos = DAOFactory.getItinerarioDAO().findByNombre(usuario);
+		/*if(productos != null) {
+			for(Producto comprasRealizadas:productos ) {
+				usuario.itinerario.add(comprasRealizadas);	
+			}	
+		}		*/
+		return usuario.itinerario;
+	} 
 }

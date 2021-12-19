@@ -2,6 +2,8 @@ package modelo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -21,8 +23,7 @@ public class Usuario {
 
 	private HashMap<String, String> errors;
 
-	private Itinerario itinerario;
-	protected List<Producto> nuevosProductos;
+	public LinkedList<Producto> itinerario = new LinkedList<Producto>();
 
 	public Usuario(int id, String nombre, int presupuesto, double tiempoDisponible, String atraccionPreferida,
 			String password, Boolean admin) {
@@ -33,8 +34,6 @@ public class Usuario {
 		this.atraccionPreferida = atraccionPreferida;
 		this.password = password;
 		this.admin = admin;
-
-		nuevosProductos = new ArrayList<>();
 	}
 
 	public int getId() {
@@ -57,9 +56,10 @@ public class Usuario {
 		return atraccionPreferida;
 	}
 
-	public List<Producto> getProductosEnItinerario() {
-		return this.getItinerario().productos;
-	}
+	/*
+	 * public List<Producto> getProductosEnItinerario() { return
+	 * this.getItinerario().productos; }
+	 */
 
 	public void setId(int id) {
 		this.id = id;
@@ -113,29 +113,17 @@ public class Usuario {
 		return borrado;
 	}
 
-	public void setItinerario(List<Producto> productos) {
-		this.itinerario = new Itinerario(productos);
-	}
-
 	public void agregarProductosAlItinerario(Producto producto) {
-		getItinerario().agregarProductos(producto);
+		itinerario.add(producto);
 		this.presupuesto -= producto.getCosto();
 		this.tiempoDisponible -= producto.getDuracion();
 	}
 
-	public void agregarProductoNuevo(Producto producto) {
-		this.nuevosProductos.add(producto);
-	}
-
-	public List<Producto> getNuevosProductos() {
-		return this.nuevosProductos;
-	}
-
 	@Override
 	public String toString() {
-		return "\nUSUARIO \n Nombre: " + nombre + " | Presupuesto: " + presupuesto + " | Tiempo Disponible: "
-				+ tiempoDisponible + "hs. | Atraccion Preferida: " + atraccionPreferida + " | Contraseña: ***** | Admin: "
-				+ admin;
+		return "Usuario: " + nombre + " | Presupuesto: " + presupuesto + " | Tiempo Disponible: "
+				+ tiempoDisponible + "hs. | Atraccion Preferida: " + atraccionPreferida
+				+ " | Contraseña: ***** | Admin: " + admin;
 	}
 
 	@Override
@@ -167,6 +155,15 @@ public class Usuario {
 	public boolean tieneTiempo(Producto p) {
 		return p.getDuracion() <= this.getTiempoDisponible();
 	}
+	
+	public boolean itinerarioContiene(Producto p) {
+		Boolean yaCompro = false;
+		Iterator<Producto> itr = itinerario.iterator();
+		while (!yaCompro && itr.hasNext()) {
+			yaCompro = itr.next().contiene(p);
+		}
+		return yaCompro;
+	}
 
 	public boolean checkPassword(String password) {
 		return Crypt.match(password, this.password);
@@ -192,11 +189,24 @@ public class Usuario {
 		return errors;
 	}
 
-	public Itinerario getItinerario() {
+	public List<Producto> getItinerario() {
 		return itinerario;
 	}
 
-	public void setItinerario(Itinerario itinerario) {
+	public void setItinerario(LinkedList<Producto> itinerario) {
 		this.itinerario = itinerario;
 	}
+
+	public String totalItinerario() {
+
+		double duracion = 0;
+		double costo = 0;
+		for (Producto producto : this.itinerario) {
+			costo += producto.getCosto();
+			duracion += producto.getDuracion();
+		}
+		return "RESUMEN DE COMPRA: COSTO TOTAL = " + costo + ", DURACION TOTAL = " + duracion;
+
+	}
+
 }

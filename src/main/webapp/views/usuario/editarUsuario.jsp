@@ -70,15 +70,15 @@
 					</div>
 				</div>
 				<div class="mb-3">
-					<label for="password"
-						class='col-form-label ${tmp_user.errors.get("password") != null ? "is-invalid" : "" }'>Contraseña:</label>
-					<input type="password" class="form-control" id="password"
-						name="password" required value="${tmp_user.password}"></input>
+					<label for="atraccionPreferida"
+						class='col-form-label ${tmp_user.errors.get("password") != null ? "is-invalid" : "" }'>Contraseña:</label> <input type="password" class="form-control"
+						id="password" name="password" required
+						value="${tmp_user.password}" readonly></input>
 					<div class="invalid-feedback">
-						<c:out value='${tmp_user.errors.get("password")}' />
+						<c:out value='${tmp_user.errors.get("password")}'></c:out>
 					</div>
 				</div>
-				<button type="submit" class="btn btn-success mt-3 mx-3" href="">Confirmar</button>
+				<button type="submit" class="btn btn-success mt-3 mx-3" href="/jsp01/usuario/editarUsuario.do">Confirmar</button>
 				<a href="/jsp01/usuario/listaUsuarios.do"
 					class="btn btn-danger mt-3 mx-3" role="button">
 					Cancelar

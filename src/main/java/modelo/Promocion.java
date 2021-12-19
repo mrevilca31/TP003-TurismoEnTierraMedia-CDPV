@@ -60,8 +60,8 @@ public abstract class Promocion extends Producto {
 
 	@Override
 	public String toString() {
-		return "\nPROMOCION \n Nombre: " + super.getNombre() + " | Atracciones Incluidas: " + this.atraccionesIncluidas()
-		+ " | Duración: " + super.getDuracion() + "hs. | Costo: " + getCosto();
+		return "Promoción: " + super.getNombre() + " | Atracciones Incluidas: " + this.atraccionesIncluidas()
+		+ " | Duración: " + super.getDuracion() + "hs. | Costo: " + getCosto() + " | Tipo de promoción: " + getTipoPromo() + " | Tipo de atracciones: " + getTipoPreferido();
 
 	}
 
@@ -119,9 +119,9 @@ public abstract class Promocion extends Producto {
 	}
 
 	@Override
-	public void disminuirCupo(int i)  {
+	public void disminuirCupo()  {
 		for (Atraccion atraccion : atraccionesEnPromocion) {
-			atraccion.disminuirCupo(1);
+			atraccion.disminuirCupo();
 		}
 	}
 }
