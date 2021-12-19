@@ -13,8 +13,7 @@
 			<div class="card mt-4 border-secondary">
 				<h5 class="card-header text-white bg-success">Promo/Atraccion</h5>
 				<div class="card-body text-dark bg-light">
-					<h5 class="card-title">"${usuario.getItinerarioString()}" </h5>
-					<p class="card-text">Detalles</p>
+					<h5 class="card-title">${producto.toString()} </h5>
 				</div>
 			</div>
 		</c:forEach>

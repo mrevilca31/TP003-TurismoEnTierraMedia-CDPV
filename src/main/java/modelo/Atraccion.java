@@ -80,8 +80,8 @@ public class Atraccion extends Producto {
 
 	@Override
 	public String toString() {
-		return "\nATRACCION \n Nombre: " + super.getNombre() + " | Costo: " + super.getCosto() + " monedas | Duración: "
-				+ super.getDuracion() + " hs. | Tipo: " + super.getTipoAtraccion();
+		return "Atracción: " + super.getNombre() + " | Costo: " + super.getCosto() + " monedas | Duración: "
+				+ super.getDuracion() + " hs. | Tipo de Atracción: " + super.getTipoAtraccion();
 	}
 
 	@Override
