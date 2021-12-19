@@ -17,6 +17,6 @@ public class ItinerarioServicio {
 			usuario.itinerario.add(comprasRealizadas);	
 		}
 		
-		return usuario.itinerario;
+		return usuario.getItinerario();
 	} 
 }
